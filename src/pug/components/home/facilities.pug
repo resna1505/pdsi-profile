@@ -1,0 +1,81 @@
+include ../cards/facility-card.pug
+include ./slider-art
+
+-
+  var facilityList = [
+    {
+      title: 'Lab and Blood Test',
+      desc: 'We perform a wide range of biological examinations to meet client\’s expectations.',
+      img: img_artwork[26]
+    },
+    {
+      title: 'Radiology',
+      desc: 'We provide comprehensive diagnostic imaging services.',
+      img: img_artwork[27]
+    },
+    {
+      title: 'Ultrasound',
+      desc: 'We offers a complete panel of testing, including OB/GYN, general, and ultrasound',
+      img: img_artwork[28]
+    },
+    {
+      title: 'Spirometry',
+      desc: 'We provide spirometry tests to diagnose asthma.',
+      img: img_artwork[29]
+    },
+    {
+      title: 'Treadmill',
+      desc: 'The test includes a complete physical exam.',
+      img: img_artwork[30]
+    },
+    {
+      title: 'Electrocardiography',
+      desc: 'One of the service we provide is an electrocardiography.',
+      img: img_artwork[26]
+    },
+  ]
+
+.root
+  .container.carousel-header
+    .text
+      h4.use-text-title
+        | #{$t.medical_landing.services_title}
+      p.use-text-subtitle2 Get a diagnosis, treatment plan, and prescription from original provider of quality medical care.
+    a.btn-flat.primary-text.waves-effect.view-all(href=link.medical.product)
+      | #{$t.common.btn_seeall}
+      i.material-icons.icon arrow_forward
+  .carousel-handle
+    .carousel-wrap
+      #facilities_carousel.carousel(data-length=facilityList.length)
+        .item.carousel-prop.show-lg-up
+          div
+        each item in facilityList
+          .item
+            +facility-card(item.img, item.title, item.desc, 'See Detail')
+  .floating-artwork
+    .container.fixed-width
+      .artwork
+        +slider-art('facilities')
+          .wow.fadeInLeftShort(data-wow-offset="250" data-wow-delay="0.3s" data-wow-duration="0.5s")
+            div
+              |
+              |
+              img.img-2d3d(
+                src=img_assets+img_artwork[13]
+                data-2d=img_assets+img_artwork[12]
+                data-3d=img_assets+img_artwork[13]
+                alt='facilities'
+              )/
+              |
+              |
+        nav.arrow
+          |
+          |
+          button#prev_facility.btn-floating.margin
+            i.material-icons arrow_back
+          |
+          |
+          button#next_facility.btn-floating.margin
+            i.material-icons arrow_forward
+          |
+          |
