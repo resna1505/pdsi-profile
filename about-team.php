@@ -65,7 +65,7 @@
       <div id="about-page">
         <div class="main-wrap">
 
-          
+
           <!-- #### HEADER ####-->
           <div class="sidenav mobile-nav" id="slide_menu">
             <div class="side-multilv">
@@ -73,7 +73,7 @@
                 <ul class="collapsible expandable">
                   <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">berita</a></li>
                   <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">testimoni</a></li>
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">mitra</a></li>                  
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">mitra</a></li>
                   <li class="collection-item group-child has-child">
                     <div class="collapsible-header">
                       <a class="waves-effect text-truncate menu-list" href="#!">
@@ -137,7 +137,7 @@
               </div>
             </div>
           </div>
-          
+
           <header class="app-bar header" id="header">
             <div class="container">
               <div class="header-content">
@@ -145,7 +145,7 @@
                   <button class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down" id="mobile_menu" type="button" data-target="slide_menu"><span class="hamburger-box"><span class="bar hamburger-inner"></span></span></button>
                   <div class="logo">
                     <a href="index.html">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>PDSI</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </a>
                   </div>
                   <div class="scrollactive-nav show-lg-up multi-menu">
@@ -280,6 +280,13 @@
             </div>
           </div><!-- ##### END BANNER #####-->
 
+          <?php
+
+          $response = file_get_contents('http://localhost:8000/api/dokter');
+          $data = json_decode($response, true);
+          // print_r($data['data']['dokter']);
+          ?>
+
           <!-- ##### COUNTER #####-->
           <div class="space-top-short">
             <div class="counter-style" id="counter_target">
@@ -289,7 +296,7 @@
                     <div class="counter-item">
                       <span class="icon ion-flag use-text-primary-color"></span>
                       <div class="text">
-                        <h4 class="display-1">+ <span class="numscroller" data-min="0" data-max="123" data-delay="5" data-increment="8">&nbsp;</span></h4>
+                        <h4 class="display-1">+ <?= htmlspecialchars($data['data']['jumlahDokter']); ?><span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;</span></h4>
                         <h6 class="use-text-subtitle2">Dokter Tersertifikasi</h6>
                       </div>
                     </div>
@@ -298,7 +305,7 @@
                     <div class="counter-item">
                       <span class="icon ion-android-people use-text-secondary-color"></span>
                       <div class="text">
-                        <h4 class="display-1">+ <span class="numscroller" data-min="0" data-max="456" data-delay="5" data-increment="8">&nbsp;</span></h4>
+                        <h4 class="display-1">+ <?= htmlspecialchars($data['data']['jumlahMitra']); ?><span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;</span></h4>
                         <h6 class="use-text-subtitle2">Mitra Kelembagaan</h6>
                       </div>
                     </div>
@@ -307,7 +314,7 @@
                     <div class="counter-item">
                       <span class="icon ion-android-globe use-text-accent-color"></span>
                       <div class="text">
-                        <h4 class="display-1"><span class="numscroller" data-min="0" data-max="89" data-delay="5" data-increment="8">&nbsp;</span>%</h4>
+                        <h4 class="display-1"><?= htmlspecialchars($data['data']['evaluasi']); ?><span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;</span>%</h4>
                         <h6 class="use-text-subtitle2">Kepuasan Evaluasi </h6>
                       </div>
                     </div>
@@ -318,331 +325,69 @@
           </div><!-- ##### END COUNTER #####-->
 
           <!-- ##### TEAM #####-->
+
           <div class="space-bottom-short">
             <div class="container text-center text-lg-start">
               <h4 class="use-text-title2 mb-3">Tim Ahli & Pengajar Profesional</h4>
-              <p class="use-text-subtitle2 mb-10">Dibimbing oleh tenaga pengajar berpengalaman dari berbagai spesialisasi kedokteran, siap membekali Anda dengan kompetensi klinis terkini. </p>
+              <p class="use-text-subtitle2 mb-10">Dibimbing oleh tenaga pengajar berpengalaman dari berbagai spesialisasi kedokteran, siap membekali Anda dengan kompetensi klinis terkini.</p>
               <div class="about-style">
                 <div class="row justify-content-center">
-                  <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="0">
-                    <div class="wow fadeInUp" data-wow-delay="0.30000000000000004s" data-wow-duration="0.5s">
-                      <div class="card profile-card portrait full">
-                        <div class="figure">
-                          <div class="responsive-img" style="background-image: url(&quot;https://res.cloudinary.com/walden-global-services/image/upload/v1544584608/dandelion/41.jpg&quot;);"></div>
-                        </div>
-                        <div class="avatar-img avatar bigger">
-                          <img src="https://randomuser.me/api/portraits/women/0.jpg" alt="avatar" />
-                        </div>
-                        <div class="properties text-truncate">
-                          <div class="card-content">
-                            <h6><strong>Dr. Andini Putri, Sp.PD</strong></h6>
-                            <div class="subtitle">Penyakit Dalam</div>
-                            <div class="desc">
-                              <span>15 Tahun</span>
+
+                  <?php if (!empty($data['data']['dokter'])): ?>
+                    <?php foreach ($data['data']['dokter'] as $item): ?>
+                      <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="<?= $item['id']; ?>">
+                        <div class="wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="0.5s">
+                          <div class="card profile-card portrait full">
+                            <div class="figure">
+                              <div class="responsive-img" style="background-image: url('https://res.cloudinary.com/walden-global-services/image/upload/v1544584608/dandelion/41.jpg');"></div>
                             </div>
-                            <a class="btn btn-outlined primary waves-effect main-btn" href="#">Lihat Profil</a>
-                          </div>
-                          <div class="action-area">
-                            <div class="card-actions action">
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-primary-color">account_circle</i>100 Peserta</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-accent-color">favorite</i>10 Minat</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-secondary-color">photo_library</i>12 Materi</span>
-                              </a>
+                            <div class="avatar-img avatar bigger">
+                              <img src="https://randomuser.me/api/portraits/men/<?= rand(0, 99); ?>.jpg" alt="avatar" />
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="1">
-                    <div class="wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.5s">
-                      <div class="card profile-card portrait full">
-                        <div class="figure">
-                          <div class="responsive-img" style="background-image: url(&quot;https://res.cloudinary.com/walden-global-services/image/upload/v1544584608/dandelion/42.jpg&quot;);"></div>
-                        </div>
-                        <div class="avatar-img avatar bigger">
-                          <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="avatar" />
-                        </div>
-                        <div class="properties text-truncate">
-                          <div class="card-content">
-                            <h6><strong>Dr. Bima Nugraha, Sp.B</strong></h6>
-                            <div class="subtitle">Bedah Umum</div>
-                            <div class="desc">
-                              <span>18 Tahun</span>
-                            </div>
-                            <a class="btn btn-outlined primary waves-effect main-btn" href="#">Lihat Profil</a>
-                          </div>
-                          <div class="action-area">
-                            <div class="card-actions action">
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-primary-color">account_circle</i>420 Peserta</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-accent-color">favorite</i>100 Minat</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-secondary-color">photo_library</i>15 Materi</span>
-                              </a>
+                            <div class="properties text-truncate">
+                              <div class="card-content">
+                                <h6><strong><?= htmlspecialchars($item['nama']); ?></strong></h6>
+                                <div class="subtitle"><?= htmlspecialchars($item['spesialis'] ?: 'Umum'); ?></div>
+                                <div class="desc">
+                                  <span><?= $item['pengalaman_tahun']; ?> Tahun</span>
+                                </div>
+                                <a class="btn btn-outlined primary waves-effect main-btn" href="#">Lihat Profil</a>
+                              </div>
+                              <div class="action-area">
+                                <div class="card-actions action">
+                                  <a class="waves-effect btn btn-flat" href="#">
+                                    <span class="btn-content">
+                                      <i class="icon material-icons use-text-primary-color">account_circle</i><?= $item['jumlah_peserta']; ?> Peserta
+                                    </span>
+                                  </a>
+                                  <a class="waves-effect btn btn-flat" href="#">
+                                    <span class="btn-content">
+                                      <i class="icon material-icons use-text-accent-color">favorite</i><?= $item['jumlah_minat']; ?> Minat
+                                    </span>
+                                  </a>
+                                  <a class="waves-effect btn btn-flat" href="#">
+                                    <span class="btn-content">
+                                      <i class="icon material-icons use-text-secondary-color">photo_library</i><?= $item['jumlah_materi']; ?> Materi
+                                    </span>
+                                  </a>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
+                    <?php endforeach; ?>
+                  <?php else: ?>
+                    <div class="col-12 text-center">
+                      <p>Data dokter tidak tersedia.</p>
                     </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="2">
-                    <div class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.5s">
-                      <div class="card profile-card portrait full">
-                        <div class="figure">
-                          <div class="responsive-img" style="background-image: url(&quot;https://res.cloudinary.com/walden-global-services/image/upload/v1544584608/dandelion/43.jpg&quot;);"></div>
-                        </div>
-                        <div class="avatar-img avatar bigger">
-                          <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="avatar" />
-                        </div>
-                        <div class="properties text-truncate">
-                          <div class="card-content">
-                            <h6><strong>Dr. Citra Maharani, Sp.KJ</strong></h6>
-                            <div class="subtitle">Psikiatri</div>
-                            <div class="desc">
-                              <span>10 Tahun</span>
-                            </div>
-                            <a class="btn btn-outlined primary waves-effect main-btn" href="#">Lihat Profil</a>
-                          </div>
-                          <div class="action-area">
-                            <div class="card-actions action">
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-primary-color">account_circle</i>300 Peserta</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-accent-color">favorite</i>35 Minat</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-secondary-color">photo_library</i>21 Materi</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="3">
-                    <div class="wow fadeInUp" data-wow-delay="0.6000000000000001s" data-wow-duration="0.5s">
-                      <div class="card profile-card portrait full">
-                        <div class="figure">
-                          <div class="responsive-img" style="background-image: url(&quot;https://res.cloudinary.com/walden-global-services/image/upload/v1544584608/dandelion/44.jpg&quot;);"></div>
-                        </div>
-                        <div class="avatar-img avatar bigger">
-                          <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="avatar" />
-                        </div>
-                        <div class="properties text-truncate">
-                          <div class="card-content">
-                            <h6><strong>Dr. Dimas Ardiansyah, Sp.THT</strong></h6>
-                            <div class="subtitle">Telinga</div>
-                            <div class="desc">
-                              <span>12 Tahun</span>
-                            </div>
-                            <a class="btn btn-outlined primary waves-effect main-btn" href="#">Lihat Profil</a>
-                          </div>
-                          <div class="action-area">
-                            <div class="card-actions action">
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-primary-color">account_circle</i>280 Peserta</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-accent-color">favorite</i>2 Minat</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-secondary-color">photo_library</i>9 Materi</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="4">
-                    <div class="wow fadeInUp" data-wow-delay="0.7s" data-wow-duration="0.5s">
-                      <div class="card profile-card portrait full">
-                        <div class="figure">
-                          <div class="responsive-img" style="background-image: url(&quot;https://res.cloudinary.com/walden-global-services/image/upload/v1544584609/dandelion/45.jpg&quot;);"></div>
-                        </div>
-                        <div class="avatar-img avatar bigger">
-                          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="avatar" />
-                        </div>
-                        <div class="properties text-truncate">
-                          <div class="card-content">
-                            <h6><strong>Dr. Erika Salsabila, Sp.A</strong></h6>
-                            <div class="subtitle">Anak</div>
-                            <div class="desc">
-                              <span>14 Tahun</span>
-                            </div>
-                            <a class="btn btn-outlined primary waves-effect main-btn" href="#">Lihat Profil</a>
-                          </div>
-                          <div class="action-area">
-                            <div class="card-actions action">
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-primary-color">account_circle</i>390 Peserta</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-accent-color">favorite</i>18 Minat</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-secondary-color">photo_library</i>21 Materi</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="5">
-                    <div class="wow fadeInUp" data-wow-delay="0.8s" data-wow-duration="0.5s">
-                      <div class="card profile-card portrait full">
-                        <div class="figure">
-                          <div class="responsive-img" style="background-image: url(&quot;https://res.cloudinary.com/walden-global-services/image/upload/v1544584611/dandelion/46.jpg&quot;);"></div>
-                        </div>
-                        <div class="avatar-img avatar bigger">
-                          <img src="https://randomuser.me/api/portraits/women/18.jpg" alt="avatar" />
-                        </div>
-                        <div class="properties text-truncate">
-                          <div class="card-content">
-                            <h6><strong>Dr. Fajar Setiawan, Sp.OG</strong></h6>
-                            <div class="subtitle">Kandungan</div>
-                            <div class="desc">
-                              <span>20 Tahun</span>
-                            </div>
-                            <a class="btn btn-outlined primary waves-effect main-btn" href="#">Lihat Profil</a>
-                          </div>
-                          <div class="action-area">
-                            <div class="card-actions action">
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-primary-color">account_circle</i>470 Peserta</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-accent-color">favorite</i>22 Minat</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-secondary-color">photo_library</i>4 Materi</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="6">
-                    <div class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.5s">
-                      <div class="card profile-card portrait full">
-                        <div class="figure">
-                          <div class="responsive-img" style="background-image: url(&quot;https://res.cloudinary.com/walden-global-services/image/upload/v1544584608/dandelion/43.jpg&quot;);"></div>
-                        </div>
-                        <div class="avatar-img avatar bigger">
-                          <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="avatar" />
-                        </div>
-                        <div class="properties text-truncate">
-                          <div class="card-content">
-                            <h6><strong>Dr. Gina Natalia, Sp.KK</strong></h6>
-                            <div class="subtitle">Kulit & Kelamin</div>
-                            <div class="desc">
-                              <span>11 Tahun</span>
-                            </div>
-                            <a class="btn btn-outlined primary waves-effect main-btn" href="#">Lihat Profil</a>
-                          </div>
-                          <div class="action-area">
-                            <div class="card-actions action">
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-primary-color">account_circle</i>310 Peserta</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-accent-color">favorite</i>35 Minat</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-secondary-color">photo_library</i>21 Materi</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="7">
-                    <div class="wow fadeInUp" data-wow-delay="0.5s" data-wow-duration="0.5s">
-                      <div class="card profile-card portrait full">
-                        <div class="figure">
-                          <div class="responsive-img" style="background-image: url(&quot;https://res.cloudinary.com/walden-global-services/image/upload/v1544584608/dandelion/44.jpg&quot;);"></div>
-                        </div>
-                        <div class="avatar-img avatar bigger">
-                          <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="avatar" />
-                        </div>
-                        <div class="properties text-truncate">
-                          <div class="card-content">
-                            <h6><strong>Dr. Hendra Wijaya, Sp.JP</strong></h6>
-                            <div class="subtitle">Jantung</div>
-                            <div class="desc">
-                              <span>17 Tahun</span>
-                            </div>
-                            <a class="btn btn-outlined primary waves-effect main-btn" href="#">Lihat Profil</a>
-                          </div>
-                          <div class="action-area">
-                            <div class="card-actions action">
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-primary-color">account_circle</i>280 Peserta</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-accent-color">favorite</i>2 Minat</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-secondary-color">photo_library</i>9 Materi</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="8">
-                    <div class="wow fadeInUp" data-wow-delay="0.7s" data-wow-duration="0.5s">
-                      <div class="card profile-card portrait full">
-                        <div class="figure">
-                          <div class="responsive-img" style="background-image: url(&quot;https://res.cloudinary.com/walden-global-services/image/upload/v1544584609/dandelion/45.jpg&quot;);"></div>
-                        </div>
-                        <div class="avatar-img avatar bigger">
-                          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="avatar" />
-                        </div>
-                        <div class="properties text-truncate">
-                          <div class="card-content">
-                            <h6><strong>Dr. Intan Melati, Sp.M</strong></h6>
-                            <div class="subtitle">Mata</div>
-                            <div class="desc">
-                              <span>14 Tahun</span>
-                            </div>
-                            <a class="btn btn-outlined primary waves-effect main-btn" href="#">Lihat Profil</a>
-                          </div>
-                          <div class="action-area">
-                            <div class="card-actions action">
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-primary-color">account_circle</i>390 Peserta</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-accent-color">favorite</i>18 Minat</span>
-                              </a>
-                              <a class="waves-effect btn btn-flat" href="#">
-                                <span class="btn-content"><i class="icon material-icons use-text-secondary-color">photo_library</i>21 Materi</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <?php endif; ?>
+
                 </div>
               </div>
             </div>
-          </div><!-- ##### END TEAM #####-->
+          </div>
+          <!-- ##### END TEAM #####-->
 
           <!-- ##### PHOTO #####-->
           <!-- <div class="space-bottom-short">
@@ -774,7 +519,7 @@
                 <div class="row">
                   <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
                     <div class="logo">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>PDSI</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </div>
                     <p class="body-2">Platform pelatihan dan pengembangan kompetensi dokter di Indonesia, dengan kurikulum terstandar dan dukungan mitra terpercaya.</p>
                     <p class="body-2 hidden-sm-down">&copy; ICT PDSI</p>

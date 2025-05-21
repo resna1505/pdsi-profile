@@ -71,7 +71,7 @@
                 <ul class="collapsible expandable">
                   <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="#facility">berita</a></li>
                   <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="#testimonials">testimoni</a></li>
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="#clinics">mitra</a></li>                  
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="#clinics">mitra</a></li>
                   <li class="collection-item group-child has-child">
                     <div class="collapsible-header">
                       <a class="waves-effect text-truncate menu-list" href="#!">
@@ -86,7 +86,7 @@
                             <div class="title-mega">Tentang Kami</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="about.html">Sekilas</a>
+                            <a class="waves-effect text-truncate menu-list" href="about.php">Sekilas</a>
                           </li>
                           <li class="collection-item side-group-link">
                             <a class="waves-effect text-truncate menu-list" href="visi-misi.html">Visi, Misi, Value</a>
@@ -128,7 +128,7 @@
                   <button class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down" id="mobile_menu" type="button" data-target="slide_menu"><span class="hamburger-box"><span class="bar hamburger-inner"></span></span></button>
                   <div class="logo">
                     <a href="index.html">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>PDSI</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </a>
                   </div>
                   <div class="scrollactive-nav show-lg-up multi-menu scrollnav">
@@ -155,7 +155,7 @@
                                   <div class="title-mega">Tentang Kami</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_marketing@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list" href="about.html">Sekilas</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="about.php">Sekilas</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="visi-misi.html">Visi, Misi, Value</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="about-team.html">Tim Pengajar & Ahli</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="blog.html">Berita</a></li>
@@ -272,7 +272,7 @@
                               <div class="col-md-7 col-lg-6 col-sm-12 px-sm-6 px-0 d-flex align-items-center">
                                 <div class="text">
                                   <h4 class="use-text-title">Kembangkan Kompetensi Medismu</h4>
-                                  <h5 class="use-text-subtitle">Ikuti pelatihan medis berkualitas untuk meningkatkan kemampuan dan karier profesional Anda.</h5>                                  
+                                  <h5 class="use-text-subtitle">Ikuti pelatihan medis berkualitas untuk meningkatkan kemampuan dan karier profesional Anda.</h5>
                                 </div>
                               </div>
                               <div class="col-md-5 col-lg-6 col-sm-12">
@@ -323,12 +323,21 @@
                         </div>
                       </div>
                     </div>
-                  </div>                  
+                  </div>
                 </div>
               </div>
             </section><!-- ##### END BANNER #####-->
 
             <!-- ##### COUNTER #####-->
+
+            <?php
+
+            $response = file_get_contents('http://localhost:8000/api/index');
+            $data = json_decode($response);
+            $totalDokter = $data->data->dokter;
+            $totalMitra = $data->data->mitra;
+
+            echo '
             <section class="space-top space-top-short-xs" id="about">
               <div class="counter-wrap">
                 <div class="container max-lg">
@@ -336,7 +345,7 @@
                     <div class="col-sm-4 col-lg-3 px-6">
                       <div class="counter-item"><span class="icon ion-ios-people-outline use-text-primary-color"></span>
                         <div class="text">
-                          <h4>+<span class="numscroller" data-min="0" data-max="456" data-delay="5" data-increment="8">&nbsp;</span></h4>
+                          <h4>+<span class="numscroller" data-min="0 data-delay=" 5" data-increment="8">&nbsp; ' . htmlspecialchars($totalDokter) . '</span></h4>
                           <h6 class="use-text-subtitle">dokter</h6>
                         </div>
                       </div>
@@ -345,7 +354,7 @@
                     <div class="col-sm-4 col-lg-3 px-6">
                       <div class="counter-item"><span class="icon ion-ios-home-outline use-text-primary-color"></span>
                         <div class="text">
-                          <h4>+<span class="numscroller" data-min="0" data-max="123" data-delay="5" data-increment="8">&nbsp;</span></h4>
+                          <h4>+<span id="data-mitra" class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp; ' . htmlspecialchars($totalMitra) . ' </span></h4>
                           <h6 class="use-text-subtitle">mitra</h6>
                         </div>
                       </div>
@@ -363,7 +372,10 @@
                   </div>
                 </div>
               </div>
-            </section><!-- ##### END COUNTER #####-->
+            </section>';
+
+            ?>
+            <!-- ##### END COUNTER #####-->
 
             <!-- ##### FACILITY #####-->
             <section class="space-top-short" id="facility">
@@ -380,66 +392,28 @@
                       <div class="item carousel-prop show-lg-up">
                         <div></div>
                       </div>
-                      <div class="item">
+
+                      <?php
+
+                      $response = file_get_contents('http://localhost:8000/api/index');
+                      $data = json_decode($response);
+                      $dataBerita = $data->data->articles;
+
+                      foreach ($dataBerita as $item) {
+
+                        echo '<div class="item">
                         <div class="card facility-card">
-                          <figure><img src="./assets/images/medical/tn_lldikti5_20230317075908.jpg" alt="img" /></figure>
+                          <figure><img src="./assets/images/medical/' . htmlspecialchars($item->attachment) . '" alt="img" /></figure>
                           <div class="text">
-                            <h6>Mengabdi Tanpa Batas: Dr. Fadli dan 30 ...</h6>
-                            <p>Dalam wawancara eksklusif bersama Dr. Fadli Rahman, Sp.PD, ia menceritakan perjalanannya selama lebih dari 30 tahun mengabdi sebagai dokter spesialis penyakit dalam di wilayah terpencil Indonesia. Dr. Fadli menekankan pentingnya kehadiran dokter sebagai agen ...</p>
+                            <h6>' . htmlspecialchars($item->title) . '</h6>
+                            <p>' . strip_tags($item->description) . '</p>
                           </div>
                           <a class="btn waves-effect block secondary button" href="detail-blog.html">See Detail</a>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card facility-card">
-                          <figure><img src="./assets/images/medical/Untitled-design-2025-01-15T112935.047.jpg" alt="img" /></figure>
-                          <div class="text">
-                            <h6>5 Platform Medis Online yang Wajib ... </h6>
-                            <p>Di era digital, literasi informasi menjadi kebutuhan utama tenaga medis. Artikel ini membahas 5 aplikasi dan website terpercaya untuk memperbarui pengetahuan klinis harian — dari PubMed, BMJ Best Practice, sampai guideline.id dari Perhimpunan Dokter Spesialis</p>
-                          </div>
-                          <a class="btn waves-effect block secondary button" href="detail-blog.html">See Detail</a>
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="card facility-card">
-                          <figure><img src=".\assets\images\decoration\clinic3_mrsrew.jpg" alt="img" /></figure>
-                          <div class="text">
-                            <h6>Etika Profesional di Era Telemedisin: ...</h6>
-                            <p>Perkembangan telemedisin membawa banyak kemudahan, tapi juga tantangan etis. Artikel opini ini mengulas dilema dokter dalam menjaga kerahasiaan pasien, kualitas diagnosis, dan validitas komunikasi medis jarak jauh</p>
-                          </div>
-                          <a class="btn waves-effect block secondary button" href="detail-blog.html">See Detail</a>
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="card facility-card">
-                          <figure><img src="./assets/images/medical/asdf.webp" alt="img" /></figure>
-                          <div class="text">
-                            <h6>Seminar Etik 2024: Menjaga ... </h6>
-                            <p>PB IDI menyelenggarakan Seminar Etik Kedokteran 2024 yang membahas pentingnya menjaga etika profesi dalam era digital. Acara ini dihadiri para dokter dari seluruh Indonesia dan menghadirkan pembicara dari bidang bioetika dan hukum kesehatan.</p>
-                          </div>
-                          <a class="btn waves-effect block secondary button" href="detail-blog.html">See Detail</a>
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="card facility-card">
-                          <figure><img src="./assets/images/medical/Webinar-Kedokteran-6-724x1024.png" alt="img" /></figure>
-                          <div class="text">
-                            <h6>IDI Aceh Tengah Gelar Bakti Sosial ... </h6>
-                            <p>Dalam rangka pengabdian masyarakat, IDI Cabang Aceh Tengah memberikan layanan kesehatan gratis di SDN 3 Pilar, Rusip Antara. Kegiatan ini bertujuan meningkatkan akses layanan medis bagi warga yang kurang terjangkau fasilitas kesehatan.</p>
-                          </div>
-                          <a class="btn waves-effect block secondary button" href="detail-blog.html">See Detail</a>
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="card facility-card">
-                          <figure><img src="./assets/images/medical/banner_1724922891.jpg" alt="img" /></figure>
-                          <div class="text">
-                            <h6>Pelatihan Kegawatdaruratan ...</h6>
-                            <p>JDN-IDI dan Ditlantas Polda Metro Jaya menggelar pelatihan penanganan kegawatdaruratan seperti henti jantung dan trauma kecelakaan lalu lintas. Pelatihan ini memperkuat sinergi dokter muda dan aparat dalam respon cepat darurat medis di lapangan.</p>
-                          </div>
-                          <a class="btn waves-effect block secondary button" href="detail-blog.html">See Detail</a>
-                        </div>
-                      </div>                      
+                      </div>';
+                      }
+
+                      ?>
                     </div>
                   </div>
                 </div>
@@ -563,154 +537,6 @@
               </div>
             </section><!-- ##### END SPECIALITY #####-->
 
-            <!-- ##### ASK DOCTORS #####-->
-            <!-- <section class="space-top-short" id="ask-doctors">
-              <div class="root">
-                <div class="container">
-                  <div class="deco">
-                    <img class="img-2d3d" src="./assets/images/medical/footer_3d@2x.png" data-3d="./assets" data-2d="./assets/images/medical/footer_3d@2x.png" alt="speciality 3d" />
-                  </div>
-                  <div class="row">
-                    <div class="col-md-3 col-sm-12 px-sm-6 px-0">
-                      <div class="wow fadeInLeftShort" data-offset="-100" data-delay="0.2s" data-duration="0.3s">
-                        <div class="side-filter">
-                          <h4 class="use-text-title">Dokter</h4>
-                          <ul class="collection nav" id="case_categories">
-                            <li class="collection-item filter"><a class="waves-effect">all</a></li>
-                            <li class="collection-item filter active"><a class="waves-effect">Orthopedic</a></li>
-                            <li class="collection-item filter"><a class="waves-effect">Nutritionist</a></li>
-                            <li class="collection-item filter"><a class="waves-effect">Pediatric</a></li>
-                            <li class="collection-item filter"><a class="waves-effect">Anaesthestic</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-8 col-md-9 col-sm-12 pa-sm-6 pa-0">
-                      <div class="massonry">
-                        <div class="row">
-                          <div class="col-sm-6 px-lg-4 px-3 py-3">
-                            <div class="wow fadeInUpShort" data-wow-delay="0s" data-wow-duration="0.4s">
-                              <div class="card doctor-card">
-                                <div class="person">
-                                  <div class="avatar-img avatar"><img src="assets\images\avatars\f1_bep9vx.jpg" alt="Jena Doe" /></div>
-                                  <div class="name">
-                                    <h4>dr.Jena Doe</h4>
-                                    <p>Pediatric Surgeon</p>
-                                  </div>
-                                </div>
-                                <hr class="divider" />
-                                <div class="action">
-                                  <div class="property">
-                                    <span><i class="ion-thumbsup"></i>&nbsp; 95%</span><span><i class="ion-briefcase"></i>&nbsp; 4 Years</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6 px-lg-4 px-3 py-3">
-                            <div class="wow fadeInUpShort" data-wow-delay="0.2s" data-wow-duration="0.4s">
-                              <div class="card doctor-card">
-                                <div class="person">
-                                  <div class="avatar-img avatar"><img src="assets\images\avatars\f2_ov9wma.jpg" alt="John Doe" /></div>
-                                  <div class="name">
-                                    <h4>dr.John Doe</h4>
-                                    <p>Neurologists</p>
-                                  </div>
-                                </div>
-                                <hr class="divider" />
-                                <div class="action">
-                                  <div class="property">
-                                    <span><i class="ion-thumbsup"></i>&nbsp; 95%</span><span><i class="ion-briefcase"></i>&nbsp; 4 Years</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6 px-lg-4 px-3 py-3">
-                            <div class="wow fadeInUpShort" data-wow-delay="0.4s" data-wow-duration="0.4s">
-                              <div class="card doctor-card">
-                                <div class="person">
-                                  <div class="avatar-img avatar"><img src="assets\images\avatars\f3_qhwcqe.jpg" alt="Jihan Doe" /></div>
-                                  <div class="name">
-                                    <h4>dr.Jihan Doe</h4>
-                                    <p>Dentist</p>
-                                  </div>
-                                </div>
-                                <hr class="divider" />
-                                <div class="action">
-                                  <div class="property">
-                                    <span><i class="ion-thumbsup"></i>&nbsp; 95%</span><span><i class="ion-briefcase"></i>&nbsp; 4 Years</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6 px-lg-4 px-3 py-3">
-                            <div class="wow fadeInUpShort" data-wow-delay="0.6000000000000001s" data-wow-duration="0.4s">
-                              <div class="card doctor-card">
-                                <div class="person">
-                                  <div class="avatar-img avatar"><img src="assets\images\avatars\m1_qihg3z.jpg" alt="James Doe" /></div>
-                                  <div class="name">
-                                    <h4>dr.James Doe</h4>
-                                    <p>Neurologists</p>
-                                  </div>
-                                </div>
-                                <hr class="divider" />
-                                <div class="action">
-                                  <div class="property">
-                                    <span><i class="ion-thumbsup"></i>&nbsp; 95%</span><span><i class="ion-briefcase"></i>&nbsp; 4 Years</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6 px-lg-4 px-3 py-3">
-                            <div class="wow fadeInUpShort" data-wow-delay="0.8s" data-wow-duration="0.4s">
-                              <div class="card doctor-card">
-                                <div class="person">
-                                  <div class="avatar-img avatar"><img src="assets\images\avatars\m2_ovd31s.jpg" alt="Jim Doe" /></div>
-                                  <div class="name">
-                                    <h4>dr.Jim Doe</h4>
-                                    <p>Psychiatrists</p>
-                                  </div>
-                                </div>
-                                <hr class="divider" />
-                                <div class="action">
-                                  <div class="property">
-                                    <span><i class="ion-thumbsup"></i>&nbsp; 95%</span><span><i class="ion-briefcase"></i>&nbsp; 4 Years</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-6 px-lg-4 px-3 py-3">
-                            <div class="wow fadeInUpShort" data-wow-delay="1s" data-wow-duration="0.4s">
-                              <div class="card doctor-card">
-                                <div class="person">
-                                  <div class="avatar-img avatar"><img src="assets\images\avatars\m3_akbcum.jpg" alt="Jessy Doe" /></div>
-                                  <div class="name">
-                                    <h4>dr.Jessy Doe</h4>
-                                    <p>Pediatric Surgeon</p>
-                                  </div>
-                                </div>
-                                <hr class="divider" />
-                                <div class="action">
-                                  <div class="property">
-                                    <span><i class="ion-thumbsup"></i>&nbsp; 95%</span><span><i class="ion-briefcase"></i>&nbsp; 4 Years</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section> -->
-            <!-- ##### END TESTIMONIALS #####-->
-
             <!-- ##### TESTIMONIALS #####-->
             <section class="space-top-short" id="testimonials">
               <!-- #### TESTIMONIALS ####-->
@@ -723,134 +549,45 @@
                 </div>
                 <div class="carousel">
                   <div class="slick-carousel" id="testimonial_carousel" data-length="9">
-                    <div class="item">
-                      <div class="testimonial-card">
-                        <div class="card paper">
-                          <p>Materinya sangat relevan dengan praktik klinis sehari-hari. Penjelasan instruktur sangat jelas dan aplikatif.</p>
-                          <div class="rating"><i class="material-icons star-icon" title="1">star</i><i class="material-icons star-icon" title="2">star</i><i class="material-icons star-icon" title="3">star</i><i class="material-icons star-icon" title="4">star</i><i class="material-icons star-icon" title="5">star</i></div>
-                        </div>
-                        <div class="person">
-                          <div class="name">
-                            <h6>John Doe</h6><span class="caption">Spesialis Anak</span>
+
+                    <?php
+
+                    $response = file_get_contents('http://localhost:8000/api/index');
+                    $data = json_decode($response);
+                    $dataTestimonial = $data->data->testimonials;
+
+                    foreach ($dataTestimonial as $item) {
+                      $avatar = 'assets/images/avatars/avatar2.jpg';
+
+                      echo '<div class="item">
+                            <div class="testimonial-card">
+                              <div class="card paper">
+                                <p>' . htmlspecialchars($item->testimonial_text) . '</p>
+                                <div class="rating">';
+
+                      for ($i = 1; $i <= 5; $i++) {
+                        if ($i <= $item->rating) {
+                          echo '<i class="material-icons star-icon" title="' . $i . '">star</i>';
+                        } else {
+                          echo '<i class="material-icons star-icon-disable" title="' . $i . '">star</i>';
+                        }
+                      }
+
+                      echo '</div>
                           </div>
-                          <div class="avatar-img avatar">
-                            <img src="assets\images\avatars\avatar1.jpg" alt="name" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="testimonial-card">
-                        <div class="card paper">
-                          <p>Kursus ini membantu saya memperbarui pengetahuan dengan cepat dan efisien. Sangat direkomendasikan untuk sejawat.</p>
-                          <div class="rating"><i class="material-icons star-icon" title="1">star</i><i class="material-icons star-icon" title="2">star</i><i class="material-icons star-icon" title="3">star</i><i class="material-icons star-icon" title="4">star</i><i class="material-icons star-icon-disable" title="1">star</i></div>
-                        </div>
-                        <div class="person">
-                          <div class="name">
-                            <h6>Jean Doe</h6><span class="caption">Dokter Umum</span>
-                          </div>
-                          <div class="avatar-img avatar">
-                            <img src="assets\images\avatars\avatar2.jpg" alt="name" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="testimonial-card">
-                        <div class="card paper">
-                          <p>Sistem pembelajaran online yang interaktif membuat saya lebih mudah memahami materi. Waktu belajarnya juga fleksibel.</p>
-                          <div class="rating"><i class="material-icons star-icon" title="1">star</i><i class="material-icons star-icon" title="2">star</i><i class="material-icons star-icon" title="3">star</i><i class="material-icons star-icon" title="4">star</i><i class="material-icons star-icon-disable" title="1">star</i></div>
-                        </div>
-                        <div class="person">
-                          <div class="name">
-                            <h6>Jena Doe</h6><span class="caption">Spesialis Penyakit Dalam</span>
-                          </div>
-                          <div class="avatar-img avatar">
-                            <img src="assets\images\avatars\avatar3.jpg" alt="name" />
+                          <div class="person">
+                            <div class="name">
+                              <h6>' . htmlspecialchars($item->anggota->nama) . '</h6><span class="caption">' . htmlspecialchars($item->anggota->nama) . '</span>
+                            </div>
+                            <div class="avatar-img avatar">
+                              <img src="' . $avatar . '" alt="' . htmlspecialchars($item->anggota->nama) . '" />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="testimonial-card">
-                        <div class="card paper">
-                          <p>Pengalaman belajar yang menyenangkan. Konten berkualitas dan mendalam, cocok untuk pengembangan kompetensi dokter.</p>
-                          <div class="rating"><i class="material-icons star-icon" title="1">star</i><i class="material-icons star-icon" title="2">star</i><i class="material-icons star-icon" title="3">star</i><i class="material-icons star-icon-disable" title="1">star</i><i class="material-icons star-icon-disable" title="2">star</i></div>
-                        </div>
-                        <div class="person">
-                          <div class="name">
-                            <h6>Jovelin Doe</h6><span class="caption">Spesialis Saraf</span>
-                          </div>
-                          <div class="avatar-img avatar">
-                            <img src="assets\images\avatars\avatar4.jpg" alt="name" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="testimonial-card">
-                        <div class="card paper">
-                          <p>Great experience, very convenient and fast delivery! A consultation and prescription delivery less than an hour.</p>
-                          <div class="rating"><i class="material-icons star-icon" title="1">star</i><i class="material-icons star-icon" title="2">star</i><i class="material-icons star-icon" title="3">star</i><i class="material-icons star-icon" title="4">star</i><i class="material-icons star-icon" title="5">star</i></div>
-                        </div>
-                        <div class="person">
-                          <div class="name">
-                            <h6>Jihan Doe</h6><span class="caption">Dokter Umum</span>
-                          </div>
-                          <div class="avatar-img avatar">
-                            <img src="assets\images\avatars\avatar5.jpg" alt="name" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="testimonial-card">
-                        <div class="card paper">
-                          <p>Its really helps. So from now on you dont have to search all over place for a medicine.</p>
-                          <div class="rating"><i class="material-icons star-icon" title="1">star</i><i class="material-icons star-icon" title="2">star</i><i class="material-icons star-icon" title="3">star</i><i class="material-icons star-icon" title="4">star</i><i class="material-icons star-icon" title="5">star</i></div>
-                        </div>
-                        <div class="person">
-                          <div class="name">
-                            <h6>Jovelin Doe</h6><span class="caption">Dokter Umum</span>
-                          </div>
-                          <div class="avatar-img avatar">
-                            <img src="assets\images\avatars\avatar6.jpg" alt="name" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="testimonial-card">
-                        <div class="card paper">
-                          <p>This apps really helpfull during pandemic an very easy to used</p>
-                          <div class="rating"><i class="material-icons star-icon" title="1">star</i><i class="material-icons star-icon" title="2">star</i><i class="material-icons star-icon" title="3">star</i><i class="material-icons star-icon" title="4">star</i><i class="material-icons star-icon-disable" title="1">star</i></div>
-                        </div>
-                        <div class="person">
-                          <div class="name">
-                            <h6>John Doe</h6><span class="caption">Koas</span>
-                          </div>
-                          <div class="avatar-img avatar">
-                            <img src="assets\images\avatars\avatar7.jpg" alt="name" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="testimonial-card">
-                        <div class="card paper">
-                          <p>Easy for doctors consulting, find a drug store, looking for vaccine schedule, buying multivitamin.</p>
-                          <div class="rating"><i class="material-icons star-icon" title="1">star</i><i class="material-icons star-icon" title="2">star</i><i class="material-icons star-icon" title="3">star</i><i class="material-icons star-icon" title="4">star</i><i class="material-icons star-icon-disable" title="1">star</i></div>
-                        </div>
-                        <div class="person">
-                          <div class="name">
-                            <h6>Jean Doe</h6><span class="caption">Dokter Umum</span>
-                          </div>
-                          <div class="avatar-img avatar">
-                            <img src="assets\images\avatars\avatar1.jpg" alt="name" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                      </div>';
+                    }
+
+                    ?>
                     <div class="item show-lg-up">
                       <div class="item-props-last"></div>
                     </div>
@@ -872,33 +609,8 @@
                   </div>
                 </div>
               </div><!-- #### END TESTIMONIALS ####-->
-            </section><!-- ##### END TESTIMONIALS #####-->
-
-            <!-- ##### CALL ACTION #####-->
-            <!-- <section class="space-top">
-              <div class="call-to-action">
-                <div class="container fixed-width-md-up">
-                  <div class="root">
-                    <div class="wow fadeInUpShort" data-wow-offset="40" data-wow-delay="0.3s" data-wow-duration="0.5s">
-                      <div class="card paper">
-                        <div class="row align-items-center">
-                          <div class="col-md-8 col-sm-12 px-sm-6">
-                            <h4 class="use-text-title2 pb-2">Ready to get started?</h4>
-                            <p>No waiting rooms. We make it simple to get healthcare whenever and wherever you want</p>
-                          </div>
-                          <div class="col-md-4 col-sm-12 px-sm-0">
-                            <div class="d-flex align-items-center justify-content-center">
-                              <a class="waves-effect btn button white block" href="contact.html">Create Appointment Now!</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section> -->
-            <!-- ##### END CALL ACTION #####-->
+            </section>
+            <!-- ##### END TESTIMONIALS #####-->
 
             <!-- ##### CLINICS #####-->
             <section class="space-top-short space-bottom-short" id="clinics">
@@ -909,180 +621,52 @@
                     <p class="use-text-subtitle2">Kami telah menjalin kerja sama dengan berbagai institusi dan perusahaan terkemuka di Indonesia.</p>
                   </div>
                   <div class="row">
-                    <div class="col-md-6 col-sm-12 px-3">
-                      <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="0s" data-wow-duration="0.4s">
-                        <div>
-                          <div class="card address-card">
-                            <div class="paper">
-                              <figure>
-                                <img src="assets\images\medical\clinic3_of5lsd.jpg" alt="clinic" />
-                              </figure>
-                              <div class="detail-info">
-                                <h6 class="use-text-subtitle2 mb-sm-6">Universitas Indonesia</h6>
-                                <div class="row">
-                                  <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0"><i class="material-icons icon use-text-primary-color">local_phone</i>(021) 786-7222</div>
-                                  <div class="col-lg-6 col-sm-12 px-2 py-1">
-                                    <div class="hidden-xs-down"><i class="material-icons icon use-text-secondary-color">email</i>info@ui.ac.id</div>
-                                  </div>
-                                  <div class="col-md-12 px-sm-2 px-0 py-1">
-                                    <div class="text-truncate"><i class="material-icons icon use-text-accent-color">location_on</i>Depok, Jawa Barat</div>
+
+                    <?php
+
+                    $response = file_get_contents('http://localhost:8000/api/index');
+                    $data = json_decode($response);
+                    $dataMitra = $data->data->mitras;
+
+                    foreach ($dataMitra as $item) {
+
+                      echo '<div class="col-md-6 col-sm-12 px-3">
+                      <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="${delay}s" data-wow-duration="0.4s">
+                        <div class="card address-card">
+                          <div class="paper">
+                            <figure>
+                              <img src="assets/images/medical/' . htmlspecialchars($item->image) . '" alt="clinic" />
+                            </figure>
+                            <div class="detail-info">
+                              <h6 class="use-text-subtitle2 mb-sm-6">' . htmlspecialchars($item->title) . '</h6>
+                              <div class="row">
+                                <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0">
+                                  <i class="material-icons icon use-text-primary-color">local_phone</i> ' . htmlspecialchars($item->telephone) . '
+                                </div>
+                                <div class="col-lg-6 col-sm-12 px-2 py-1">
+                                  <div class="hidden-xs-down">
+                                    <i class="material-icons icon use-text-secondary-color">email</i> ' . htmlspecialchars($item->email) . '
                                   </div>
                                 </div>
-                                <div class="hidden-xs-down">
-                                  <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
+                                <div class="col-md-12 px-sm-2 px-0 py-1">
+                                  <div class="text-truncate">
+                                    <i class="material-icons icon use-text-accent-color">location_on</i>' . htmlspecialchars($item->address) . '
+                                  </div>
                                 </div>
                               </div>
-                              <a class="mobile-link waves-effect" href="contact-map.html"></a>
+                              <div class="hidden-xs-down">
+                                <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
+                              </div>
                             </div>
+                            <a class="mobile-link waves-effect" href="contact-map.html"></a>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 px-3">
-                      <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="0.2s" data-wow-duration="0.4s">
-                        <div>
-                          <div class="card address-card">
-                            <div class="paper">
-                              <figure>
-                                <img src="assets\images\medical\clinic4_bicryo.jpg" alt="clinic" />
-                              </figure>
-                              <div class="detail-info">
-                                <h6 class="use-text-subtitle2 mb-sm-6">RS Cipto Mangunkusumo</h6>
-                                <div class="row">
-                                  <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0"><i class="material-icons icon use-text-primary-color">local_phone</i>(021) 1500135</div>
-                                  <div class="col-lg-6 col-sm-12 px-2 py-1">
-                                    <div class="hidden-xs-down"><i class="material-icons icon use-text-secondary-color">email</i>info@rscm.co.id</div>
-                                  </div>
-                                  <div class="col-md-12 px-sm-2 px-0 py-1">
-                                    <div class="text-truncate"><i class="material-icons icon use-text-accent-color">location_on</i>Jl. Diponegoro No.71, Jakarta</div>
-                                  </div>
-                                </div>
-                                <div class="hidden-xs-down">
-                                  <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
-                                </div>
-                              </div>
-                              <a class="mobile-link waves-effect" href="contact-map.html"></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 px-3">
-                      <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="0.4s" data-wow-duration="0.4s">
-                        <div>
-                          <div class="card address-card">
-                            <div class="paper">
-                              <figure>
-                                <img src="assets\images\medical\clinic5_tomj4j.jpg" alt="clinic" />
-                              </figure>
-                              <div class="detail-info">
-                                <h6 class="use-text-subtitle2 mb-sm-6">Mother and Baby Care</h6>
-                                <div class="row">
-                                  <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0"><i class="material-icons icon use-text-primary-color">local_phone</i>+123 456 78 91</div>
-                                  <div class="col-lg-6 col-sm-12 px-2 py-1">
-                                    <div class="hidden-xs-down"><i class="material-icons icon use-text-secondary-color">email</i>hello@awrora.com</div>
-                                  </div>
-                                  <div class="col-md-12 px-sm-2 px-0 py-1">
-                                    <div class="text-truncate"><i class="material-icons icon use-text-accent-color">location_on</i>Aenean Facilisis no.14 Block A</div>
-                                  </div>
-                                </div>
-                                <div class="hidden-xs-down">
-                                  <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
-                                </div>
-                              </div>
-                              <a class="mobile-link waves-effect" href="contact-map.html"></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 px-3">
-                      <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="0.6000000000000001s" data-wow-duration="0.4s">
-                        <div>
-                          <div class="card address-card">
-                            <div class="paper">
-                              <figure>
-                                <img src="assets\images\medical\clinic6_ev63gj.jpg" alt="clinic" />
-                              </figure>
-                              <div class="detail-info">
-                                <h6 class="use-text-subtitle2 mb-sm-6">Halodoc</h6>
-                                <div class="row">
-                                  <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0"><i class="material-icons icon use-text-primary-color">local_phone</i>(021) 50508000</div>
-                                  <div class="col-lg-6 col-sm-12 px-2 py-1">
-                                    <div class="hidden-xs-down"><i class="material-icons icon use-text-secondary-color">email</i>cs@halodoc.com</div>
-                                  </div>
-                                  <div class="col-md-12 px-sm-2 px-0 py-1">
-                                    <div class="text-truncate"><i class="material-icons icon use-text-accent-color">location_on</i>Jakarta Selatan</div>
-                                  </div>
-                                </div>
-                                <div class="hidden-xs-down">
-                                  <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
-                                </div>
-                              </div>
-                              <a class="mobile-link waves-effect" href="contact-map.html"></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 px-3">
-                      <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="0.8s" data-wow-duration="0.4s">
-                        <div>
-                          <div class="card address-card">
-                            <div class="paper">
-                              <figure>
-                                <img src="assets\images\medical\clinic2_hptmba.jpg" alt="clinic" />
-                              </figure>
-                              <div class="detail-info">
-                                <h6 class="use-text-subtitle2 mb-sm-6">Mother and Baby Care</h6>
-                                <div class="row">
-                                  <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0"><i class="material-icons icon use-text-primary-color">local_phone</i>+123 456 78 91</div>
-                                  <div class="col-lg-6 col-sm-12 px-2 py-1">
-                                    <div class="hidden-xs-down"><i class="material-icons icon use-text-secondary-color">email</i>hello@awrora.com</div>
-                                  </div>
-                                  <div class="col-md-12 px-sm-2 px-0 py-1">
-                                    <div class="text-truncate"><i class="material-icons icon use-text-accent-color">location_on</i>Nulla-Vehicula street no.14 Block A</div>
-                                  </div>
-                                </div>
-                                <div class="hidden-xs-down">
-                                  <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
-                                </div>
-                              </div>
-                              <a class="mobile-link waves-effect" href="contact-map.html"></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 px-3">
-                      <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="1s" data-wow-duration="0.4s">
-                        <div>
-                          <div class="card address-card">
-                            <div class="paper">
-                              <figure>
-                                <img src="assets\images\medical\clinic1_g9hod9.jpg" alt="clinic" />
-                              </figure>
-                              <div class="detail-info">
-                                <h6 class="use-text-subtitle2 mb-sm-6">Orthopedic Clinic</h6>
-                                <div class="row">
-                                  <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0"><i class="material-icons icon use-text-primary-color">local_phone</i>+123 456 78 91</div>
-                                  <div class="col-lg-6 col-sm-12 px-2 py-1">
-                                    <div class="hidden-xs-down"><i class="material-icons icon use-text-secondary-color">email</i>hello@awrora.com</div>
-                                  </div>
-                                  <div class="col-md-12 px-sm-2 px-0 py-1">
-                                    <div class="text-truncate"><i class="material-icons icon use-text-accent-color">location_on</i>Fusce II street Block C - Vestibullum Building</div>
-                                  </div>
-                                </div>
-                                <div class="hidden-xs-down">
-                                  <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
-                                </div>
-                              </div>
-                              <a class="mobile-link waves-effect" href="contact-map.html"></a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    </div>';
+                    }
+
+                    ?>
+
                   </div>
                 </div>
               </div>
@@ -1100,7 +684,7 @@
               <div class="row">
                 <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
                   <div class="logo">
-                    <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>PDSI</span>
+                    <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                   </div>
                   <p class="body-2">Platform pelatihan dan pengembangan kompetensi dokter di Indonesia, dengan kurikulum terstandar dan dukungan mitra terpercaya.</p>
                   <p class="body-2 hidden-sm-down">&copy; ICT PDSI</p>
@@ -1271,6 +855,126 @@
     </div>
   </div><!-- Scripts-->
   <!-- Put the 3rd/plugins javascript here-->
+  <!-- <script>
+    fetch('http://localhost:8000/api/index')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById('data-dokter').innerText = `${data.data.dokter}`;
+        document.getElementById('data-mitra').innerText = `${data.data.mitra}`;
+
+        const mitraContainer = document.getElementById('mitra-container');
+        const mitras = data.data.mitras;
+
+        mitras.forEach((mitra, index) => {
+          const delay = (index * 0.2).toFixed(1); // delay animasi meningkat
+
+          const mitraHTML = `
+          <div class="col-md-6 col-sm-12 px-3">
+            <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="${delay}s" data-wow-duration="0.4s">
+              <div class="card address-card">
+                <div class="paper">
+                  <figure>
+                    <img src="assets/images/medical/${mitra.image}" alt="clinic" />
+                  </figure>
+                  <div class="detail-info">
+                    <h6 class="use-text-subtitle2 mb-sm-6">${mitra.title}</h6>
+                    <div class="row">
+                      <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0">
+                        <i class="material-icons icon use-text-primary-color">local_phone</i> ${mitra.telephone}
+                      </div>
+                      <div class="col-lg-6 col-sm-12 px-2 py-1">
+                        <div class="hidden-xs-down">
+                          <i class="material-icons icon use-text-secondary-color">email</i> ${mitra.email}
+                        </div>
+                      </div>
+                      <div class="col-md-12 px-sm-2 px-0 py-1">
+                        <div class="text-truncate">
+                          <i class="material-icons icon use-text-accent-color">location_on</i> ${mitra.address}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="hidden-xs-down">
+                      <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
+                    </div>
+                  </div>
+                  <a class="mobile-link waves-effect" href="contact-map.html"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+          mitraContainer.insertAdjacentHTML('beforeend', mitraHTML);
+        });
+
+        const articles = data.data.articles;
+        const carousel = document.getElementById('facilities_carousel');
+
+        articles.forEach((article, index) => {
+          const image = article.attachment ?
+            `./storage/articles/${article.attachment}` :
+            './assets/images/medical/default-article.jpg';
+
+          const shortDesc = article.description
+            .replace(/<[^>]*>?/gm, '')
+            .slice(0, 150) + '...';
+
+          const articleHTML = `
+          <div class="item">
+            <div class="card facility-card">
+              <figure><img src="${image}" alt="img" /></figure>
+              <div class="text">
+                <h6>${article.title}</h6>
+                <p>${shortDesc}</p>
+              </div>
+              <a class="btn waves-effect block secondary button" href="detail-blog.html?id=${article.id}">See Detail</a>
+            </div>
+          </div>
+        `;
+
+          // carousel.insertAdjacentHTML('beforeend', articleHTML);
+        });
+
+        // const testimoniContainer = document.getElementById('asdf');
+        // const testimonials = data.data.testimonials;
+
+        // testimonials.forEach((testimoni, index) => {
+        //   const delay = (index * 0.2).toFixed(1); // delay animasi meningkat
+
+        //   const testimoniHTML = `
+        //   <div class="item">
+        //     <div class="testimonial-card">
+        //       <div class="card paper">
+        //         <p>Kursus ini membantu saya memperbarui pengetahuan dengan cepat dan efisien. Sangat direkomendasikan untuk sejawat.</p>
+        //         <div class="rating"><i class="material-icons star-icon" title="1">star</i><i class="material-icons star-icon" title="2">star</i><i class="material-icons star-icon" title="3">star</i><i class="material-icons star-icon" title="4">star</i><i class="material-icons star-icon-disable" title="1">star</i></div>
+        //       </div>
+        //       <div class="person">
+        //         <div class="name">
+        //           <h6>Jean Doe</h6><span class="caption">Dokter Umum</span>
+        //         </div>
+        //         <div class="avatar-img avatar">
+        //           <img src="assets\images\avatars\avatar2.jpg" alt="name" />
+        //         </div>
+        //       </div>
+        //     </div>
+        //   </div>
+        // `;
+
+        //   testimoniContainer.insertAdjacentHTML('beforeend', testimoniHTML);
+        // });
+
+      })
+
+      .catch(error => {
+        document.getElementById('data-dokter').innerText = `Error: ${error.message}`;
+        document.getElementById('data-mitra').innerText = `Error: ${error.message}`;
+        console.error('Error:', error);
+      });
+  </script> -->
+
   <script src="./assets/js/vendors/jquery.min.js"></script>
   <script src="./assets/js/vendors/bootstrap.min.js"></script>
   <script src="./assets/js/vendors/enquire.min.js"></script>

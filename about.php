@@ -43,55 +43,8 @@
   <meta property="og:image" content="/images/logo-medical.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <title>PDSI - Pricing </title><!-- Styles-->
+  <title>PDSI - Sekilas </title><!-- Styles-->
   <!-- Put the 3rd/plugins css here-->
-
-  <style>
-    .plus-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background-color: #ff0000;
-      color: white;
-      font-size: 14px;
-      font-weight: bold;
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
-
-    .value-item, .visi-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-    }
-
-    .value-text, .visi-text {
-      margin-left: 10px;
-      font-size: 15px;
-    }
-
-    .section-title {
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .motto-title {
-      color: red;
-      font-weight: bold;
-      font-size: 1.75rem;
-    }
-
-    @media (max-width: 767px) {
-      .section-title {
-        font-size: 1.25rem;
-      }
-    }
-  </style>
-
   <link href="./assets/css/vendors/normalize.css" rel="stylesheet">
   <link href="./assets/css/vendors/bootstrap.css" rel="stylesheet">
   <link href="./assets/css/vendors/magnific-popup.css" rel="stylesheet">
@@ -109,7 +62,7 @@
   <div class="m-application theme--light transition-page" id="app">
     <div class="loading"></div>
     <div class="m-content fresh fresh-var" id="main-wrap">
-      <div id="pricing-page">
+      <div id="about-page">
         <div class="main-wrap">
 
           <!-- #### HEADER ####-->
@@ -119,7 +72,7 @@
                 <ul class="collapsible expandable">
                   <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">berita</a></li>
                   <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">testimoni</a></li>
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">mitra</a></li>                  
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">mitra</a></li>
                   <li class="collection-item group-child has-child">
                     <div class="collapsible-header">
                       <a class="waves-effect text-truncate menu-list" href="#!">
@@ -134,10 +87,10 @@
                             <div class="title-mega">Tentang Kami</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="about.html">Sekilas</a>
+                            <a class="waves-effect text-truncate menu-list current" href="about.html">Sekilas</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list current" href="visi-misi.html">Visi, Misi, Value</a>
+                            <a class="waves-effect text-truncate menu-list" href="visi-misi.html">Visi, Misi, Value</a>
                           </li>
                           <li class="collection-item side-group-link">
                             <a class="waves-effect text-truncate menu-list" href="about-team.html">Tim Pengajar & Ahli</a>
@@ -183,7 +136,7 @@
               </div>
             </div>
           </div>
-          
+
           <header class="app-bar header" id="header">
             <div class="container">
               <div class="header-content">
@@ -191,7 +144,7 @@
                   <button class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down" id="mobile_menu" type="button" data-target="slide_menu"><span class="hamburger-box"><span class="bar hamburger-inner"></span></span></button>
                   <div class="logo">
                     <a href="index.html">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>PDSI</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </a>
                   </div>
                   <div class="scrollactive-nav show-lg-up multi-menu">
@@ -218,8 +171,8 @@
                                   <div class="title-mega">Tentang Kami</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_marketing@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list" href="about.html">Sekilas</a></li>
-                                    <li class="waves-effect"><a class="menu-list current" href="visi-misi.html">Visi, Misi, Value</a></li>
+                                    <li class="waves-effect"><a class="menu-list current" href="about.html">Sekilas</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="visi-misi.html">Visi, Misi, Value</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="about-team.html">Tim Pengajar & Ahli</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="blog.html">Berita</a></li>
                                   </ul>
@@ -296,75 +249,257 @@
             </div>
           </header>
           <!-- #### END HEADER ####-->
-          
-          <div class="space-top-short container py-5">
-            <div class="row justify-content-center">
-              <div class="col-lg-5 col-md-12">
-                <h4 class="section-title mb-4">Visi & Misi</h4>
-                <div class="visi-item">
-                  <div class="plus-icon">+</div>
-                  <div class="visi-text">
-                    Menjadikan sebagai solusi tepat masyarakat dalam memperoleh layanan kesehatan Jantung dan Pembuluh Darah yang profesional, inovatif dan terpercaya di Jawa Barat.
-                  </div>
-                </div>
-                <div class="visi-item">
-                  <div class="plus-icon">+</div>
-                  <div class="visi-text">
-                    Menyelenggarakan pelayanan kesehatan khusus jantung dan pembuluh darah yang profesional dengan sistem manajemen yang terintegrasi, akuntabel dan <em>real time</em> serta senantiasa mengutamakan kepuasan pelanggan.
-                  </div>
-                </div>
-              </div>
-        
-              <div class="col-lg-5 col-md-12">
-                <h4 class="section-title mb-4">Value</h4>
-                <div class="value-item">
-                  <div class="plus-icon">+</div>
-                  <div class="value-text">
-                    <strong>INTEGRITAS</strong><br>
-                    Menjunjung tinggi prinsip moral akan kejujuran, kepercayaan dan menghormati kerahasiaan dan transparansi.
-                  </div>
-                </div>
-                <div class="value-item">
-                  <div class="plus-icon">+</div>
-                  <div class="value-text">
-                    <strong>BELAS KASIH</strong><br>
-                    Berkomitmen untuk memberikan perawatan kelas atas bagi Pasien, Keluarga dan Perawat.
-                  </div>
-                </div>
-                <div class="value-item">
-                  <div class="plus-icon">+</div>
-                  <div class="value-text">
-                    <strong>KUALITAS</strong><br>
-                    Mempertahankan standar kualitas yang tinggi dengan penilaian berkelanjutan agar terjadi peningkatan hasil.
-                  </div>
-                </div>
-                <div class="value-item">
-                  <div class="plus-icon">+</div>
-                  <div class="value-text">
-                    <strong>INOVASI</strong><br>
-                    Perubahan yang dinamis dan mendorong penemuan untuk memenuhi kebutuhan global.
-                  </div>
-                </div>
-                <div class="value-item">
-                  <div class="plus-icon">+</div>
-                  <div class="value-text">
-                    <strong>KERJASAMA</strong><br>
-                    Berkolaborasi untuk menghasilkan solusi yang signifikan.
+
+          <!-- ##### BANNER #####-->
+          <div class="hero-banner-wrap">
+            <div class="deco-wrap">
+              <div class="deco bottom s1">&nbsp;</div>
+              <div class="deco top s1">&nbsp;</div>
+            </div>
+            <div class="container">
+              <div class="banner-basic">
+                <div class="banner-wrap">
+                  <div class="inner">
+                    <div class="row d-flex justify-content-center align-items-center">
+                      <div class="col-md-6 px-sm-5 px-0 py-4">
+                        <div class="text">
+                          <h4 class="use-text-title">Lembaga Pelatihan Kedokteran Berakreditasi </h4>
+                          <h5 class="use-text-subtitle2">Sebagai pionir dalam pelatihan kedokteran, kami menyediakan kurikulum berbasis kompetensi dan fasilitas simulasi canggih untuk mempersiapkan tenaga medis profesional</h5>
+                        </div>
+                      </div>
+                      <div class="col-md-6 px-sm-5 py-4">
+                        <div class="img">
+                          <img class="img-2d3d" src="./assets/images/medical/about_3d@2x.png" data-2d="./assets" data-3d="./assets/images/medical/about_3d@2x.png" alt="services 3d" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-        
-            <div class="row mt-5">
-              <div class="col-lg-5 col-md-12">
-                <h4 class="section-title mb-4">Motto</h4>
-                <p class="motto-title">SPIRIT</p>
-                <p class="motto-list">
-                  Safe ● Professional ● Innovative ● Responsible ● Integrated ● Trustworthy
+          </div><!-- ##### BANNER #####-->
+
+          <!-- ##### COMPANY LOGO #####-->
+          <div class="company-logo fixed-width">
+            <div class="root">
+              <img src="./assets/images/logos/architect.png" alt="logo0" />
+              <img src="./assets/images/logos/cloud.png" alt="logo1" />
+              <img src="./assets/images/logos/coin.png" alt="logo2" />
+              <img src="./assets/images/logos/mobile.png" alt="logo3" />
+              <img src="./assets/images/logos/profile.png" alt="logo4" />
+              <img src="./assets/images/logos/saas.png" alt="logo5" />
+            </div>
+          </div><!-- ##### END COMPANY LOGO #####-->
+
+          <!-- ##### COUNTER #####-->
+
+          <?php
+
+          $response = file_get_contents('http://localhost:8000/api/about');
+          $data = json_decode($response);
+          $totalDokter = $data->data->dokter;
+          $totalMitra = $data->data->mitra;
+          $totalEvaluasi = $data->data->evaluasi;
+
+          echo ' <div class="space-top-short">
+            <div class="counter-style" id="counter_target">
+              <div class="container max-md">
+                <div class="row justify-content-center align-items-center">
+                  <div class="col py-4">
+                    <div class="counter-item">
+                      <span class="icon ion-flag use-text-primary-color"></span>
+                      <div class="text">
+                        <h4 class="display-1">+ <span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;' . htmlspecialchars($totalDokter) . '</span></h4>
+                        <h6 class="use-text-subtitle2">Dokter Tersertifikasi</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col py-4">
+                    <div class="counter-item">
+                      <span class="icon ion-android-people use-text-secondary-color"></span>
+                      <div class="text">
+                        <h4 class="display-1">+ <span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;' . htmlspecialchars($totalMitra) . '</span></h4>
+                        <h6 class="use-text-subtitle2">Mitra</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col py-4">
+                    <div class="counter-item">
+                      <span class="icon ion-android-globe use-text-accent-color"></span>
+                      <div class="text">
+                        <h4 class="display-1"><span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;' . htmlspecialchars($totalEvaluasi) . '</span> %</h4>
+                        <h6 class="use-text-subtitle2">Evaluasi</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>';
+
+          ?>
+          <!-- ##### END COUNTER #####-->
+
+          <!-- ##### VIDEO PROGRESS #####-->
+          <?php
+
+          $response = file_get_contents('http://localhost:8000/api/about');
+          $data = json_decode($response);
+
+          // Ambil 1 video pertama
+          $video = $data->data->videos[0];
+
+          ?>
+
+          <div class="container">
+            <div class="row justify-content-center">
+
+              <!-- Kolom Video -->
+              <div class="col-md-6 col-sm-8 px-0 px-sm-4 px-lg-12">
+                <div class="about-style">
+                  <div class="video-root">
+                    <div class="modal video-popup" id="video_modal">
+                      <div class="modal-content">
+                        <h4 class="use-text-subtitle mb-3"><?= $video->title ?></h4>
+                        <button class="btn-icon modal-close close-btn waves-effect"><i class="material-icons">close</i></button>
+                        <div class="text-center">
+                          <div id="video_iframe">
+                            <iframe width="100%" height="300" src="<?= $video->url ?>" frameborder="0" allowfullscreen></iframe>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <h4 class="use-text-title2 mb-3 use-text-primary">Metode Pembelajaran Kami</h4>
+                    <p class="pb-2 use-text-subtitle2">Kami memadukan keahlian medis dengan teknologi terkini untuk pengalaman pelatihan yang optimal:</p>
+                    <div class="video-wrap">
+                      <div class="modal-trigger" data-target="video_modal" data-video="<?= $video->url ?>">
+                        <div class="card media-card landscape video">
+                          <span class="badge grey darken-4"><?= $video->duration ?></span>
+                          <figure><img src="./assets/images/medical/metode-pembelajaran-1.jpg" alt="cover" /></figure>
+                          <div class="property">
+                            <a class="btn play-btn waves-effect"><span class="ion-ios-play"></span></a>
+                            <div class="card-title media-title"><?= $video->title ?></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kolom Progress -->
+              <div class="col-md-6 col-sm-8 px-0 px-sm-4 px-lg-12">
+                <div class="about-style">
+                  <div class="progress-wrap">
+                    <ul class="zero" id="progress">
+
+                      <?php foreach ($video->learning_methods as $method): ?>
+                        <li>
+                          <div class="text-icon"><i class="ion-wand use-text-primary-color"></i>
+                            <h5 class="use-text-subtitle2"><?= $method->name ?></h5>
+                          </div>
+                          <div class="progress">
+                            <div class="determinate progress-linear primary" style="width: <?= $method->pivot->progress ?>%"></div>
+                          </div>
+                        </li>
+                      <?php endforeach; ?>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ##### END VIDEO PROGRESS #####-->
+
+          <!-- ##### PHOTO SLIDER #####-->
+          <div class="space-bottom-short">
+            <div class="about-style">
+              <div class="container gallery-root">
+                <h4 class="use-text-title2 mb-3">Galeri Kegiatan & Fasilitas</h4>
+                <p class="use-text-subtitle2">
+                  Lihat langsung suasana pelatihan, fasilitas modern, dan momen penting dari program sertifikasi kami. Setiap gambar mencerminkan komitmen kami dalam menyediakan pendidikan kedokteran berkualitas tinggi.
                 </p>
+                <div class="carousel">
+                  <button class="btn btn-icon waves-effect btn-small nav prev" id="team_prev">
+                    <i class="icon material-icons">arrow_back</i>
+                  </button>
+
+                  <div class="photo-carousel" id="about_photo_carousel">
+                    <?php
+                    $response = file_get_contents('http://localhost:8000/api/about');
+                    $data = json_decode($response);
+
+                    if (!empty($data->data->activities)) {
+                      $counter = 0;
+                      foreach ($data->data->activities as $activity) {
+                        if (!empty($activity->photos)) {
+                          foreach ($activity->photos as $photo) {
+                            $imgSrc = './assets/images/medical/' . $photo->image;
+                            $title = $activity->title ?? 'Kegiatan';
+                    ?>
+                            <div class="item px-sm-3 px-1 showImg" data-index="<?= $counter ?>">
+                              <div class="showimg">
+                                <a class="waves-effect" href="<?= $imgSrc ?>"><img src="<?= $imgSrc ?>" alt="photo" /></a>
+                              </div>
+                              <div class="card media-card portrait photo">
+                                <a class="cover-link waves-effect" href="<?= $imgSrc ?>"></a>
+                                <figure><img src="<?= $imgSrc ?>" alt="cover" /></figure>
+                                <div class="property">
+                                  <div class="card-title media-title"><?= $title ?></div>
+                                </div>
+                              </div>
+                            </div>
+                    <?php
+                            $counter++;
+                          }
+                        }
+                      }
+                    } else {
+                      echo "<p>Tidak ada data galeri.</p>";
+                    }
+                    ?>
+                  </div>
+
+                  <button class="btn btn-icon waves-effect btn-small nav next" id="team_next">
+                    <i class="icon material-icons">arrow_forward</i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- ##### END PHOTO SLIDER #####-->
+
+          <!-- ##### CALL ACTION #####-->
+          <!-- <div class="space-bottom-short">
+            <div class="call-to-action">
+              <div class="container fixed-width-md-up">
+                <div class="root">
+                  <div class="wow fadeInUpShort" data-wow-offset="40" data-wow-delay="0.3s" data-wow-duration="0.5s">
+                    <div class="card paper">
+                      <div class="row align-items-center">
+                        <div class="col-md-8 col-sm-12 px-sm-6">
+                          <h4 class="use-text-title2 pb-2">Ready to get started?</h4>
+                          <p>No waiting rooms. We make it simple to get healthcare whenever and wherever you want</p>
+                        </div>
+                        <div class="col-md-4 col-sm-12 px-sm-0">
+                          <div class="d-flex align-items-center justify-content-center">
+                            <a class="waves-effect btn button white block" href="contact.html">Create Appointment Now!</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- ##### END CALL ACTION #####-->
 
           <!-- ##### FOOTER #####-->
           <div id="footer">
@@ -379,7 +514,7 @@
                 <div class="row">
                   <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
                     <div class="logo">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>PDSI</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </div>
                     <p class="body-2">Get a diagnosis, treatment plan, and prescription from original provider of quality medical care.</p>
                     <p class="body-2 hidden-sm-down">&copy; Nirwana Theme 2022</p>
@@ -474,8 +609,7 @@
                 </div>
               </div>
             </footer>
-          </div>
-          <!-- ##### END FOOTER #####-->
+          </div><!-- ##### END FOOTER #####-->
         </div>
       </div>
     </div>

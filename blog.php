@@ -43,7 +43,7 @@
   <meta property="og:image" content="/images/logo-medical.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <title>Medical - Card Collection </title><!-- Styles-->
+  <title>PDSI - Berita </title><!-- Styles-->
   <!-- Put the 3rd/plugins css here-->
   <link href="./assets/css/vendors/normalize.css" rel="stylesheet">
   <link href="./assets/css/vendors/bootstrap.css" rel="stylesheet">
@@ -62,7 +62,7 @@
   <div class="m-application theme--light transition-page" id="app">
     <div class="loading"></div>
     <div class="m-content fresh fresh-var" id="main-wrap">
-      <div id="collection-page">
+      <div id="blog-page">
         <div class="main-wrap">
 
           <!-- #### HEADER ####-->
@@ -72,7 +72,7 @@
                 <ul class="collapsible expandable">
                   <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">berita</a></li>
                   <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">testimoni</a></li>
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">mitra</a></li>                  
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">mitra</a></li>
                   <li class="collection-item group-child has-child">
                     <div class="collapsible-header">
                       <a class="waves-effect text-truncate menu-list" href="#!">
@@ -96,7 +96,7 @@
                             <a class="waves-effect text-truncate menu-list" href="about-team.html">Tim Pengajar & Ahli</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="blog.html">Berita</a>
+                            <a class="waves-effect text-truncate menu-list current" href="blog.html">Berita</a>
                           </li>
                         </ul>
                         <ul class="group-child">
@@ -104,7 +104,7 @@
                             <div class="title-mega">Kegiatan</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list current" href="program-kerja.html">Program Kerja</a>
+                            <a class="waves-effect text-truncate menu-list" href="program-kerja.html">Program Kerja</a>
                           </li>
                           <li class="collection-item side-group-link">
                             <a class="waves-effect text-truncate menu-list" href="agenda.html">Agenda</a>
@@ -136,7 +136,7 @@
               </div>
             </div>
           </div>
-          
+
           <header class="app-bar header" id="header">
             <div class="container">
               <div class="header-content">
@@ -144,7 +144,7 @@
                   <button class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down" id="mobile_menu" type="button" data-target="slide_menu"><span class="hamburger-box"><span class="bar hamburger-inner"></span></span></button>
                   <div class="logo">
                     <a href="index.html">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>PDSI</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </a>
                   </div>
                   <div class="scrollactive-nav show-lg-up multi-menu">
@@ -174,14 +174,14 @@
                                     <li class="waves-effect"><a class="menu-list" href="about.html">Sekilas</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="visi-misi.html">Visi, Misi, Value</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="about-team.html">Tim Pengajar & Ahli</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="blog.html">Berita</a></li>
+                                    <li class="waves-effect"><a class="menu-list current" href="blog.html">Berita</a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
                                   <div class="title-mega">Kegiatan</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_other@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list current" href="program-kerja.html">Program Kerja</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="program-kerja.html">Program Kerja</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="agenda.html">Agenda</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="gallery.html">Galeri</a></li>
                                   </ul>
@@ -250,86 +250,293 @@
           </header>
           <!-- #### END HEADER ####-->
 
-          <div class="container container-front">
-            <div class="container-wrap">
-              <div class="search-content">
-                <div>
-                  <div class="row align-items-start justify-content-center">
-                    <div class="col-md-12 col-sm-12 px-md-3 px-0">
+          <div class="container-general">
+            <div class="container mt-12 mt-sm-0">
+              <div class="row">
+                <div class="row mt-6">
+                  <!-- ##### BLOG POST #####-->
+                  <div class="col-md-8 col-sm-12 px-0 px-sm-4">
+                    <div data-index="0">
+                      <div class="card post-card portrait full">
+                        <div class="card-image figure">
+                          <div class="responsive-img" style="background-image: url('./assets/images/medical/tn_lldikti5_20230317075908.jpg');"></div>
+                        </div>
+                        <div class="properties">
+                          <div class="use-text-subtitle2 text-truncate">
+                            <strong>Mengabdi Tanpa Batas: Dr. Fadli dan 30 Tahun Melayani di Daerah 3T</strong>
+                          </div>
+                          <div class="caption py-4">12 Nov 2023</div>
+                          <div class="card-content desc">
+                            <p>Dalam wawancara eksklusif bersama Dr. Fadli Rahman, Sp.PD, ia menceritakan perjalanannya selama lebih dari 30 tahun mengabdi sebagai dokter spesialis penyakit dalam di wilayah terpencil Indonesia. Dr. Fadli menekankan pentingnya kehadiran dokter sebagai agen perubahan sosial di tengah keterbatasan akses kesehatan</p>
+                          </div>
+                          <div class="card-action">
+                            <a class="btn btn-outlined primary action-btn waves-effect" href="detail-blog.html">read more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-12 pt-3" data-index="1">
+                      <div class="card post-card portrait full">
+                        <div class="card-image figure">
+                          <div class="responsive-img" style="background-image:url('./assets/images/medical/Untitled-design-2025-01-15T112935.047.jpg');"></div>
+                        </div>
+                        <div class="properties">
+                          <div class="use-text-subtitle2 text-truncate">
+                            <strong>5 Platform Medis Online yang Wajib Dimiliki Dokter Muda</strong>
+                          </div>
+                          <div class="caption py-4">12 Nov 2021</div>
+                          <div class="card-content desc">
+                            <p>Di era digital, literasi informasi menjadi kebutuhan utama tenaga medis. Artikel ini membahas 5 aplikasi dan website terpercaya untuk memperbarui pengetahuan klinis harian — dari PubMed, BMJ Best Practice, sampai guideline.id dari Perhimpunan Dokter Spesialis</p>
+                          </div>
+                          <div class="card-action">
+                            <a class="btn btn-outlined primary action-btn waves-effect" href="detail-blog.html">read more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-12 pt-3" data-index="2">
+                      <div class="card post-card portrait full">
+                        <div class="card-image figure">
+                          <div class="responsive-img" style="background-image:url('./assets/images/decoration/clinic3_mrsrew.jpg');"></div>
+                        </div>
+                        <div class="properties">
+                          <div class="use-text-subtitle2 text-truncate">
+                            <strong>Etika Profesional di Era Telemedisin: Antara Manfaat dan Tantangan</strong>
+                          </div>
+                          <div class="caption py-4">12 Nov 2021</div>
+                          <div class="card-content desc">
+                            <p>Perkembangan telemedisin membawa banyak kemudahan, tapi juga tantangan etis. Artikel opini ini mengulas dilema dokter dalam menjaga kerahasiaan pasien, kualitas diagnosis, dan validitas komunikasi medis jarak jauh</p>
+                          </div>
+                          <div class="card-action">
+                            <a class="btn btn-outlined primary action-btn waves-effect" href="detail-blog.html">read more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-12 pt-3" data-index="3">
+                      <div class="card post-card portrait full">
+                        <div class="card-image figure">
+                          <div class="responsive-img" style="background-image:url('./assets/images/medical/asdf.webp');"></div>
+                        </div>
+                        <div class="properties">
+                          <div class="use-text-subtitle2 text-truncate">
+                            <strong>Seminar Etik 2024: Menjaga Profesionalisme Dokter di Era Digital</strong>
+                          </div>
+                          <div class="caption py-4">12 Nov 2021</div>
+                          <div class="card-content desc">
+                            <p>PB IDI menyelenggarakan Seminar Etik Kedokteran 2024 yang membahas pentingnya menjaga etika profesi dalam era digital. Acara ini dihadiri para dokter dari seluruh Indonesia dan menghadirkan pembicara dari bidang bioetika dan hukum kesehatan</p>
+                          </div>
+                          <div class="card-action">
+                            <a class="btn btn-outlined primary action-btn waves-effect" href="detail-blog.html">read more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-12 pt-3" data-index="4">
+                      <div class="card post-card portrait full">
+                        <div class="card-image figure">
+                          <div class="responsive-img" style="background-image:url('./assets/images/medical/Webinar-Kedokteran-6-724x1024.png');"></div>
+                        </div>
+                        <div class="properties">
+                          <div class="use-text-subtitle2 text-truncate">
+                            <strong>IDI Aceh Tengah Gelar Bakti Sosial di Daerah Terpencil</strong>
+                          </div>
+                          <div class="caption py-4">12 Nov 2021</div>
+                          <div class="card-content desc">
+                            <p>Dalam rangka pengabdian masyarakat, IDI Cabang Aceh Tengah memberikan layanan kesehatan gratis di SDN 3 Pilar, Rusip Antara. Kegiatan ini bertujuan meningkatkan akses layanan medis bagi warga yang kurang terjangkau fasilitas kesehatan</p>
+                          </div>
+                          <div class="card-action">
+                            <a class="btn btn-outlined primary action-btn waves-effect" href="detail-blog.html">read more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-12 pt-3" data-index="5">
+                      <div class="card post-card portrait full">
+                        <div class="card-image figure">
+                          <div class="responsive-img" style="background-image:url('./assets/images/medical/banner_1724922891.jpg');"></div>
+                        </div>
+                        <div class="properties">
+                          <div class="use-text-subtitle2 text-truncate">
+                            <strong>Pelatihan Kegawatdaruratan untuk Penanganan Kecelakaan oleh JDN-IDI</strong>
+                          </div>
+                          <div class="caption py-4">12 Nov 2021</div>
+                          <div class="card-content desc">
+                            <p>JDN-IDI dan Ditlantas Polda Metro Jaya menggelar pelatihan penanganan kegawatdaruratan seperti henti jantung dan trauma kecelakaan lalu lintas. Pelatihan ini memperkuat sinergi dokter muda dan aparat dalam respon cepat darurat medis di lapangan</p>
+                          </div>
+                          <div class="card-action">
+                            <a class="btn btn-outlined primary action-btn waves-effect" href="detail-blog.html">read more</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="arrow">
+                      <div class="d-flex justify-content-between mt-10">
+                        <div class="btn-flat waves-effect"><i class="material-icons left">arrow_back</i>prev</div>
+                        <div class="btn-flat waves-effect">next<i class="material-icons right">arrow_forward</i></div>
+                      </div>
+                    </div>
+                  </div><!-- ##### END BLOG POST #####-->
 
-                      <!-- ##### POST CARD PORTRAIT #####-->
-                      <div class="space-top-short" style="margin-top: 8%;" id="post_l">
-                        <h4 class="use-text-subtitle use-text-primary mb-3 ms-3">Program Kerja</h4>
-                        <div class="row">
-                          <div class="col-md-12 px-0" data-index="0">
-                            <div class="card post-card landscape full">
-                              <div class="properties">
-                                <div class="use-text-subtitle2 text-truncate">
-                                  <strong>PENGUATAN KESEJAWATAN</strong>
+                  <!-- ##### SIDEBAR #####-->
+                  <div class="col-md-4 col-sm-12 px-0 px-sm-4">
+                    <div class="blog-style">
+                      <div class="sidebar">
+                        <!-- <div class="card paper color">
+                          <header>
+                            <div class="icon"><i class="material-icons small white-text">signal_wifi_4_bar</i></div>
+                            <div class="card-content">
+                              <span class="card-title">Subscribe</span>
+                              <p>Subscribe our newsletter</p>
+                            </div>
+                          </header>
+                          <div class="content">
+                            <div>
+                              <div class="form">
+                                <div class="input-field flex-fill">
+                                  <input class="input dark" id="subscribe" type="text" />
+                                  <label class="white-text" for="subscribe">Email? *</label>
                                 </div>
-                                <div class="card-content desc">
-                                  <p>1. Menguatnya soliditas anggota dan organisasi.</p>
-                                  <p>2. Terciptanya konsep arah baru kesejawatan yang inovatif dan modern.</p>
-                                  <p>3. Menguatnya etik kedokteran dan kesejawatan.</p>
-                                </div>
+                                <div class="btn btn-outlined white small send">submit</div>
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-12 px-0" data-index="1">
-                            <div class="card post-card landscape full">
-                              <div class="properties">
-                                <div class="use-text-subtitle2 text-truncate">
-                                  <strong>PENGUATAN CITRA/BRANDING</strong>
-                                </div>
-                                <div class="card-content desc">
-                                  <p>4. Menguatnya citra organisasi yang transparan, akuntabel, proaktif, sinergis, dan kolaboratif.</p>
-                                  <p>5. Terciptanya konsep arah baru kesejawatan yang inovatif dan modern.</p>
-                                  <p>6. Meningkatnya kepercayaan publik dan pemerintahan.</p>
-                                </div>
-                              </div>
+                        </div> -->
+                        <div class="py-3"></div>
+                        <div class="card paper">
+                          <header>
+                            <div class="icon"><i class="material-icons small">account_circle</i></div>
+                            <div class="card-content">
+                              <span class="card-title">Tentang Kami</span>
+                              <p>Ikatan Dokter Spesialis Penyakit Dalam (IDSPDI) adalah wadah profesional untuk meningkatkan kompetensi, etika, dan kolaborasi antar spesialis di Indonesia.</p>
                             </div>
-                          </div>
-                          <div class="col-md-12 px-0" data-index="2">
-                            <div class="card post-card landscape full">
-                              <div class="properties">
-                                <div class="use-text-subtitle2">
-                                  <strong>SISTEM ADVOKASI</strong>
-                                </div>
-                                <div class="card-content desc">
-                                  <p>7. Menguatnya koneksivitas dan advokasi pada kebijakan strategis pemerintah dalam bidang kedokteran dan kesehatan.</p>
-                                  <p>8. Menguatnya advokasi dalam percepatan pembangunan kesehatan di daerah khususnya daerah terpencil dan tertinggal.</p>
-                                  <p>9. Menguatnya relasi, komunikasi, dan koordinasi dengan seluruh stake holder kesehatan dalam sistem kesehatan dan ketahanan kesehatan nasional.</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12 px-0" data-index="0">
-                            <div class="card post-card landscape full">
-                              <div class="properties">
-                                <div class="use-text-subtitle2 text-truncate">
-                                  <strong>KESEJAHTERAAN
-                                    PERLINDUNGAN HUKUM
-                                    DAN PEMBINAAN ANGGOTA</strong>
-                                </div>
-                                <div class="card-content desc">
-                                  <p>10. Terbangunnya infrastruktur pelayanan dan kesejahteraan anggota yang inovatif, efisien, dan berkeadilan.</p>
-                                  <p>11. Terbentuknya sistem perlindungan hukum bagi anggota yang efektif dan kompeten.</p>
-                                  <p>12. Menguatnya advokasi regulasi perlindungan hukum bagi anggota.</p>
-                                  <p>13. Menguatnya advokasi dan regulasi pembiayaan kesehatan nasional dan jaminan kesehatan bagi anggota yang lebih baik dan berkeadilan.</p>
-                                  <p>14. Menguatnya etik dan disiplin kedokteran.</p>
-                                </div>
-                              </div>
+                          </header>
+                          <div class="content">
+                            <div>
+                              <ul class="collection">
+                                <li class="collection-item avatar">
+                                  <i class="circle icon primary material-icons grey lighten-3">date_range</i>
+                                  <span class="use-text-medium">Didirikan</span>
+                                  <p>Jan 9, 2025</p>
+                                </li>
+                                <li class="collection-item avatar">
+                                  <i class="circle icon primary material-icons grey lighten-3">local_phone</i>
+                                  <span class="use-text-medium">Ketua Umum</span>
+                                  <p>...</p>
+                                </li>
+                                <li class="collection-item avatar">
+                                  <i class="circle icon primary material-icons grey lighten-3">location_on</i>
+                                  <span class="use-text-medium">Kantor Pusat</span>
+                                  <p>Jakarta, Indonesia</p>
+                                </li>
+                              </ul>
                             </div>
                           </div>
                         </div>
-                      </div><!-- ##### END CARD #####-->
+                        <div class="py-3"></div>
+                        <div class="card paper">
+                          <header>
+                            <div class="icon"><i class="material-icons small">bookmark</i></div>
+                            <div class="card-content">
+                              <span class="card-title">Artikel Terbaru</span>
+                            </div>
+                          </header>
+                          <div class="content">
+                            <div>
+                              <div class="collection">
+                                <a class="waves-effect collection-item" href="#!">
+                                  <span class="d-block">Permenkes Baru Soal Telemedicine 2025</span><span class="caption">6 Mei 2025</span>
+                                </a>
+
+                                <a class="waves-effect collection-item" href="#!">
+                                  <span class="d-block">Panduan Diagnosis Hipertensi Revisi WHO</span><span class="caption">4 Mei 2025</span>
+                                </a>
+
+                                <a class="waves-effect collection-item" href="#!">
+                                  <span class="d-block">Tips Menghindari Burnout bagi Residen</span><span class="caption">2 Mei 2025</span>
+                                </a>
+                              </div><a class="btn waves-effect btn-flat primary-text block">see all</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="py-3"></div>
+                        <div class="card paper">
+                          <header>
+                            <div class="icon"><i class="material-icons small">message</i></div>
+                            <div class="card-content">
+                              <span class="card-title">Agenda Mendatang</span>
+                            </div>
+                          </header>
+                          <div class="content">
+                            <div class="collection">
+                              <a class="waves-effect collection-item avatar" href="#!">
+                                <i class="circle icon avatar-char teal">J</i>
+                                <span class="d-block use-text-medium">Manajemen Gagal Ginjal</span>
+                                <span>10 Mei 2025 </span>
+                              </a>
+
+                              <a class="waves-effect collection-item avatar" href="#!">
+                                <i class="circle icon avatar-char pink">J</i>
+                                <span class="d-block use-text-medium">EKG Dasar & Lanjut</span>
+                                <span>15 Mei 2025 </span>
+                              </a>
+
+                              <a class="waves-effect collection-item avatar" href="#!">
+                                <i class="circle icon avatar-char purple">J</i>
+                                <span class="d-block use-text-medium">Kongres Nasional</span>
+                                <span>1-3 Juni 2025 </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="py-3"></div>
+                        <div class="card paper">
+                          <header>
+                            <div class="icon"><i class="material-icons small">folder</i></div>
+                            <div class="card-content">
+                              <span class="card-title">Archived</span>
+                            </div>
+                          </header>
+                          <div class="content">
+                            <div>
+                              <div class="collection">
+                                <a class="waves-effect collection-item" href="#!">
+                                  <span class="use-text-medium">Januari 2025</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
+                                </a>
+
+                                <a class="waves-effect collection-item" href="#!">
+                                  <span class="use-text-medium">Februari 2025</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
+                                </a>
+
+                                <a class="waves-effect collection-item" href="#!">
+                                  <span class="use-text-medium">Maret 2025</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
+                                </a>
+
+                                <a class="waves-effect collection-item" href="#!">
+                                  <span class="use-text-medium">April 2025</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
+                                </a>
+
+                                <a class="waves-effect collection-item" href="#!">
+                                  <span class="use-text-medium">Mei 2025</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
+                                </a>
+
+                                <a class="waves-effect collection-item" href="#!">
+                                  <span class="use-text-medium">Juni 2025</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
+                                </a>
+                              </div>
+                            </div><a class="btn waves-effect btn-flat primary-text block">see all</a>
+                          </div>
+                        </div>
+                        <div class="py-3"></div>
+                      </div>
                     </div>
-                  </div>
+                  </div><!-- ##### END SIDEBAR #####-->
                 </div>
               </div>
             </div>
+          </div>
 
-          </div><!-- ##### FOOTER #####-->
+          <!-- ##### FOOTER #####-->
           <div id="footer">
             <footer class="footer-sitemap">
               <div class="footer-deco">
@@ -342,7 +549,7 @@
                 <div class="row">
                   <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
                     <div class="logo">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>Medical</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </div>
                     <p class="body-2">Get a diagnosis, treatment plan, and prescription from original provider of quality medical care.</p>
                     <p class="body-2 hidden-sm-down">&copy; Nirwana Theme 2022</p>
@@ -437,7 +644,7 @@
                 </div>
               </div>
             </footer>
-          </div>
+          </div><!-- ##### END FOOTER #####-->
 
         </div>
       </div>
