@@ -70,9 +70,9 @@
             <div class="side-multilv">
               <div class="collection side-multilv">
                 <ul class="collapsible expandable">
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">berita</a></li>
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">testimoni</a></li>
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">mitra</a></li>
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.php">berita</a></li>
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.php">testimoni</a></li>
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.php">mitra</a></li>
                   <li class="collection-item group-child has-child">
                     <div class="collapsible-header">
                       <a class="waves-effect text-truncate menu-list" href="#!">
@@ -87,16 +87,16 @@
                             <div class="title-mega">Tentang Kami</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="about.html">Sekilas</a>
+                            <a class="waves-effect text-truncate menu-list" href="about.php">Sekilas</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="visi-misi.html">Visi, Misi, Value</a>
+                            <a class="waves-effect text-truncate menu-list" href="visi-misi.php">Visi, Misi, Value</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="about-team.html">Tim Pengajar & Ahli</a>
+                            <a class="waves-effect text-truncate menu-list" href="about-team.php">Tim Pengajar & Ahli</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="blog.html">Berita</a>
+                            <a class="waves-effect text-truncate menu-list" href="news.php">Berita</a>
                           </li>
                         </ul>
                         <ul class="group-child">
@@ -104,13 +104,10 @@
                             <div class="title-mega">Kegiatan</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list current" href="program-kerja.html">Program Kerja</a>
+                            <a class="waves-effect text-truncate menu-list current" href="program-kerja.php">Program Kerja</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="agenda.html">Agenda</a>
-                          </li>
-                          <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="gallery.html">Galeri</a>
+                            <a class="waves-effect text-truncate menu-list" href="agenda.php">Agenda</a>
                           </li>
                         </ul>
                         <ul class="group-child">
@@ -118,7 +115,7 @@
                             <div class="title-mega">FAQ</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="pricing.html">pricing and faq</a>
+                            <a class="waves-effect text-truncate menu-list" href="faq.php">frequently answer &amp; questions</a>
                           </li>
                         </ul>
                       </div>
@@ -130,7 +127,7 @@
               <div class="collection">
                 <ul>
                   <li class="collection-item">
-                    <a class="sidenav-close waves-effect menu-list" href="login.html">Login</a>
+                    <a class="sidenav-close waves-effect menu-list" href="https://www.platform.pdsionline.org/login">Login</a>
                   </li>
                 </ul>
               </div>
@@ -143,20 +140,20 @@
                 <nav class="nav-menu">
                   <button class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down" id="mobile_menu" type="button" data-target="slide_menu"><span class="hamburger-box"><span class="bar hamburger-inner"></span></span></button>
                   <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                       <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </a>
                   </div>
                   <div class="scrollactive-nav show-lg-up multi-menu">
                     <ul class="main-menu">
                       <li>
-                        <a class="btn btn-flat anchor-link waves-effect" href="index.html#facility">berita</a>
+                        <a class="btn btn-flat anchor-link waves-effect" href="index.php#facility">berita</a>
                       </li>
                       <li>
-                        <a class="btn btn-flat anchor-link waves-effect" href="index.html#testimonials">testimoni</a>
+                        <a class="btn btn-flat anchor-link waves-effect" href="index.php#testimonials">testimoni</a>
                       </li>
                       <li>
-                        <a class="btn btn-flat anchor-link waves-effect" href="index.html#clinics">mitra</a>
+                        <a class="btn btn-flat anchor-link waves-effect" href="index.php#clinics">mitra</a>
                       </li>
                       <li>
                         <button class="btn btn-flat megamenu-trigger-click waves-effect" data-target="sample-page">
@@ -171,26 +168,25 @@
                                   <div class="title-mega">Tentang Kami</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_marketing@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list" href="about.html">Sekilas</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="visi-misi.html">Visi, Misi, Value</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="about-team.html">Tim Pengajar & Ahli</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="blog.html">Berita</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="about.php">Sekilas</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="visi-misi.php">Visi, Misi, Value</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="about-team.php">Tim Pengajar & Ahli</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="news.php">Berita</a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
                                   <div class="title-mega">Kegiatan</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_other@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list current" href="program-kerja.html">Program Kerja</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="agenda.html">Agenda</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="gallery.html">Galeri</a></li>
+                                    <li class="waves-effect"><a class="menu-list current" href="program-kerja.php">Program Kerja</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="agenda.php">Agenda</a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
                                   <div class="title-mega">FAQ</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_saas2@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list" href="faq.html">frequently answer &amp; questions</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="faq.php">frequently answer &amp; questions</a></li>
                                   </ul>
                                 </div>
                               </div>
@@ -201,7 +197,7 @@
                     </ul>
                   </div>
                   <nav class="user-menu">
-                    <a class="btn waves-effect primary show-sm-up" href="coming-soon.html">Login</a>
+                    <a class="btn waves-effect primary show-sm-up" href="https://www.platform.pdsionline.org/login">Login</a>
                     <span class="spacer vertical-divider show-lg-up"></span>
                     <div class="menu-setting">
                       <div class="setting">
@@ -221,22 +217,6 @@
                                   </label>
                                 </div>
                               </div>
-                            </li>
-                          </ul>
-                          <div class="dropdown-divider"></div>
-                          <ul class="collection with-header lang-menu" id="lang_menu">
-                            <li class="collection-header">language</li>
-                            <li class="collection-item lang-list waves-effect avatar">
-                              <a data-lang="en" href="#">
-                                <div class="flag circle"><i class="en"></i></div>
-                                <span class="content lang-opt text-truncate">English</span>
-                              </a>
-                            </li>
-                            <li class="collection-item lang-list waves-effect avatar">
-                              <a data-lang="id" href="#">
-                                <div class="flag circle"><i class="id"></i></div>
-                                <span class="content lang-opt text-truncate">󠁥󠁮󠁧󠁿Bahasa Indonesia</span>
-                              </a>
                             </li>
                           </ul>
                         </div>
@@ -316,69 +296,27 @@
                 <div class="row">
                   <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
                     <div class="logo">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />Medical</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </div>
-                    <p class="body-2">Get a diagnosis, treatment plan, and prescription from original provider of quality medical care.</p>
-                    <p class="body-2 hidden-sm-down">&copy; Nirwana Theme 2022</p>
+                    <p class="body-2">Platform pelatihan dan pengembangan kompetensi dokter di Indonesia, dengan kurikulum terstandar dan dukungan mitra terpercaya.</p>
+                    <p class="body-2 hidden-sm-down">© Copyright 2025 PDSI</p>
                   </div>
                   <div class="col-md-6 col-sm-12 pa-4">
                     <ul class="show-sm-down collapsible">
                       <li class="accordion-content">
                         <div class="collapsible-header">
-                          <h6 class="title">Company</h6><i class="material-icons right arrow">expand_more</i>
-                        </div>
-                        <div class="collapsible-body">
-                          <ul>
-                            <li><a href="#team">Team</a></li>
-                            <li><a href="#history">History</a></li>
-                            <li><a href="#contact-us">Contact us</a></li>
-                            <li><a href="#locations">Locations</a></li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li class="accordion-content">
-                        <div class="collapsible-header">
-                          <h6 class="title">Resources</h6><i class="material-icons right arrow">expand_more</i>
-                        </div>
-                        <div class="collapsible-body">
-                          <ul>
-                            <li><a href="#resource">Resource</a></li>
-                            <li><a href="#resource-name">Resource name</a></li>
-                            <li><a href="#another-resource">Another resource</a></li>
-                            <li><a href="#final-resource">Final resource</a></li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li class="accordion-content">
-                        <div class="collapsible-header">
                           <h6 class="title">Legal</h6><i class="material-icons right arrow">expand_more</i>
                         </div>
-                        <div class="collapsible-body">
-                          <ul>
-                            <li><a href="#privacy-policy">Privacy policy</a></li>
-                            <li><a href="#terms-of-use">Terms of use</a></li>
-                          </ul>
-                        </div>
+                        <ul>
+                          <li><a href="#privacy-policy">Privacy policy</a></li>
+                          <li><a href="#terms-of-use">Terms of use</a></li>
+                        </ul>
                       </li>
                     </ul>
                     <div class="row show-md-up justify-content-around">
                       <div class="col pa-4 site-map-item">
-                        <h6 class="title mb-4">Company</h6>
-                        <ul>
-                          <li><a href="#team">Team</a></li>
-                          <li><a href="#history">History</a></li>
-                          <li><a href="#contact-us">Contact us</a></li>
-                          <li><a href="#locations">Locations</a></li>
-                        </ul>
                       </div>
                       <div class="col pa-4 site-map-item">
-                        <h6 class="title mb-4">Resources</h6>
-                        <ul>
-                          <li><a href="#resource">Resource</a></li>
-                          <li><a href="#resource-name">Resource name</a></li>
-                          <li><a href="#another-resource">Another resource</a></li>
-                          <li><a href="#final-resource">Final resource</a></li>
-                        </ul>
                       </div>
                       <div class="col pa-4 site-map-item">
                         <h6 class="title mb-4">Legal</h6>
@@ -391,22 +329,12 @@
                   </div>
                   <div class="col-md-3 col-sm-12 pa-4">
                     <div class="socmed">
-                      <a class="btn btn-icon waves-effect"><span class="ion-social-facebook icon"></span></a>
-                      <a class="btn btn-icon waves-effect"><span class="ion-social-twitter icon"></span></a>
-                      <a class="btn btn-icon waves-effect"><span class="ion-social-instagram icon"></span></a>
-                      <a class="btn btn-icon waves-effect"><span class="ion-social-linkedin icon"></span></a>
+                      <a href="https://www.facebook.com/officialpdsi" target="_blank" class="btn btn-icon waves-effect"><span class="ion-social-facebook icon"></span></a>
+                      <a href="https://x.com/PP_PDSI" target="_blank" class="btn btn-icon waves-effect"><span class="ion-social-twitter icon"></span></a>
+                      <a href="https://www.instagram.com/dokterseluruhindonesia/" target="_blank" class="btn btn-icon waves-effect"><span class="ion-social-instagram icon"></span></a>
+                      <a href="https://id.linkedin.com/company/perkumpulan-dokter-seluruh-indonesia" target="_blank" class="btn btn-icon waves-effect"><span class="ion-social-linkedin icon"></span></a>
                     </div>
-                    <div class="select-lang select-outlined">
-                      <select class="select" id="lang_select">
-                        <option value="ar">󠁥󠁮󠁧󠁿العربيّة</option>
-                        <option value="de">Deutsch</option>
-                        <option value="en" selected>English</option>
-                        <option value="id">󠁥󠁮󠁧󠁿Bahasa Indonesia</option>
-                        <option value="pt">󠁥󠁮󠁧󠁿Português</option>
-                        <option value="zh">简体中文</option>
-                      </select>
-                    </div>
-                    <p class="body-2 mt-5 text-center hidden-md-up">&copy; Nirwana Theme 2022</p>
+                    <p class="body-2 mt-5 text-center hidden-md-up">&copy; ICT PDSI</p>
                   </div>
                 </div>
               </div>

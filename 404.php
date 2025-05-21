@@ -173,8 +173,8 @@
               <nav class="nav-menu">
                 <button class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down" id="mobile_menu" type="button" data-target="slide_menu"><span class="hamburger-box"><span class="bar hamburger-inner"></span></span></button>
                 <div class="logo">
-                  <a href="index.html">
-                    <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>Medical</span>
+                  <a href="index.php">
+                    <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />Medical</span>
                   </a>
                 </div>
                 <div class="scrollactive-nav show-lg-up multi-menu">
@@ -359,7 +359,7 @@
               <div class="row">
                 <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
                   <div class="logo">
-                    <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>Medical</span>
+                    <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />Medical</span>
                   </div>
                   <p class="body-2">Get a diagnosis, treatment plan, and prescription from original provider of quality medical care.</p>
                   <p class="body-2 hidden-sm-down">&copy; Nirwana Theme 2022</p>

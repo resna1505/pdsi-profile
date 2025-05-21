@@ -89,13 +89,24 @@
                             <a class="waves-effect text-truncate menu-list" href="about.php">Sekilas</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="visi-misi.html">Visi, Misi, Value</a>
+                            <a class="waves-effect text-truncate menu-list" href="visi-misi.php">Visi, Misi, Value</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="about-team.html">Tim Pengajar & Ahli</a>
+                            <a class="waves-effect text-truncate menu-list" href="about-team.php">Tim Pengajar & Ahli</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="blog.html">blog detail</a>
+                            <a class="waves-effect text-truncate menu-list" href="news.php">Berita</a>
+                          </li>
+                        </ul>
+                        <ul class="group-child">
+                          <li class="collection-header">
+                            <div class="title-mega">Kegiatan</div>
+                          </li>
+                          <li class="collection-item side-group-link">
+                            <a class="waves-effect text-truncate menu-list" href="program-kerja.php">Program Kerja</a>
+                          </li>
+                          <li class="collection-item side-group-link">
+                            <a class="waves-effect text-truncate menu-list" href="agenda.php">Agenda</a>
                           </li>
                         </ul>
                         <ul class="group-child">
@@ -103,7 +114,7 @@
                             <div class="title-mega">FAQ</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="pricing.html">pricing and faq</a>
+                            <a class="waves-effect text-truncate menu-list" href="faq.php">frequently answer &amp; questions</a>
                           </li>
                         </ul>
                       </div>
@@ -115,19 +126,20 @@
               <div class="collection">
                 <ul>
                   <li class="collection-item">
-                    <a class="sidenav-close waves-effect menu-list" href="coming-soon.html">Login</a>
+                    <a class="sidenav-close waves-effect menu-list" href="https://www.platform.pdsionline.org/login">Login</a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
+
           <header class="app-bar header" id="header">
             <div class="container">
               <div class="header-content">
                 <nav class="nav-menu">
                   <button class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down" id="mobile_menu" type="button" data-target="slide_menu"><span class="hamburger-box"><span class="bar hamburger-inner"></span></span></button>
                   <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                       <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </a>
                   </div>
@@ -156,25 +168,24 @@
                                   <img class="thumb-menu" src="./assets/images/medical/menu_marketing@2x.jpg" alt="thumbnail" />
                                   <ul>
                                     <li class="waves-effect"><a class="menu-list" href="about.php">Sekilas</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="visi-misi.html">Visi, Misi, Value</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="about-team.html">Tim Pengajar & Ahli</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="blog.html">Berita</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="visi-misi.php">Visi, Misi, Value</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="about-team.php">Tim Pengajar & Ahli</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="news.php">Berita</a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
                                   <div class="title-mega">Kegiatan</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_other@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list" href="program-kerja.html">Program Kerja</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="agenda.html">Agenda</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="gallery.html">Galeri</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="program-kerja.php">Program Kerja</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="agenda.php">Agenda</a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
                                   <div class="title-mega">FAQ</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_saas2@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list" href="faq.html">frequently answer &amp; questions</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="faq.php">frequently answer &amp; questions</a></li>
                                   </ul>
                                 </div>
                               </div>
@@ -185,7 +196,7 @@
                     </ul>
                   </div>
                   <nav class="user-menu">
-                    <a class="btn waves-effect primary show-sm-up" href="coming-soon.html">Login</a>
+                    <a class="btn waves-effect primary show-sm-up" href="https://www.platform.pdsionline.org/login">Login</a>
                     <span class="spacer vertical-divider show-lg-up"></span>
                     <div class="menu-setting">
                       <div class="setting">
@@ -207,22 +218,6 @@
                               </div>
                             </li>
                           </ul>
-                          <div class="dropdown-divider"></div>
-                          <ul class="collection with-header lang-menu" id="lang_menu">
-                            <li class="collection-header">language</li>
-                            <li class="collection-item lang-list waves-effect avatar">
-                              <a data-lang="en" href="#">
-                                <div class="flag circle"><i class="en"></i></div>
-                                <span class="content lang-opt text-truncate">English</span>
-                              </a>
-                            </li>
-                            <li class="collection-item lang-list waves-effect avatar">
-                              <a data-lang="id" href="#">
-                                <div class="flag circle"><i class="id"></i></div>
-                                <span class="content lang-opt text-truncate">󠁥󠁮󠁧󠁿Bahasa Indonesia</span>
-                              </a>
-                            </li>
-                          </ul>
                         </div>
                       </div>
                     </div>
@@ -233,6 +228,17 @@
             </div>
           </header>
           <!-- #### END HEADER ####-->
+
+          <?php
+          $response = file_get_contents('http://localhost:8000/api/index');
+          $data = json_decode($response);
+
+          $totalDokter = $data->data->dokter;
+          $totalMitra = $data->data->mitra;
+          $dataMitra = $data->data->mitras;
+          $dataBerita = $data->data->articles;
+          $dataTestimonial = $data->data->testimonials;
+          ?>
 
           <main class="container-wrap">
             <!-- ##### BANNER #####-->
@@ -326,42 +332,42 @@
                   </div>
                 </div>
               </div>
-            </section><!-- ##### END BANNER #####-->
+            </section>
+            <!-- ##### END BANNER #####-->
 
             <!-- ##### COUNTER #####-->
-
-            <?php
-
-            $response = file_get_contents('http://localhost:8000/api/index');
-            $data = json_decode($response);
-            $totalDokter = $data->data->dokter;
-            $totalMitra = $data->data->mitra;
-
-            echo '
             <section class="space-top space-top-short-xs" id="about">
               <div class="counter-wrap">
                 <div class="container max-lg">
                   <div class="row justify-content-center align-items-center">
+                    <!-- Dokter Counter -->
                     <div class="col-sm-4 col-lg-3 px-6">
-                      <div class="counter-item"><span class="icon ion-ios-people-outline use-text-primary-color"></span>
+                      <div class="counter-item">
+                        <span class="icon ion-ios-people-outline use-text-primary-color"></span>
                         <div class="text">
-                          <h4>+<span class="numscroller" data-min="0 data-delay=" 5" data-increment="8">&nbsp; ' . htmlspecialchars($totalDokter) . '</span></h4>
+                          <h4>+<span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;<?= htmlspecialchars($totalDokter) ?></span></h4>
                           <h6 class="use-text-subtitle">dokter</h6>
                         </div>
                       </div>
                       <p class="text-center">Dokter-dokter yang telah mengikuti dan lulus pelatihan kami</p>
                     </div>
+
+                    <!-- Mitra Counter -->
                     <div class="col-sm-4 col-lg-3 px-6">
-                      <div class="counter-item"><span class="icon ion-ios-home-outline use-text-primary-color"></span>
+                      <div class="counter-item">
+                        <span class="icon ion-ios-home-outline use-text-primary-color"></span>
                         <div class="text">
-                          <h4>+<span id="data-mitra" class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp; ' . htmlspecialchars($totalMitra) . ' </span></h4>
+                          <h4>+<span id="data-mitra" class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;<?= htmlspecialchars($totalMitra) ?></span></h4>
                           <h6 class="use-text-subtitle">mitra</h6>
                         </div>
                       </div>
                       <p class="text-center">Institusi dan organisasi ternama yang mendukung peningkatan kompetensi medis</p>
                     </div>
+
+                    <!-- Materi Counter -->
                     <div class="col-sm-4 col-lg-3 px-6">
-                      <div class="counter-item"><span class="icon ion-ios-medkit-outline use-text-primary-color"></span>
+                      <div class="counter-item">
+                        <span class="icon ion-ios-medkit-outline use-text-primary-color"></span>
                         <div class="text">
                           <h4>+<span class="numscroller" data-min="0" data-max="24" data-delay="5" data-increment="8">&nbsp;</span></h4>
                           <h6 class="use-text-subtitle">akses materi</h6>
@@ -372,9 +378,7 @@
                   </div>
                 </div>
               </div>
-            </section>';
-
-            ?>
+            </section>
             <!-- ##### END COUNTER #####-->
 
             <!-- ##### FACILITY #####-->
@@ -392,28 +396,20 @@
                       <div class="item carousel-prop show-lg-up">
                         <div></div>
                       </div>
-
-                      <?php
-
-                      $response = file_get_contents('http://localhost:8000/api/index');
-                      $data = json_decode($response);
-                      $dataBerita = $data->data->articles;
-
-                      foreach ($dataBerita as $item) {
-
-                        echo '<div class="item">
-                        <div class="card facility-card">
-                          <figure><img src="./assets/images/medical/' . htmlspecialchars($item->attachment) . '" alt="img" /></figure>
-                          <div class="text">
-                            <h6>' . htmlspecialchars($item->title) . '</h6>
-                            <p>' . strip_tags($item->description) . '</p>
+                      <?php foreach ($dataBerita as $item): ?>
+                        <div class="item">
+                          <div class="card facility-card">
+                            <figure>
+                              <img src="./assets/images/medical/<?= htmlspecialchars($item->attachment) ?>" alt="img" />
+                            </figure>
+                            <div class="text">
+                              <h6><?= htmlspecialchars($item->title) ?></h6>
+                              <p><?= strip_tags($item->description) ?></p>
+                            </div>
+                            <a class="btn waves-effect block secondary button" href="detail-news.php?id=<?= $item->id ?>">See Detail</a>
                           </div>
-                          <a class="btn waves-effect block secondary button" href="detail-blog.html">See Detail</a>
                         </div>
-                      </div>';
-                      }
-
-                      ?>
+                      <?php endforeach; ?>
                     </div>
                   </div>
                 </div>
@@ -549,45 +545,35 @@
                 </div>
                 <div class="carousel">
                   <div class="slick-carousel" id="testimonial_carousel" data-length="9">
-
-                    <?php
-
-                    $response = file_get_contents('http://localhost:8000/api/index');
-                    $data = json_decode($response);
-                    $dataTestimonial = $data->data->testimonials;
-
-                    foreach ($dataTestimonial as $item) {
+                    <?php foreach ($dataTestimonial as $item):
                       $avatar = 'assets/images/avatars/avatar2.jpg';
-
-                      echo '<div class="item">
-                            <div class="testimonial-card">
-                              <div class="card paper">
-                                <p>' . htmlspecialchars($item->testimonial_text) . '</p>
-                                <div class="rating">';
-
-                      for ($i = 1; $i <= 5; $i++) {
-                        if ($i <= $item->rating) {
-                          echo '<i class="material-icons star-icon" title="' . $i . '">star</i>';
-                        } else {
-                          echo '<i class="material-icons star-icon-disable" title="' . $i . '">star</i>';
-                        }
-                      }
-
-                      echo '</div>
+                    ?>
+                      <div class="item">
+                        <div class="testimonial-card">
+                          <div class="card paper">
+                            <p><?= htmlspecialchars($item->testimonial_text) ?></p>
+                            <div class="rating">
+                              <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <?php if ($i <= $item->rating): ?>
+                                  <i class="material-icons star-icon" title="<?= $i ?>">star</i>
+                                <?php else: ?>
+                                  <i class="material-icons star-icon-disable" title="<?= $i ?>">star</i>
+                                <?php endif; ?>
+                              <?php endfor; ?>
+                            </div>
                           </div>
                           <div class="person">
                             <div class="name">
-                              <h6>' . htmlspecialchars($item->anggota->nama) . '</h6><span class="caption">' . htmlspecialchars($item->anggota->nama) . '</span>
+                              <h6><?= htmlspecialchars($item->anggota->nama) ?></h6>
+                              <span class="caption"><?= htmlspecialchars($item->anggota->nama) ?></span>
                             </div>
                             <div class="avatar-img avatar">
-                              <img src="' . $avatar . '" alt="' . htmlspecialchars($item->anggota->nama) . '" />
+                              <img src="<?= $avatar ?>" alt="<?= htmlspecialchars($item->anggota->nama) ?>" />
                             </div>
                           </div>
                         </div>
-                      </div>';
-                    }
-
-                    ?>
+                      </div>
+                    <?php endforeach; ?>
                     <div class="item show-lg-up">
                       <div class="item-props-last"></div>
                     </div>
@@ -622,57 +608,53 @@
                   </div>
                   <div class="row">
 
-                    <?php
-
-                    $response = file_get_contents('http://localhost:8000/api/index');
-                    $data = json_decode($response);
-                    $dataMitra = $data->data->mitras;
-
-                    foreach ($dataMitra as $item) {
-
-                      echo '<div class="col-md-6 col-sm-12 px-3">
-                      <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="${delay}s" data-wow-duration="0.4s">
-                        <div class="card address-card">
-                          <div class="paper">
-                            <figure>
-                              <img src="assets/images/medical/' . htmlspecialchars($item->image) . '" alt="clinic" />
-                            </figure>
-                            <div class="detail-info">
-                              <h6 class="use-text-subtitle2 mb-sm-6">' . htmlspecialchars($item->title) . '</h6>
-                              <div class="row">
-                                <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0">
-                                  <i class="material-icons icon use-text-primary-color">local_phone</i> ' . htmlspecialchars($item->telephone) . '
-                                </div>
-                                <div class="col-lg-6 col-sm-12 px-2 py-1">
-                                  <div class="hidden-xs-down">
-                                    <i class="material-icons icon use-text-secondary-color">email</i> ' . htmlspecialchars($item->email) . '
+                    <?php foreach ($dataMitra as $item): ?>
+                      <div class="col-md-6 col-sm-12 px-3">
+                        <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="${delay}s" data-wow-duration="0.4s">
+                          <div class="card address-card">
+                            <div class="paper">
+                              <figure>
+                                <img src="assets/images/medical/<?= htmlspecialchars($item->image) ?>" alt="clinic" />
+                              </figure>
+                              <div class="detail-info">
+                                <h6 class="use-text-subtitle2 mb-sm-6"><?= htmlspecialchars($item->title) ?></h6>
+                                <div class="row">
+                                  <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0">
+                                    <i class="material-icons icon use-text-primary-color">local_phone</i>
+                                    <?= htmlspecialchars($item->telephone) ?>
+                                  </div>
+                                  <div class="col-lg-6 col-sm-12 px-2 py-1">
+                                    <div class="hidden-xs-down">
+                                      <i class="material-icons icon use-text-secondary-color">email</i>
+                                      <?= htmlspecialchars($item->email) ?>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-12 px-sm-2 px-0 py-1">
+                                    <div class="text-truncate">
+                                      <i class="material-icons icon use-text-accent-color">location_on</i>
+                                      <?= htmlspecialchars($item->address) ?>
+                                    </div>
                                   </div>
                                 </div>
-                                <div class="col-md-12 px-sm-2 px-0 py-1">
-                                  <div class="text-truncate">
-                                    <i class="material-icons icon use-text-accent-color">location_on</i>' . htmlspecialchars($item->address) . '
-                                  </div>
+                                <div class="hidden-xs-down">
+                                  <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
                                 </div>
                               </div>
-                              <div class="hidden-xs-down">
-                                <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
-                              </div>
+                              <a class="mobile-link waves-effect" href="contact-map.html"></a>
                             </div>
-                            <a class="mobile-link waves-effect" href="contact-map.html"></a>
                           </div>
                         </div>
                       </div>
-                    </div>';
-                    }
-
-                    ?>
+                    <?php endforeach; ?>
 
                   </div>
                 </div>
               </div>
-            </section><!-- ##### END CLINICS #####-->
+            </section>
+            <!-- ##### END CLINICS #####-->
 
-          </main><!-- ##### FOOTER #####-->
+          </main>
+          <!-- ##### FOOTER #####-->
           <footer class="footer-sitemap">
             <div class="footer-deco">
               <div class="left-deco"></div>
@@ -687,66 +669,24 @@
                     <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                   </div>
                   <p class="body-2">Platform pelatihan dan pengembangan kompetensi dokter di Indonesia, dengan kurikulum terstandar dan dukungan mitra terpercaya.</p>
-                  <p class="body-2 hidden-sm-down">&copy; ICT PDSI</p>
+                  <p class="body-2 hidden-sm-down">© Copyright 2025 PDSI</p>
                 </div>
                 <div class="col-md-6 col-sm-12 pa-4">
                   <ul class="show-sm-down collapsible">
                     <li class="accordion-content">
                       <div class="collapsible-header">
-                        <h6 class="title">Company</h6><i class="material-icons right arrow">expand_more</i>
-                      </div>
-                      <div class="collapsible-body">
-                        <ul>
-                          <li><a href="#team">Team</a></li>
-                          <li><a href="#history">History</a></li>
-                          <li><a href="#contact-us">Contact us</a></li>
-                          <li><a href="#locations">Locations</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="accordion-content">
-                      <div class="collapsible-header">
-                        <h6 class="title">Resources</h6><i class="material-icons right arrow">expand_more</i>
-                      </div>
-                      <div class="collapsible-body">
-                        <ul>
-                          <li><a href="#resource">Resource</a></li>
-                          <li><a href="#resource-name">Resource name</a></li>
-                          <li><a href="#another-resource">Another resource</a></li>
-                          <li><a href="#final-resource">Final resource</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="accordion-content">
-                      <div class="collapsible-header">
                         <h6 class="title">Legal</h6><i class="material-icons right arrow">expand_more</i>
                       </div>
-                      <div class="collapsible-body">
-                        <ul>
-                          <li><a href="#privacy-policy">Privacy policy</a></li>
-                          <li><a href="#terms-of-use">Terms of use</a></li>
-                        </ul>
-                      </div>
+                      <ul>
+                        <li><a href="#privacy-policy">Privacy policy</a></li>
+                        <li><a href="#terms-of-use">Terms of use</a></li>
+                      </ul>
                     </li>
                   </ul>
                   <div class="row show-md-up justify-content-around">
                     <div class="col pa-4 site-map-item">
-                      <h6 class="title mb-4">Company</h6>
-                      <ul>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#history">History</a></li>
-                        <li><a href="#contact-us">Contact us</a></li>
-                        <li><a href="#locations">Locations</a></li>
-                      </ul>
                     </div>
                     <div class="col pa-4 site-map-item">
-                      <h6 class="title mb-4">Resources</h6>
-                      <ul>
-                        <li><a href="#resource">Resource</a></li>
-                        <li><a href="#resource-name">Resource name</a></li>
-                        <li><a href="#another-resource">Another resource</a></li>
-                        <li><a href="#final-resource">Final resource</a></li>
-                      </ul>
                     </div>
                     <div class="col pa-4 site-map-item">
                       <h6 class="title mb-4">Legal</h6>
@@ -759,86 +699,24 @@
                 </div>
                 <div class="col-md-3 col-sm-12 pa-4">
                   <div class="socmed">
-                    <a class="btn btn-icon waves-effect"><span class="ion-social-facebook icon"></span></a>
-                    <a class="btn btn-icon waves-effect"><span class="ion-social-twitter icon"></span></a>
-                    <a class="btn btn-icon waves-effect"><span class="ion-social-instagram icon"></span></a>
-                    <a class="btn btn-icon waves-effect"><span class="ion-social-linkedin icon"></span></a>
+                    <a href="https://www.facebook.com/officialpdsi" target="_blank" class="btn btn-icon waves-effect"><span class="ion-social-facebook icon"></span></a>
+                    <a href="https://x.com/PP_PDSI" target="_blank" class="btn btn-icon waves-effect"><span class="ion-social-twitter icon"></span></a>
+                    <a href="https://www.instagram.com/dokterseluruhindonesia/" target="_blank" class="btn btn-icon waves-effect"><span class="ion-social-instagram icon"></span></a>
+                    <a href="https://id.linkedin.com/company/perkumpulan-dokter-seluruh-indonesia" target="_blank" class="btn btn-icon waves-effect"><span class="ion-social-linkedin icon"></span></a>
                   </div>
-                  <div class="select-lang select-outlined">
-                    <select class="select" id="lang_select">
-                      <option value="ar">󠁥󠁮󠁧󠁿العربيّة</option>
-                      <option value="de">Deutsch</option>
-                      <option value="en" selected>English</option>
-                      <option value="id">󠁥󠁮󠁧󠁿Bahasa Indonesia</option>
-                      <option value="pt">󠁥󠁮󠁧󠁿Português</option>
-                      <option value="zh">简体中文</option>
-                    </select>
-                  </div>
-                  <p class="body-2 mt-5 text-center hidden-md-up">&copy; Nirwana Theme 2022</p>
+                  <p class="body-2 mt-5 text-center hidden-md-up">&copy; ICT PDSI</p>
                 </div>
               </div>
             </div>
-          </footer><!-- ##### END FOOTER #####-->
-
-          <!-- ##### NOTIFICATIONS #####-->
-          <!-- <div class="hidden-md-down">
-            <div class="notification alert alert-dismissible fade show" role="alert">
-              <div class="wrapper">
-                <div class="content">
-                  <div class="action">This is an example of a message that is commonly used for important information to visitors or users. Please click the button beside to close this message.</div>
-                  <button class="btn btn-outlined waves-effect waves-light white" type="button" data-bs-dismiss="alert" aria-label="Close">Accept</button>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- ##### END NOTIFICATIONS #####-->
-
-          <!-- ##### CORNER #####-->
-          <!-- <div class="hidden-md-down">
-            <div class="chat">
-              <div class="panel" id="chat_panel">
-                <header>
-                  <h3><span class="indicator online"></span>Live Chat</h3>
-                  <div class="btn btn-icon waves-effect close" id="close_chat"><i class="ion-android-close"></i></div>
-                </header>
-                <div class="chat-room" id="chat-container">
-                  <ul>
-                    <li class="item">
-                      <div class="avatar">
-                        <img class="avatar-img" src="./assets/images/avatars/pp_boy4.svg" alt="visitor" />
-                      </div>
-                      <span class="talk from">Hola!, Maecenas</span>
-                    </li>
-                    <li class="item justify-content-end">
-                      <span class="talk">Hola!, Maecenas nisl </span>
-                    </li>
-                    <li class="item">
-                      <div class="avatar">
-                        <img class="avatar-img" src="./assets/images/avatars/pp_boy4.svg" alt="visitor" />
-                      </div>
-                      <span class="talk from">Hola!, Maecenas</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="form">
-                  <div class="input-field"><input id="chat_field" type="text">
-                    <label for="chat_field">Ask something</label>
-                  </div>
-                  <div class="btn-floating waves-effect send" id="send_message"><span class="ion-android-send"></span></div>
-                </div>
-              </div>
-              <div class="btn-floating btn-large chat-button" id="toggle_chat">
-                <span class="indicator online"></span><i class="ion-chatbox"></i>
-              </div>
-            </div>
-          </div> -->
+          </footer>
+          <!-- ##### END FOOTER #####-->
 
           <div class="page-nav" id="page_nav">
             <nav class="section-nav">
               <div class="scrollnav">
                 <ul>
                   <li style="top: 120px"><a class="tooltipped" href="#facility" data-position="left" data-tooltip="courses"></a></li>
-                  <li style="top: 90px"><a class="tooltipped" href="#ask-doctors" data-position="left" data-tooltip="doctors"></a></li>
+                  <li style="top: 90px"><a class="tooltipped" href="#speciality" data-position="left" data-tooltip="doctors"></a></li>
                   <li style="top: 60px"><a class="tooltipped" href="#testimonials" data-position="left" data-tooltip="testimonials"></a></li>
                   <li style="top: 30px"><a class="tooltipped" href="#clinics" data-position="left" data-tooltip="mitra"></a></li>
                 </ul>
@@ -848,132 +726,11 @@
                 <div class="icon material-icons">arrow_upward</div>
               </a></div>
           </div>
-
           <!-- ##### END CORNER #####-->
         </div>
       </div>
     </div>
-  </div><!-- Scripts-->
-  <!-- Put the 3rd/plugins javascript here-->
-  <!-- <script>
-    fetch('http://localhost:8000/api/index')
-      .then(response => {
-        if (!response.ok) throw new Error('Network response was not ok');
-        return response.json();
-      })
-      .then(data => {
-        document.getElementById('data-dokter').innerText = `${data.data.dokter}`;
-        document.getElementById('data-mitra').innerText = `${data.data.mitra}`;
-
-        const mitraContainer = document.getElementById('mitra-container');
-        const mitras = data.data.mitras;
-
-        mitras.forEach((mitra, index) => {
-          const delay = (index * 0.2).toFixed(1); // delay animasi meningkat
-
-          const mitraHTML = `
-          <div class="col-md-6 col-sm-12 px-3">
-            <div class="wow fadeInUpShort" data-wow-offset="-50" data-wow-delay="${delay}s" data-wow-duration="0.4s">
-              <div class="card address-card">
-                <div class="paper">
-                  <figure>
-                    <img src="assets/images/medical/${mitra.image}" alt="clinic" />
-                  </figure>
-                  <div class="detail-info">
-                    <h6 class="use-text-subtitle2 mb-sm-6">${mitra.title}</h6>
-                    <div class="row">
-                      <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0">
-                        <i class="material-icons icon use-text-primary-color">local_phone</i> ${mitra.telephone}
-                      </div>
-                      <div class="col-lg-6 col-sm-12 px-2 py-1">
-                        <div class="hidden-xs-down">
-                          <i class="material-icons icon use-text-secondary-color">email</i> ${mitra.email}
-                        </div>
-                      </div>
-                      <div class="col-md-12 px-sm-2 px-0 py-1">
-                        <div class="text-truncate">
-                          <i class="material-icons icon use-text-accent-color">location_on</i> ${mitra.address}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="hidden-xs-down">
-                      <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
-                    </div>
-                  </div>
-                  <a class="mobile-link waves-effect" href="contact-map.html"></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
-
-          mitraContainer.insertAdjacentHTML('beforeend', mitraHTML);
-        });
-
-        const articles = data.data.articles;
-        const carousel = document.getElementById('facilities_carousel');
-
-        articles.forEach((article, index) => {
-          const image = article.attachment ?
-            `./storage/articles/${article.attachment}` :
-            './assets/images/medical/default-article.jpg';
-
-          const shortDesc = article.description
-            .replace(/<[^>]*>?/gm, '')
-            .slice(0, 150) + '...';
-
-          const articleHTML = `
-          <div class="item">
-            <div class="card facility-card">
-              <figure><img src="${image}" alt="img" /></figure>
-              <div class="text">
-                <h6>${article.title}</h6>
-                <p>${shortDesc}</p>
-              </div>
-              <a class="btn waves-effect block secondary button" href="detail-blog.html?id=${article.id}">See Detail</a>
-            </div>
-          </div>
-        `;
-
-          // carousel.insertAdjacentHTML('beforeend', articleHTML);
-        });
-
-        // const testimoniContainer = document.getElementById('asdf');
-        // const testimonials = data.data.testimonials;
-
-        // testimonials.forEach((testimoni, index) => {
-        //   const delay = (index * 0.2).toFixed(1); // delay animasi meningkat
-
-        //   const testimoniHTML = `
-        //   <div class="item">
-        //     <div class="testimonial-card">
-        //       <div class="card paper">
-        //         <p>Kursus ini membantu saya memperbarui pengetahuan dengan cepat dan efisien. Sangat direkomendasikan untuk sejawat.</p>
-        //         <div class="rating"><i class="material-icons star-icon" title="1">star</i><i class="material-icons star-icon" title="2">star</i><i class="material-icons star-icon" title="3">star</i><i class="material-icons star-icon" title="4">star</i><i class="material-icons star-icon-disable" title="1">star</i></div>
-        //       </div>
-        //       <div class="person">
-        //         <div class="name">
-        //           <h6>Jean Doe</h6><span class="caption">Dokter Umum</span>
-        //         </div>
-        //         <div class="avatar-img avatar">
-        //           <img src="assets\images\avatars\avatar2.jpg" alt="name" />
-        //         </div>
-        //       </div>
-        //     </div>
-        //   </div>
-        // `;
-
-        //   testimoniContainer.insertAdjacentHTML('beforeend', testimoniHTML);
-        // });
-
-      })
-
-      .catch(error => {
-        document.getElementById('data-dokter').innerText = `Error: ${error.message}`;
-        document.getElementById('data-mitra').innerText = `Error: ${error.message}`;
-        console.error('Error:', error);
-      });
-  </script> -->
+  </div>
 
   <script src="./assets/js/vendors/jquery.min.js"></script>
   <script src="./assets/js/vendors/bootstrap.min.js"></script>
