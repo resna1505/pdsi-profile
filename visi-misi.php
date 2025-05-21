@@ -43,7 +43,7 @@
   <meta property="og:image" content="/images/logo-medical.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <title>PDSI - Pricing </title><!-- Styles-->
+  <title>PDSI - Visi Misi </title><!-- Styles-->
   <!-- Put the 3rd/plugins css here-->
 
   <style>
