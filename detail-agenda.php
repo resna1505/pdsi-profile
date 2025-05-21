@@ -72,7 +72,7 @@
                 <ul class="collapsible expandable">
                   <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">berita</a></li>
                   <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">testimoni</a></li>
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">mitra</a></li>                  
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">mitra</a></li>
                   <li class="collection-item group-child has-child">
                     <div class="collapsible-header">
                       <a class="waves-effect text-truncate menu-list" href="#!">
@@ -136,7 +136,7 @@
               </div>
             </div>
           </div>
-          
+
           <header class="app-bar header" id="header">
             <div class="container">
               <div class="header-content">
@@ -144,7 +144,7 @@
                   <button class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down" id="mobile_menu" type="button" data-target="slide_menu"><span class="hamburger-box"><span class="bar hamburger-inner"></span></span></button>
                   <div class="logo">
                     <a href="index.html">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>PDSI</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </a>
                   </div>
                   <div class="scrollactive-nav show-lg-up multi-menu">
@@ -250,6 +250,41 @@
           </header>
           <!-- #### END HEADER ####-->
 
+          <?php
+          // 1. Get article ID from URL
+          $articleId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+
+          // 2. Fetch all articles from API
+          $apiUrl = "http://localhost:8000/api/news";
+          $response = file_get_contents($apiUrl);
+          $data = json_decode($response, true);
+
+          // 3. Find the requested article and prepare latest posts
+          $article = null;
+          $latestPosts = [];
+          if ($data && $data['status'] === 'success' && !empty($data['data']['articles'])) {
+            foreach ($data['data']['articles'] as $item) {
+              if ($item['id'] == $articleId) {
+                $article = $item;
+              } else {
+                $latestPosts[] = $item;
+              }
+            }
+
+            // Get only 5 latest posts (excluding current article)
+            $latestPosts = array_slice($latestPosts, 0, 5);
+          }
+
+          // 4. If article not found, show error
+          if (!$article) {
+            echo '<div class="alert alert-danger">Article not found</div>';
+            exit;
+          }
+
+          // 5. Format dates
+          $articleDate = date('F j, Y', strtotime($article['created_at']));
+          ?>
+
           <div class="container-general pt-12">
             <div class="container pt-3">
               <div class="row">
@@ -258,132 +293,38 @@
                 <div class="col-md-8 col-sm-12 px-0 px-sm-3">
                   <div class="blog-style">
                     <article class="blog-content">
-                      <h4 class="text-h4 title-blog">Maecenas rutrum dolor sed nisi</h4><span class="caption">June 19, 2021 by Oliver</span>
-                      <figure class="image-blog"><img src="https://placehold.co/1050x700/1DE9B6/767676/" alt="blog" /></figure>
-                      <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                      <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p><strong>Heading</strong>
-                      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p><strong>Sub-heading</strong>
-                      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                      <p>Example code block Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo. Tortor mauris condimentum nibh, ut fermentum massa.</p><strong>Sub-heading</strong>
-                      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                      <figure class="image-blog"><img src="https://placehold.co/1050x700/43A047/FFFFFF/" alt="blog" /></figure>
-                      <ul class="list">
-                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-                        <li>Donec id elit non mi porta gravida at eget metus.</li>
-                        <li>Nulla vitae elit libero, a pharetra augue.</li>
-                      </ul>
-                      <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-                      <ol>
-                        <li>Vestibulum id ligula porta felis euismod semper.</li>
-                        <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-                        <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-                      </ol>
-                      <div class="share-socmed">
-                        <h6 class="use-text-primary use-text-bold mb-3">Share to social media</h6>
-                        <a class="btn btn-outlined waves-effect facebook mq-xs-down" data-class="btn-icon"><i class="icon ion-social-facebook left"></i><span class="hidden-xs-down">facebook</span></a>
-                        <a class="btn btn-outlined waves-effect twitter mq-xs-down" data-class="btn-icon"><i class="icon ion-social-twitter left"></i><span class="hidden-xs-down">twitter</span></a>
-                        <a class="btn btn-outlined waves-effect linkedin mq-xs-down" data-class="btn-icon"><i class="icon ion-social-linkedin left"></i><span class="hidden-xs-down">linkedin</span></a>
+                      <h4 class="text-h4 title-blog"><?php echo htmlspecialchars($article['title']); ?></h4>
+                      <span class="caption"><?php echo $articleDate; ?> by <?php echo htmlspecialchars($article['author']); ?></span>
+
+                      <?php if (!empty($article['attachment'])): ?>
+                        <figure class="image-blog">
+                          <img src="./assets/images/medical/<?php echo htmlspecialchars($article['attachment']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" />
+                        </figure>
+                      <?php endif; ?>
+
+                      <div class="article-content">
+                        <?php
+                        // Output the full description (contains HTML from API)
+                        // Note: Only do this if you trust the API content
+                        echo $article['description'];
+                        ?>
                       </div>
                     </article>
                   </div>
-                  <div class="comment">
-                    <h6 class="use-text-primary use-text-bold mb-3">Write Comments</h6>
-                    <div class="comments-style">
-                      <div class="form-comment">
-                        <div class="write">
-                          <div class="avatar-img">
-                            <img src="./assets/images/avatars/pp_boy3.svg" alt="avatar" />
-                          </div>
-                          <div class="input-field">
-                            <input id="write_comment" placeholder="Write Comments" type="text" />
-                            <button class="btn btn-small waves-effect primary send-btn">
-                              <span class="hidden-xs-down">Send Message</span><i class="material-icons icon show-xs-down">send</i>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="collection border-0">
-                      <div class="comments-style">
-                        <div class="comment-list">
-                          <div class="collection-item avatar">
-                            <img class="circle" src="./assets/images/avatars/pp_boy4.svg" alt="John Doe" />
-                            <span class="title font-weight-medium">John Doe</span>
-                            <div>
-                              <span class="caption">13 Dec 2021</span>
-                              <p class="mt-2">Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.</p>
-                            </div>
-                          </div>
-                          <hr class="divider" />
-                        </div>
-                        <div class="comment-list">
-                          <div class="collection-item avatar">
-                            <img class="circle" src="./assets/images/avatars/pp_boy4.svg" alt="John Doe" />
-                            <span class="title font-weight-medium">John Doe</span>
-                            <div>
-                              <span class="caption">13 Dec 2021</span>
-                              <p class="mt-2">Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.</p>
-                            </div>
-                          </div>
-                          <hr class="divider" />
-                        </div>
-                        <div class="comment-list">
-                          <div class="collection-item avatar">
-                            <img class="circle" src="./assets/images/avatars/pp_boy4.svg" alt="John Doe" />
-                            <span class="title font-weight-medium">John Doe</span>
-                            <div>
-                              <span class="caption">13 Dec 2021</span>
-                              <p class="mt-2">Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.</p>
-                            </div>
-                          </div>
-                          <hr class="divider" />
-                        </div>
-                        <div class="comment-list">
-                          <div class="collection-item avatar">
-                            <img class="circle" src="./assets/images/avatars/pp_boy4.svg" alt="John Doe" />
-                            <span class="title font-weight-medium">John Doe</span>
-                            <div>
-                              <span class="caption">13 Dec 2021</span>
-                              <p class="mt-2">Maecenas nisl libero, tincidunt id odio id, feugiat vulputate quam. Vestibulum feugiat rhoncus metus. In non erat et ipsum molestie porta sit amet ut felis. Vestibulum a massa vestibulum, gravida odio id, fringilla ipsum.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- ##### EMD ARTICLE #####-->
+                </div>
+                <!-- ##### END ARTICLE #####-->
 
                 <!-- ##### SIDEBAR #####-->
                 <div class="col-md-4 col-sm-12 px-0 px-sm-3">
                   <div class="blog-style">
                     <div class="sidebar">
-                      <div class="card paper color">
-                        <header>
-                          <div class="icon"><i class="material-icons small white-text">signal_wifi_4_bar</i></div>
-                          <div class="card-content">
-                            <span class="card-title">Subscribe</span>
-                            <p>Subscribe our newsletter</p>
-                          </div>
-                        </header>
-                        <div class="content">
-                          <div>
-                            <div class="form">
-                              <div class="input-field flex-fill">
-                                <input class="input dark" id="subscribe" type="text" />
-                                <label class="white-text" for="subscribe">Email? *</label>
-                              </div>
-                              <div class="btn btn-outlined white small send">submit</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                       <div class="py-3"></div>
                       <div class="card paper">
                         <header>
                           <div class="icon"><i class="material-icons small">account_circle</i></div>
                           <div class="card-content">
                             <span class="card-title">About Us</span>
-                            <p>commodo augue. In dictum leo nec odio euismod pretium.</p>
+                            <p>Ikatan Dokter Spesialis Penyakit Dalam (IDSPDI) adalah wadah profesional untuk meningkatkan kompetensi, etika, dan kolaborasi antar spesialis di Indonesia.</p>
                           </div>
                         </header>
                         <div class="content">
@@ -391,18 +332,18 @@
                             <ul class="collection">
                               <li class="collection-item avatar">
                                 <i class="circle icon primary material-icons grey lighten-3">date_range</i>
-                                <span class="use-text-medium">Born</span>
-                                <p>Jan 9, 1974</p>
+                                <span class="use-text-medium">Didirikan</span>
+                                <p>Jan 9, 2025</p>
                               </li>
                               <li class="collection-item avatar">
                                 <i class="circle icon primary material-icons grey lighten-3">local_phone</i>
-                                <span class="use-text-medium">Phone</span>
-                                <p>(+62)8765432190</p>
+                                <span class="use-text-medium">Ketua Umum</span>
+                                <p>Dr. Ahmad Fauzi, Sp.PD</p>
                               </li>
                               <li class="collection-item avatar">
                                 <i class="circle icon primary material-icons grey lighten-3">location_on</i>
-                                <span class="use-text-medium">Address</span>
-                                <p>Chicendo Street no.105 Block A/5A - Barcelona, Spain</p>
+                                <span class="use-text-medium">Kantor Pusat</span>
+                                <p>Jakarta, Indonesia</p>
                               </li>
                             </ul>
                           </div>
@@ -413,173 +354,29 @@
                         <header>
                           <div class="icon"><i class="material-icons small">bookmark</i></div>
                           <div class="card-content">
-                            <span class="card-title">Latest Post</span>
+                            <span class="card-title">Artikel Terbaru</span>
                           </div>
                         </header>
                         <div class="content">
                           <div>
                             <div class="collection">
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="d-block">Vestibulum bibendum nisi eget magna</span><span class="caption">Jan 9, 2014</span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="d-block">Quisque a consequat ante</span><span class="caption">Jan 9, 2014</span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="d-block">Donec dignissim, odio ac imperdiet luctus</span><span class="caption">Jan 9, 2014</span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="d-block">Suspendisse eleifend nunc non</span><span class="caption">Jan 9, 2014</span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="d-block">Vestibulum a massa vestibulum</span><span class="caption">Jan 9, 2014</span>
-                              </a>
-                            </div><a class="btn waves-effect btn-flat primary-text block">see all</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="py-3"></div>
-                      <div class="card paper">
-                        <header>
-                          <div class="icon"><i class="material-icons small">message</i></div>
-                          <div class="card-content">
-                            <span class="card-title">Latest Comment</span>
-                          </div>
-                        </header>
-                        <div class="content">
-                          <div class="collection">
-                            <a class="waves-effect collection-item avatar" href="#!">
-                              <i class="circle icon avatar-char teal">J</i>
-                              <span class="d-block use-text-medium">John Doe</span>
-                              <span>Duis viverra neque eget </span>
-                            </a>
-
-                            <a class="waves-effect collection-item avatar" href="#!">
-                              <i class="circle icon avatar-char pink">J</i>
-                              <span class="d-block use-text-medium">Jean Doe</span>
-                              <span>Duis viverra neque eget </span>
-                            </a>
-
-                            <a class="waves-effect collection-item avatar" href="#!">
-                              <i class="circle icon avatar-char purple">J</i>
-                              <span class="d-block use-text-medium">Jim Doe</span>
-                              <span>Duis viverra neque eget </span>
-                            </a>
-
-                            <a class="waves-effect collection-item avatar" href="#!">
-                              <i class="circle icon avatar-char amber">J</i>
-                              <span class="d-block use-text-medium">Jihan Doe</span>
-                              <span>Duis viverra neque eget </span>
-                            </a>
-
-                            <a class="waves-effect collection-item avatar" href="#!">
-                              <i class="circle icon avatar-char cyan">J</i>
-                              <span class="d-block use-text-medium">Jena Doe</span>
-                              <span>Duis viverra neque eget </span>
-                            </a>
-
-                            <a class="waves-effect collection-item avatar" href="#!">
-                              <i class="circle icon avatar-char deepBlue">J</i>
-                              <span class="d-block use-text-medium">Johan Doe</span>
-                              <span>Duis viverra neque eget </span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="py-3"></div>
-                      <div class="card paper">
-                        <header>
-                          <div class="icon"><i class="material-icons small">folder</i></div>
-                          <div class="card-content">
-                            <span class="card-title">Archived</span>
-                          </div>
-                        </header>
-                        <div class="content">
-                          <div>
-                            <div class="collection">
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="use-text-medium">October 2018</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="use-text-medium">September 2018</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="use-text-medium">August 2018</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="use-text-medium">July 2018</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="use-text-medium">June 2018</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="use-text-medium">April 2018</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="use-text-medium">March 2018</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
-                              </a>
-
-                              <a class="waves-effect collection-item" href="#!">
-                                <span class="use-text-medium">Febuary 2018</span><span class="secondary-content"><i class="material-icons icon primary">keyboard_arrow_right</i></span>
-                              </a>
+                              <?php foreach ($latestPosts as $latest):
+                                $latestDate = date('M j, Y', strtotime($latest['created_at']));
+                              ?>
+                                <a class="waves-effect collection-item" href="detail-news.php?id=<?php echo $latest['id']; ?>">
+                                  <span class="d-block"><?php echo htmlspecialchars($latest['title']); ?></span>
+                                  <span class="caption"><?php echo $latestDate; ?></span>
+                                </a>
+                              <?php endforeach; ?>
                             </div>
-                          </div><a class="btn waves-effect btn-flat primary-text block">see all</a>
-                        </div>
-                      </div>
-                      <div class="py-3"></div>
-                      <div class="card paper">
-                        <header>
-                          <div class="icon"><i class="material-icons small">photo_library</i></div>
-                          <div class="card-content">
-                            <span class="card-title">Album Post</span>
+                            <a class="btn waves-effect btn-flat primary-text block" href="news.php">Lihat Semua</a>
                           </div>
-                        </header>
-                        <div class="content">
-                          <div>
-                            <div class="row ma-0">
-                              <div class="col-6 pa-0 gallery-item">
-                                <div class="card-image">
-                                  <img class="responsive-image text-right" src="https://placehold.co/1050x700/009688/FFFFFF/" alt="thumb" />
-                                  <a class="btn btn-icon waves-effect btn-small"><i class="material-icons white-text">star</i></a>
-                                </div>
-                              </div>
-                              <div class="col-6 pa-0 gallery-item">
-                                <div class="card-image">
-                                  <img class="responsive-image text-right" src="https://placehold.co/1050x700/0097A7/FFFFFF/" alt="thumb" />
-                                  <a class="btn btn-icon waves-effect btn-small"><i class="material-icons white-text">star</i></a>
-                                </div>
-                              </div>
-                              <div class="col-6 pa-0 gallery-item">
-                                <div class="card-image">
-                                  <img class="responsive-image text-right" src="https://placehold.co/1050x700/00E5FF/767676/" alt="thumb" />
-                                  <a class="btn btn-icon waves-effect btn-small"><i class="material-icons white-text">star</i></a>
-                                </div>
-                              </div>
-                              <div class="col-6 pa-0 gallery-item">
-                                <div class="card-image">
-                                  <img class="responsive-image text-right" src="https://placehold.co/1050x700/C6FF00/767676/" alt="thumb" />
-                                  <a class="btn btn-icon waves-effect btn-small"><i class="material-icons white-text">star</i></a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <a class="btn waves-effect btn-flat primary-text block">see all</a>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div><!-- ##### END SIDEBAR #####-->
-
+                </div>
+                <!-- ##### END SIDEBAR #####-->
               </div>
             </div>
           </div>
@@ -597,7 +394,7 @@
                 <div class="row">
                   <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
                     <div class="logo">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>Medical</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />Medical</span>
                     </div>
                     <p class="body-2">Get a diagnosis, treatment plan, and prescription from original provider of quality medical care.</p>
                     <p class="body-2 hidden-sm-down">&copy; Nirwana Theme 2022</p>

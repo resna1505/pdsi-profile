@@ -43,7 +43,7 @@
   <meta property="og:image" content="/images/logo-medical.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <title>Medical - Contact </title><!-- Styles-->
+  <title>Medical - Detail Blog </title><!-- Styles-->
   <!-- Put the 3rd/plugins css here-->
   <link href="./assets/css/vendors/normalize.css" rel="stylesheet">
   <link href="./assets/css/vendors/bootstrap.css" rel="stylesheet">
@@ -62,21 +62,21 @@
   <div class="m-application theme--light transition-page" id="app">
     <div class="loading"></div>
     <div class="m-content fresh fresh-var" id="main-wrap">
-      <div id="contact-page">
+      <div id="blog-page">
         <div class="main-wrap">
+
           <!-- #### HEADER ####-->
           <div class="sidenav mobile-nav" id="slide_menu">
             <div class="side-multilv">
               <div class="collection side-multilv">
                 <ul class="collapsible expandable">
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="#facility">facilities</a></li>
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="#ask-doctors">ask doctors</a></li>
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="#testimonials">testimonials</a></li>
-                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="#clinics">clinics</a></li>
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">berita</a></li>
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">testimoni</a></li>
+                  <li class="collection-item"><a class="sidenav-close waves-effect menu-list" href="index.html">mitra</a></li>
                   <li class="collection-item group-child has-child">
                     <div class="collapsible-header">
                       <a class="waves-effect text-truncate menu-list" href="#!">
-                        inner Page
+                        Lembaga
                         <i class="material-icons right">keyboard_arrow_down</i>
                       </a>
                     </div>
@@ -84,70 +84,41 @@
                       <div class="collection side-group">
                         <ul class="group-child">
                           <li class="collection-header">
-                            <div class="title-mega">Company</div>
+                            <div class="title-mega">Tentang Kami</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="about.html">about</a>
+                            <a class="waves-effect text-truncate menu-list" href="about.html">Sekilas</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="about-team.html">team</a>
+                            <a class="waves-effect text-truncate menu-list" href="visi-misi.html">Visi, Misi, Value</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="blog.html">blog</a>
+                            <a class="waves-effect text-truncate menu-list" href="about-team.html">Tim Pengajar & Ahli</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="detail-blog.html">blog detail</a>
+                            <a class="waves-effect text-truncate menu-list" href="blog.html">Berita</a>
                           </li>
                         </ul>
                         <ul class="group-child">
                           <li class="collection-header">
-                            <div class="title-mega">Form</div>
+                            <div class="title-mega">Kegiatan</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="login.html">login</a>
+                            <a class="waves-effect text-truncate menu-list" href="program-kerja.html">Program Kerja</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="register.html">register</a>
+                            <a class="waves-effect text-truncate menu-list" href="agenda.html">Agenda</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list current" href="contact.html">contact</a>
-                          </li>
-                          <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="contact-map.html">contact map</a>
+                            <a class="waves-effect text-truncate menu-list" href="gallery.html">Galeri</a>
                           </li>
                         </ul>
                         <ul class="group-child">
                           <li class="collection-header">
-                            <div class="title-mega">Items</div>
+                            <div class="title-mega">FAQ</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="collection.html">card</a>
-                          </li>
-                          <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="products.html">product</a>
-                          </li>
-                          <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="product-detail.html">product detail</a>
-                          </li>
-                        </ul>
-                        <ul class="group-child">
-                          <li class="collection-header">
-                            <div class="title-mega">Utilities</div>
-                          </li>
-                          <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="pricing.html">pricing</a>
-                          </li>
-                          <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="faq.html">faq</a>
-                          </li>
-                          <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="maintenance.html">maintenance</a>
-                          </li>
-                          <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="coming-soon.html">coming soon</a>
-                          </li>
-                          <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="404.html">error</a>
+                            <a class="waves-effect text-truncate menu-list" href="pricing.html">pricing and faq</a>
                           </li>
                         </ul>
                       </div>
@@ -161,13 +132,11 @@
                   <li class="collection-item">
                     <a class="sidenav-close waves-effect menu-list" href="login.html">Login</a>
                   </li>
-                  <li class="collection-item">
-                    <a class="sidenav-close waves-effect menu-list" href="register.html">register</a>
-                  </li>
                 </ul>
               </div>
             </div>
           </div>
+
           <header class="app-bar header" id="header">
             <div class="container">
               <div class="header-content">
@@ -175,26 +144,23 @@
                   <button class="btn-icon waves-effect sidenav-trigger hamburger hamburger--spin show-md-down" id="mobile_menu" type="button" data-target="slide_menu"><span class="hamburger-box"><span class="bar hamburger-inner"></span></span></button>
                   <div class="logo">
                     <a href="index.html">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>Medical</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                     </a>
                   </div>
                   <div class="scrollactive-nav show-lg-up multi-menu">
                     <ul class="main-menu">
                       <li>
-                        <a class="btn btn-flat anchor-link waves-effect" href="index.html#facility">facilities</a>
+                        <a class="btn btn-flat anchor-link waves-effect" href="index.html#facility">berita</a>
                       </li>
                       <li>
-                        <a class="btn btn-flat anchor-link waves-effect" href="index.html#ask-doctors">ask doctors</a>
+                        <a class="btn btn-flat anchor-link waves-effect" href="index.html#testimonials">testimoni</a>
                       </li>
                       <li>
-                        <a class="btn btn-flat anchor-link waves-effect" href="index.html#testimonials">testimonials</a>
-                      </li>
-                      <li>
-                        <a class="btn btn-flat anchor-link waves-effect" href="index.html#clinics">clinics</a>
+                        <a class="btn btn-flat anchor-link waves-effect" href="index.html#clinics">mitra</a>
                       </li>
                       <li>
                         <button class="btn btn-flat megamenu-trigger-click waves-effect" data-target="sample-page">
-                          inner Page
+                          Profil Lembaga
                           <i class="material-icons right icon">keyboard_arrow_down</i>
                         </button>
                         <div class="mega-menu-root dropdown-content" id="sample-page">
@@ -202,43 +168,29 @@
                             <div class="container max-md">
                               <div class="row">
                                 <div class="col-sm-3 mb-6">
-                                  <div class="title-mega">Company</div>
+                                  <div class="title-mega">Tentang Kami</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_marketing@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list" href="about.html">about</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="about-team.html">team and culture</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="blog.html">blog home</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="detail-blog.html">blog detail</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="about.html">Sekilas</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="visi-misi.html">Visi, Misi, Value</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="about-team.html">Tim Pengajar & Ahli</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="blog.html">Berita</a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
-                                  <div class="title-mega">Form</div>
-                                  <img class="thumb-menu" src="./assets/images/medical/menu_education@2x.jpg" alt="thumbnail" />
+                                  <div class="title-mega">Kegiatan</div>
+                                  <img class="thumb-menu" src="./assets/images/medical/menu_other@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list" href="login.html">login</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="register.html">register</a></li>
-                                    <li class="waves-effect"><a class="menu-list current" href="contact.html">contact</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="contact-map.html">contact with map</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="program-kerja.html">Program Kerja</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="agenda.html">Agenda</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="gallery.html">Galeri</a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
-                                  <div class="title-mega">Items</div>
-                                  <img class="thumb-menu" src="./assets/images/medical/menu_pos@2x.jpg" alt="thumbnail" />
-                                  <ul>
-                                    <li class="waves-effect"><a class="menu-list" href="collection.html">card collection</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="products.html">product with filter</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="product-detail.html">detail product</a></li>
-                                  </ul>
-                                </div>
-                                <div class="col-sm-3 mb-6">
-                                  <div class="title-mega">Utilities</div>
+                                  <div class="title-mega">FAQ</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_saas2@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list" href="pricing.html">pricing and faq</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="faq.html">frequently answer &amp; questions</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="maintenance.html">maintenance</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="coming-soon.html">coming soon</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="404.html">error not found</a></li>
                                   </ul>
                                 </div>
                               </div>
@@ -249,8 +201,7 @@
                     </ul>
                   </div>
                   <nav class="user-menu">
-                    <a class="btn btn-flat waves-effect show-sm-up" href="login.html">Login</a>
-                    <a class="btn waves-effect primary show-sm-up" href="register.html">register</a>
+                    <a class="btn waves-effect primary show-sm-up" href="coming-soon.html">Login</a>
                     <span class="spacer vertical-divider show-lg-up"></span>
                     <div class="menu-setting">
                       <div class="setting">
@@ -276,18 +227,6 @@
                           <ul class="collection with-header lang-menu" id="lang_menu">
                             <li class="collection-header">language</li>
                             <li class="collection-item lang-list waves-effect avatar">
-                              <a data-lang="ar" href="#">
-                                <div class="flag circle"><i class="ar"></i></div>
-                                <span class="content lang-opt text-truncate">󠁥󠁮󠁧󠁿العربيّة</span>
-                              </a>
-                            </li>
-                            <li class="collection-item lang-list waves-effect avatar">
-                              <a data-lang="de" href="#">
-                                <div class="flag circle"><i class="de"></i></div>
-                                <span class="content lang-opt text-truncate">Deutsch</span>
-                              </a>
-                            </li>
-                            <li class="collection-item lang-list waves-effect avatar">
                               <a data-lang="en" href="#">
                                 <div class="flag circle"><i class="en"></i></div>
                                 <span class="content lang-opt text-truncate">English</span>
@@ -299,18 +238,6 @@
                                 <span class="content lang-opt text-truncate">󠁥󠁮󠁧󠁿Bahasa Indonesia</span>
                               </a>
                             </li>
-                            <li class="collection-item lang-list waves-effect avatar">
-                              <a data-lang="pt" href="#">
-                                <div class="flag circle"><i class="pt"></i></div>
-                                <span class="content lang-opt text-truncate">󠁥󠁮󠁧󠁿Português</span>
-                              </a>
-                            </li>
-                            <li class="collection-item lang-list waves-effect avatar">
-                              <a data-lang="zh" href="#">
-                                <div class="flag circle"><i class="zh"></i></div>
-                                <span class="content lang-opt text-truncate">简体中文</span>
-                              </a>
-                            </li>
                           </ul>
                         </div>
                       </div>
@@ -320,65 +247,142 @@
                 <div id="container_menu"></div>
               </div>
             </div>
-          </header><!-- #### END HEADER ####-->
+          </header>
+          <!-- #### END HEADER ####-->
 
-          <!-- ##### CONTACT FORM #####-->
-          <div class="space-top-short space-bottom-short-sm">
-            <div class="form-style">
-              <div class="container inner-wrap max-md">
-                <div class="full-form-wrap">
-                  <h3 class="title-contact use-text-title use-text-primary pb-3 text-center">Say Hello to Us</h3>
-                  <p class="desc use-text-subtitle2 text-center">Do you have any questions? Are you ready to reduce cost and create new revenue? Or you simply want to say hi? Drop us a message.</p>
-                  <div class="form">
-                    <form id="contact_form">
-                      <div class="row spacing6">
-                        <div class="col-sm-6 px-6">
-                          <div class="input-field primary">
-                            <input class="validate" id="name" type="text" required />
-                            <label for="name">What is your name? *</label>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 px-6">
-                          <div class="input-field primary">
-                            <input class="validate" id="email" type="email" required />
-                            <label for="email">What is your email? *</label>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 px-6">
-                          <div class="input-field primary">
-                            <input id="phone" type="tel" />
-                            <label for="phone">What is your phone number?</label>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 px-6">
-                          <div class="input-field primary">
-                            <input id="company" type="text" />
-                            <label for="company">What is your company?</label>
-                          </div>
-                        </div>
-                        <div class="col-sm-12 px-6">
-                          <div class="input-field primary">
-                            <textarea class="materialize-textarea" id="message" rows="6"></textarea>
-                            <label for="message">Write your message here</label>
-                          </div>
-                        </div>
+          <?php
+          // 1. Get article ID from URL
+          $articleId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+
+          // 2. Fetch all articles from API
+          $apiUrl = "http://localhost:8000/api/news";
+          $response = file_get_contents($apiUrl);
+          $data = json_decode($response, true);
+
+          // 3. Find the requested article and prepare latest posts
+          $article = null;
+          $latestPosts = [];
+          if ($data && $data['status'] === 'success' && !empty($data['data']['articles'])) {
+            foreach ($data['data']['articles'] as $item) {
+              if ($item['id'] == $articleId) {
+                $article = $item;
+              } else {
+                $latestPosts[] = $item;
+              }
+            }
+
+            // Get only 5 latest posts (excluding current article)
+            $latestPosts = array_slice($latestPosts, 0, 5);
+          }
+
+          // 4. If article not found, show error
+          if (!$article) {
+            echo '<div class="alert alert-danger">Article not found</div>';
+            exit;
+          }
+
+          // 5. Format dates
+          $articleDate = date('F j, Y', strtotime($article['created_at']));
+          ?>
+
+          <div class="container-general pt-12">
+            <div class="container pt-3">
+              <div class="row">
+
+                <!-- ##### ARTICLE #####-->
+                <div class="col-md-8 col-sm-12 px-0 px-sm-3">
+                  <div class="blog-style">
+                    <article class="blog-content">
+                      <h4 class="text-h4 title-blog"><?php echo htmlspecialchars($article['title']); ?></h4>
+                      <span class="caption"><?php echo $articleDate; ?> by <?php echo htmlspecialchars($article['author']); ?></span>
+
+                      <?php if (!empty($article['attachment'])): ?>
+                        <figure class="image-blog">
+                          <img src="./assets/images/medical/<?php echo htmlspecialchars($article['attachment']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" />
+                        </figure>
+                      <?php endif; ?>
+
+                      <div class="article-content">
+                        <?php
+                        // Output the full description (contains HTML from API)
+                        // Note: Only do this if you trust the API content
+                        echo $article['description'];
+                        ?>
                       </div>
-                      <div class="btn-area flex">
-                        <div class="form-control-label">
-                          <label><input class="filled-in primary" type="checkbox" required /><span>I have read and accept the Terms of</span></label>
-                          <br/><a href="#">Service &amp; Privacy Policy *</a>
-                        </div>
-                        <div class="my-8 my-sm-0"><button class="btn btn-large waves-effect primary" type="submit">Send Message</button></div>
-                      </div>
-                    </form>
+                    </article>
                   </div>
                 </div>
+                <!-- ##### END ARTICLE #####-->
+
+                <!-- ##### SIDEBAR #####-->
+                <div class="col-md-4 col-sm-12 px-0 px-sm-3">
+                  <div class="blog-style">
+                    <div class="sidebar">
+                      <div class="py-3"></div>
+                      <div class="card paper">
+                        <header>
+                          <div class="icon"><i class="material-icons small">account_circle</i></div>
+                          <div class="card-content">
+                            <span class="card-title">About Us</span>
+                            <p>Ikatan Dokter Spesialis Penyakit Dalam (IDSPDI) adalah wadah profesional untuk meningkatkan kompetensi, etika, dan kolaborasi antar spesialis di Indonesia.</p>
+                          </div>
+                        </header>
+                        <div class="content">
+                          <div>
+                            <ul class="collection">
+                              <li class="collection-item avatar">
+                                <i class="circle icon primary material-icons grey lighten-3">date_range</i>
+                                <span class="use-text-medium">Didirikan</span>
+                                <p>Jan 9, 2025</p>
+                              </li>
+                              <li class="collection-item avatar">
+                                <i class="circle icon primary material-icons grey lighten-3">local_phone</i>
+                                <span class="use-text-medium">Ketua Umum</span>
+                                <p>Dr. Ahmad Fauzi, Sp.PD</p>
+                              </li>
+                              <li class="collection-item avatar">
+                                <i class="circle icon primary material-icons grey lighten-3">location_on</i>
+                                <span class="use-text-medium">Kantor Pusat</span>
+                                <p>Jakarta, Indonesia</p>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="py-3"></div>
+                      <div class="card paper">
+                        <header>
+                          <div class="icon"><i class="material-icons small">bookmark</i></div>
+                          <div class="card-content">
+                            <span class="card-title">Artikel Terbaru</span>
+                          </div>
+                        </header>
+                        <div class="content">
+                          <div>
+                            <div class="collection">
+                              <?php foreach ($latestPosts as $latest):
+                                $latestDate = date('M j, Y', strtotime($latest['created_at']));
+                              ?>
+                                <a class="waves-effect collection-item" href="detail-news.php?id=<?php echo $latest['id']; ?>">
+                                  <span class="d-block"><?php echo htmlspecialchars($latest['title']); ?></span>
+                                  <span class="caption"><?php echo $latestDate; ?></span>
+                                </a>
+                              <?php endforeach; ?>
+                            </div>
+                            <a class="btn waves-effect btn-flat primary-text block" href="news.php">Lihat Semua</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- ##### END SIDEBAR #####-->
               </div>
             </div>
-          </div><!-- ##### END CONTACT FORM #####-->
+          </div>
 
           <!-- ##### FOOTER #####-->
-          <div id="footer">
+          <div class="space-top-short" id="footer">
             <footer class="footer-sitemap">
               <div class="footer-deco">
                 <div class="left-deco"></div>
@@ -390,7 +394,7 @@
                 <div class="row">
                   <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
                     <div class="logo">
-                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo"/>Medical</span>
+                      <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />Medical</span>
                     </div>
                     <p class="body-2">Get a diagnosis, treatment plan, and prescription from original provider of quality medical care.</p>
                     <p class="body-2 hidden-sm-down">&copy; Nirwana Theme 2022</p>
@@ -486,6 +490,7 @@
               </div>
             </footer>
           </div><!-- ##### END FOOTER #####-->
+
         </div>
       </div>
     </div>

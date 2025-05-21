@@ -43,7 +43,7 @@
   <meta property="og:image" content="/images/logo-medical.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <title>PDSI - FAQ </title><!-- Styles-->
+  <title>PDSI - Berita </title><!-- Styles-->
   <!-- Put the 3rd/plugins css here-->
   <link href="./assets/css/vendors/normalize.css" rel="stylesheet">
   <link href="./assets/css/vendors/bootstrap.css" rel="stylesheet">
@@ -62,7 +62,7 @@
   <div class="m-application theme--light transition-page" id="app">
     <div class="loading"></div>
     <div class="m-content fresh fresh-var" id="main-wrap">
-      <div id="faq-page">
+      <div id="blog-page">
         <div class="main-wrap">
 
           <!-- #### HEADER ####-->
@@ -96,7 +96,7 @@
                             <a class="waves-effect text-truncate menu-list" href="about-team.html">Tim Pengajar & Ahli</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="blog.html">Berita</a>
+                            <a class="waves-effect text-truncate menu-list current" href="blog.html">Berita</a>
                           </li>
                         </ul>
                         <ul class="group-child">
@@ -118,7 +118,7 @@
                             <div class="title-mega">FAQ</div>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list current" href="pricing.html">pricing and faq</a>
+                            <a class="waves-effect text-truncate menu-list" href="pricing.html">pricing and faq</a>
                           </li>
                         </ul>
                       </div>
@@ -174,7 +174,7 @@
                                     <li class="waves-effect"><a class="menu-list" href="about.html">Sekilas</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="visi-misi.html">Visi, Misi, Value</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="about-team.html">Tim Pengajar & Ahli</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="blog.html">Berita</a></li>
+                                    <li class="waves-effect"><a class="menu-list current" href="blog.html">Berita</a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
@@ -190,7 +190,7 @@
                                   <div class="title-mega">FAQ</div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_saas2@2x.jpg" alt="thumbnail" />
                                   <ul>
-                                    <li class="waves-effect"><a class="menu-list current" href="faq.html">frequently answer &amp; questions</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="faq.html">frequently answer &amp; questions</a></li>
                                   </ul>
                                 </div>
                               </div>
@@ -250,108 +250,227 @@
           </header>
           <!-- #### END HEADER ####-->
 
-          <div class="container-wrap">
-            <!-- #### SEARCH ####-->
-            <div class="hero-banner-wrap">
-              <div class="deco-wrap">
-                <div class="deco bottom s1">&nbsp;</div>
-                <div class="deco top s1">&nbsp;</div>
-              </div>
-              <div class="container">
-                <section class="search-banner">
-                  <div class="container max-md">
-                    <div class="row search-block align-items-center justify-content-center">
-                      <!-- <col-sm-12> -->
-                      <h2 class="use-text-title2 text-center">Pertanyaan Umum</h2>
-                      <h3 class="use-text-subtitle2 text-center">Tanya Jawab Seputar Keanggotaan dan Layanan Organisasi</h3>
-                      <!-- </col-sm-12> -->
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
+          <?php
+          // Fetch data from API
+          $apiUrl = "http://localhost:8000/api/news";
+          $response = file_get_contents($apiUrl);
+          $data = json_decode($response, true);
 
-            <?php
-            $apiUrl = "http://localhost:8000/api/faqs";
-            $response = file_get_contents($apiUrl);
-            $data = json_decode($response, true);
+          // Pagination settings
+          $perPage = 4; // Number of articles per page
+          $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1; // Current page
 
-            $faqCategories = $data['data']['faq'];
-            ?>
+          // Check if API request was successful
+          if ($data && $data['status'] === 'success' && !empty($data['data']['articles'])) {
+            $allArticles = $data['data']['articles'];
+            $totalArticles = count($allArticles);
+            $totalPages = ceil($totalArticles / $perPage);
 
-            <div class="container">
-              <div class="row justify-content-center">
-                <!-- ##### FAQ #####-->
-                <div class="col-md-6 col-sm-12 px-sm-6 px-0">
-                  <div class="faq-style">
-                    <?php foreach ($faqCategories as $index => $category): ?>
-                      <div class="faq-group" id="topic<?= $index + 1 ?>">
-                        <div class="use-text-subtitle mb-3"><?= htmlspecialchars($category['name']) ?></div>
-                        <div class="accordion">
-                          <ul class="collapsible">
-                            <?php foreach ($category['items'] as $i => $item): ?>
-                              <li class="accordion-content paper <?= $i === 0 ? 'active' : '' ?>">
-                                <div class="collapsible-header content">
-                                  <p class="heading"><?= htmlspecialchars($item['question']) ?></p>
-                                  <i class="material-icons right arrow">expand_more</i>
-                                </div>
-                                <div class="collapsible-body detail">
-                                  <p><?= htmlspecialchars($item['answer']) ?></p>
-                                </div>
-                              </li>
-                            <?php endforeach; ?>
-                          </ul>
+            // Validate current page
+            if ($page > $totalPages) {
+              $page = $totalPages;
+            }
+
+            // Get articles for current page
+            $offset = ($page - 1) * $perPage;
+            $articles = array_slice($allArticles, $offset, $perPage);
+          ?>
+            <div class="container-general">
+              <div class="container mt-12 mt-sm-0">
+                <div class="row">
+                  <div class="row mt-6">
+                    <!-- ##### BLOG POST #####-->
+                    <div class="col-md-8 col-sm-12 px-0 px-sm-4">
+                      <?php foreach ($articles as $index => $article):
+                        $date = date('d M Y', strtotime($article['created_at']));
+
+                        $shortDescription = strip_tags($article['description']);
+                      ?>
+                        <div <?php echo $index > 0 ? 'class="mt-12 pt-3"' : ''; ?> data-index="<?php echo $index; ?>">
+                          <div class="card post-card portrait full">
+                            <div class="card-image figure">
+                              <div class="responsive-img" style="background-image: url('./assets/images/medical/<?php echo htmlspecialchars($article['attachment']); ?>');"></div>
+                            </div>
+                            <div class="properties">
+                              <div class="use-text-subtitle2 text-truncate">
+                                <strong><?php echo htmlspecialchars($article['title']); ?></strong>
+                              </div>
+                              <div class="caption py-4"><?php echo $date; ?></div>
+                              <div class="card-content desc">
+                                <p><?php echo htmlspecialchars($shortDescription); ?></p>
+                              </div>
+                              <div class="card-action">
+                                <a class="btn btn-outlined primary action-btn waves-effect" href="detail-news.php?id=<?php echo $article['id']; ?>">read more</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <?php endforeach; ?>
+
+                      <div class="arrow">
+                        <div class="d-flex justify-content-between mt-10">
+                          <?php if ($page > 1): ?>
+                            <a href="?page=<?php echo $page - 1; ?>" class="btn-flat waves-effect">
+                              <i class="material-icons left">arrow_back</i>prev
+                            </a>
+                          <?php else: ?>
+                            <span class="btn-flat waves-effect disabled">
+                              <i class="material-icons left">arrow_back</i>prev
+                            </span>
+                          <?php endif; ?>
+
+                          <?php if ($page < $totalPages): ?>
+                            <a href="?page=<?php echo $page + 1; ?>" class="btn-flat waves-effect">
+                              next<i class="material-icons right">arrow_forward</i>
+                            </a>
+                          <?php else: ?>
+                            <span class="btn-flat waves-effect disabled">
+                              next<i class="material-icons right">arrow_forward</i>
+                            </span>
+                          <?php endif; ?>
                         </div>
                       </div>
-                    <?php endforeach; ?>
-                  </div>
-                </div>
-                <!-- ##### END FAQ #####-->
-
-                <!-- ##### SIDEBAR #####-->
-                <div class="col-md-4 col-sm-12 px-sm-6 pt-10 pt-sm-0">
-                  <div class="space-bottom-short">
-                    <div class="faq-style">
-                      <h4 class="use-text-subtitle mb-3">Navigasi Topik</h4>
-                      <ul class="topic-list">
-                        <?php foreach ($faqCategories as $index => $category): ?>
-                          <li><a href="#topic<?= $index + 1 ?>"><?= htmlspecialchars($category['name']) ?></a></li>
-                        <?php endforeach; ?>
-                      </ul>
                     </div>
-                  </div>
-                </div>
-                <!-- ##### END SIDEBAR #####-->
-              </div>
-            </div>
-          </div>
+                    <!-- ##### END BLOG POST #####-->
+                  <?php
+                } else {
+                  // Display error message if API request fails
+                  echo '<div class="alert alert-danger">Failed to load news articles. Please try again later.</div>';
+                }
+                  ?>
 
-          <!-- ##### FOOTER #####-->
-          <div class="space-top-short">
-            <div id="footer">
-              <footer class="footer-sitemap">
-                <div class="footer-deco">
-                  <div class="left-deco"></div>
-                  <div class="right-deco">
-                    <img class="img-2d3d" src="./assets/images/medical/footer_3d@2x.png" data-3d="./assets" data-2d="./assets/images/medical/footer_3d@2x.png" alt="speciality 3d" />
-                  </div>
-                </div>
-                <div class="container mq-sm-down" data-class="fixed-width">
-                  <div class="row">
-                    <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
-                      <div class="logo">
-                        <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
-                      </div>
-                      <p class="body-2">Get a diagnosis, treatment plan, and prescription from original provider of quality medical care.</p>
-                      <p class="body-2 hidden-sm-down">&copy; Nirwana Theme 2022</p>
-                    </div>
-                    <div class="col-md-6 col-sm-12 pa-4">
-                      <ul class="show-sm-down collapsible">
-                        <li class="accordion-content">
-                          <div class="collapsible-header">
-                            <h6 class="title">Company</h6><i class="material-icons right arrow">expand_more</i>
+                  <!-- ##### SIDEBAR #####-->
+                  <div class="col-md-4 col-sm-12 px-0 px-sm-4">
+                    <div class="blog-style">
+                      <div class="sidebar">
+                        <div class="py-3"></div>
+                        <div class="card paper">
+                          <header>
+                            <div class="icon"><i class="material-icons small">account_circle</i></div>
+                            <div class="card-content">
+                              <span class="card-title">Tentang Kami</span>
+                              <p>Ikatan Dokter Spesialis Penyakit Dalam (IDSPDI) adalah wadah profesional untuk meningkatkan kompetensi, etika, dan kolaborasi antar spesialis di Indonesia.</p>
+                            </div>
+                          </header>
+                          <div class="content">
+                            <div>
+                              <ul class="collection">
+                                <li class="collection-item avatar">
+                                  <i class="circle icon primary material-icons grey lighten-3">date_range</i>
+                                  <span class="use-text-medium">Didirikan</span>
+                                  <p>Jan 9, 2025</p>
+                                </li>
+                                <li class="collection-item avatar">
+                                  <i class="circle icon primary material-icons grey lighten-3">local_phone</i>
+                                  <span class="use-text-medium">Ketua Umum</span>
+                                  <p>...</p>
+                                </li>
+                                <li class="collection-item avatar">
+                                  <i class="circle icon primary material-icons grey lighten-3">location_on</i>
+                                  <span class="use-text-medium">Kantor Pusat</span>
+                                  <p>Jakarta, Indonesia</p>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
-                          <div class="collapsible-body">
+                        </div>
+                        <div class="py-3"></div>
+                        <div class="card paper">
+                          <header>
+                            <div class="icon"><i class="material-icons small">bookmark</i></div>
+                            <div class="card-content">
+                              <span class="card-title">Artikel Terbaru</span>
+                            </div>
+                          </header>
+                          <div class="content">
+                            <div>
+                              <div class="collection">
+                                <?php
+                                // Display latest 3 articles in sidebar
+                                $latestArticles = array_slice($articles, 0, 3);
+                                foreach ($latestArticles as $latest):
+                                  $latestDate = date('d M Y', strtotime($latest['created_at']));
+                                ?>
+                                  <a class="waves-effect collection-item" href="detail-news.php?id=<?php echo $latest['id']; ?>">
+                                    <span class="d-block"><?php echo htmlspecialchars($latest['title']); ?></span>
+                                    <span class="caption"><?php echo $latestDate; ?></span>
+                                  </a>
+                                <?php endforeach; ?>
+                              </div>
+                              <a class="btn waves-effect btn-flat primary-text block">see all</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="py-3"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ##### END SIDEBAR #####-->
+                  </div>
+                </div>
+              </div>
+
+              <!-- ##### FOOTER #####-->
+              <div id="footer">
+                <footer class="footer-sitemap">
+                  <div class="footer-deco">
+                    <div class="left-deco"></div>
+                    <div class="right-deco">
+                      <img class="img-2d3d" src="./assets/images/medical/footer_3d@2x.png" data-3d="./assets" data-2d="./assets/images/medical/footer_3d@2x.png" alt="speciality 3d" />
+                    </div>
+                  </div>
+                  <div class="container mq-sm-down" data-class="fixed-width">
+                    <div class="row">
+                      <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
+                        <div class="logo">
+                          <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
+                        </div>
+                        <p class="body-2">Get a diagnosis, treatment plan, and prescription from original provider of quality medical care.</p>
+                        <p class="body-2 hidden-sm-down">&copy; Nirwana Theme 2022</p>
+                      </div>
+                      <div class="col-md-6 col-sm-12 pa-4">
+                        <ul class="show-sm-down collapsible">
+                          <li class="accordion-content">
+                            <div class="collapsible-header">
+                              <h6 class="title">Company</h6><i class="material-icons right arrow">expand_more</i>
+                            </div>
+                            <div class="collapsible-body">
+                              <ul>
+                                <li><a href="#team">Team</a></li>
+                                <li><a href="#history">History</a></li>
+                                <li><a href="#contact-us">Contact us</a></li>
+                                <li><a href="#locations">Locations</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="accordion-content">
+                            <div class="collapsible-header">
+                              <h6 class="title">Resources</h6><i class="material-icons right arrow">expand_more</i>
+                            </div>
+                            <div class="collapsible-body">
+                              <ul>
+                                <li><a href="#resource">Resource</a></li>
+                                <li><a href="#resource-name">Resource name</a></li>
+                                <li><a href="#another-resource">Another resource</a></li>
+                                <li><a href="#final-resource">Final resource</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li class="accordion-content">
+                            <div class="collapsible-header">
+                              <h6 class="title">Legal</h6><i class="material-icons right arrow">expand_more</i>
+                            </div>
+                            <div class="collapsible-body">
+                              <ul>
+                                <li><a href="#privacy-policy">Privacy policy</a></li>
+                                <li><a href="#terms-of-use">Terms of use</a></li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="row show-md-up justify-content-around">
+                          <div class="col pa-4 site-map-item">
+                            <h6 class="title mb-4">Company</h6>
                             <ul>
                               <li><a href="#team">Team</a></li>
                               <li><a href="#history">History</a></li>
@@ -359,12 +478,8 @@
                               <li><a href="#locations">Locations</a></li>
                             </ul>
                           </div>
-                        </li>
-                        <li class="accordion-content">
-                          <div class="collapsible-header">
-                            <h6 class="title">Resources</h6><i class="material-icons right arrow">expand_more</i>
-                          </div>
-                          <div class="collapsible-body">
+                          <div class="col pa-4 site-map-item">
+                            <h6 class="title mb-4">Resources</h6>
                             <ul>
                               <li><a href="#resource">Resource</a></li>
                               <li><a href="#resource-name">Resource name</a></li>
@@ -372,90 +487,58 @@
                               <li><a href="#final-resource">Final resource</a></li>
                             </ul>
                           </div>
-                        </li>
-                        <li class="accordion-content">
-                          <div class="collapsible-header">
-                            <h6 class="title">Legal</h6><i class="material-icons right arrow">expand_more</i>
-                          </div>
-                          <div class="collapsible-body">
+                          <div class="col pa-4 site-map-item">
+                            <h6 class="title mb-4">Legal</h6>
                             <ul>
                               <li><a href="#privacy-policy">Privacy policy</a></li>
                               <li><a href="#terms-of-use">Terms of use</a></li>
                             </ul>
                           </div>
-                        </li>
-                      </ul>
-                      <div class="row show-md-up justify-content-around">
-                        <div class="col pa-4 site-map-item">
-                          <h6 class="title mb-4">Company</h6>
-                          <ul>
-                            <li><a href="#team">Team</a></li>
-                            <li><a href="#history">History</a></li>
-                            <li><a href="#contact-us">Contact us</a></li>
-                            <li><a href="#locations">Locations</a></li>
-                          </ul>
-                        </div>
-                        <div class="col pa-4 site-map-item">
-                          <h6 class="title mb-4">Resources</h6>
-                          <ul>
-                            <li><a href="#resource">Resource</a></li>
-                            <li><a href="#resource-name">Resource name</a></li>
-                            <li><a href="#another-resource">Another resource</a></li>
-                            <li><a href="#final-resource">Final resource</a></li>
-                          </ul>
-                        </div>
-                        <div class="col pa-4 site-map-item">
-                          <h6 class="title mb-4">Legal</h6>
-                          <ul>
-                            <li><a href="#privacy-policy">Privacy policy</a></li>
-                            <li><a href="#terms-of-use">Terms of use</a></li>
-                          </ul>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-md-3 col-sm-12 pa-4">
-                      <div class="socmed">
-                        <a class="btn btn-icon waves-effect"><span class="ion-social-facebook icon"></span></a>
-                        <a class="btn btn-icon waves-effect"><span class="ion-social-twitter icon"></span></a>
-                        <a class="btn btn-icon waves-effect"><span class="ion-social-instagram icon"></span></a>
-                        <a class="btn btn-icon waves-effect"><span class="ion-social-linkedin icon"></span></a>
+                      <div class="col-md-3 col-sm-12 pa-4">
+                        <div class="socmed">
+                          <a class="btn btn-icon waves-effect"><span class="ion-social-facebook icon"></span></a>
+                          <a class="btn btn-icon waves-effect"><span class="ion-social-twitter icon"></span></a>
+                          <a class="btn btn-icon waves-effect"><span class="ion-social-instagram icon"></span></a>
+                          <a class="btn btn-icon waves-effect"><span class="ion-social-linkedin icon"></span></a>
+                        </div>
+                        <div class="select-lang select-outlined">
+                          <select class="select" id="lang_select">
+                            <option value="ar">󠁥󠁮󠁧󠁿العربيّة</option>
+                            <option value="de">Deutsch</option>
+                            <option value="en" selected>English</option>
+                            <option value="id">󠁥󠁮󠁧󠁿Bahasa Indonesia</option>
+                            <option value="pt">󠁥󠁮󠁧󠁿Português</option>
+                            <option value="zh">简体中文</option>
+                          </select>
+                        </div>
+                        <p class="body-2 mt-5 text-center hidden-md-up">&copy; Nirwana Theme 2022</p>
                       </div>
-                      <div class="select-lang select-outlined">
-                        <select class="select" id="lang_select">
-                          <option value="ar">󠁥󠁮󠁧󠁿العربيّة</option>
-                          <option value="de">Deutsch</option>
-                          <option value="en" selected>English</option>
-                          <option value="id">󠁥󠁮󠁧󠁿Bahasa Indonesia</option>
-                          <option value="pt">󠁥󠁮󠁧󠁿Português</option>
-                          <option value="zh">简体中文</option>
-                        </select>
-                      </div>
-                      <p class="body-2 mt-5 text-center hidden-md-up">&copy; Nirwana Theme 2022</p>
                     </div>
                   </div>
-                </div>
-              </footer>
+                </footer>
+              </div><!-- ##### END FOOTER #####-->
+
             </div>
-          </div><!-- ##### END FOOTER #####-->
         </div>
       </div>
-    </div>
-  </div><!-- Scripts-->
-  <!-- Put the 3rd/plugins javascript here-->
-  <script src="./assets/js/vendors/jquery.min.js"></script>
-  <script src="./assets/js/vendors/bootstrap.min.js"></script>
-  <script src="./assets/js/vendors/enquire.min.js"></script>
-  <script src="./assets/js/vendors/jquery.form-validator.min.js"></script>
-  <script src="./assets/js/vendors/jquery.touchSwipe.min.js"></script>
-  <script src="./assets/js/vendors/jquery.magnific-popup.min.js"></script>
-  <script src="./assets/js/vendors/pace.min.js"></script>
-  <script src="./assets/js/vendors/slick.min.js"></script>
-  <script src="./assets/js/vendors/wow.min.js"></script>
-  <script src="./assets/js/vendors/jquery.navScroll.min.js"></script><!-- This assets are not avalaible in npm.js or it has been costumized-->
-  <script src="./assets/js/vendors/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-  <script src="./assets/js/vendors/materialize.js"></script>
-  <script src="./assets/js/scripts.js"></script>
-  <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+    </div><!-- Scripts-->
+    <!-- Put the 3rd/plugins javascript here-->
+    <script src="./assets/js/vendors/jquery.min.js"></script>
+    <script src="./assets/js/vendors/bootstrap.min.js"></script>
+    <script src="./assets/js/vendors/enquire.min.js"></script>
+    <script src="./assets/js/vendors/jquery.form-validator.min.js"></script>
+    <script src="./assets/js/vendors/jquery.touchSwipe.min.js"></script>
+    <script src="./assets/js/vendors/jquery.magnific-popup.min.js"></script>
+    <script src="./assets/js/vendors/pace.min.js"></script>
+    <script src="./assets/js/vendors/slick.min.js"></script>
+    <script src="./assets/js/vendors/wow.min.js"></script>
+    <script src="./assets/js/vendors/jquery.navScroll.min.js"></script><!-- This assets are not avalaible in npm.js or it has been costumized-->
+    <script src="./assets/js/vendors/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="./assets/js/vendors/materialize.js"></script>
+    <script src="./assets/js/scripts.js"></script>
+    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
 </body>
 
 </html>
