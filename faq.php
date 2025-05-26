@@ -252,7 +252,7 @@
             </div>
 
             <?php
-            $apiUrl = "http://localhost:8000/api/faqs";
+            $apiUrl = "https://www.platform.pdsionline.org/api/faqs";
             $response = file_get_contents($apiUrl);
             $data = json_decode($response, true);
 

@@ -232,7 +232,7 @@
 
           <?php
           // Fetch data from API
-          $apiUrl = "http://localhost:8000/api/agenda";
+          $apiUrl = "https://www.platform.pdsionline.org/api/agenda";
           $response = file_get_contents($apiUrl);
           $data = json_decode($response, true);
 

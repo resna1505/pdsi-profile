@@ -239,7 +239,7 @@
 
                       <!-- ##### POST CARD PORTRAIT #####-->
                       <?php
-                      $url = 'http://localhost:8000/api/program-kerja';
+                      $url = 'https://www.platform.pdsionline.org/api/program-kerja';
                       $response = file_get_contents($url);
 
                       $data = json_decode($response, true);

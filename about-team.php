@@ -262,7 +262,7 @@
 
           <?php
 
-          $response = file_get_contents('http://localhost:8000/api/dokter');
+          $response = file_get_contents('https://www.platform.pdsionline.org/api/dokter');
           $data = json_decode($response, true);
           // print_r($data['data']['dokter']);
           ?>

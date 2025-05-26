@@ -274,7 +274,7 @@
           <!-- ##### COUNTER #####-->
 
           <?php
-          $response = file_get_contents('http://localhost:8000/api/about');
+          $response = file_get_contents('https://www.platform.pdsionline.org/api/about');
           $data = json_decode($response);
           $totalDokter = $data->data->dokter;
           $totalMitra = $data->data->mitra;
@@ -407,7 +407,7 @@
 
                   <div class="photo-carousel" id="about_photo_carousel">
                     <?php
-                    $response = file_get_contents('http://localhost:8000/api/about');
+                    $response = file_get_contents('https://www.platform.pdsionline.org/api/about');
                     $data = json_decode($response);
 
                     if (!empty($data->data->activities)) {

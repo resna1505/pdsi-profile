@@ -230,7 +230,7 @@
           <!-- #### END HEADER ####-->
 
           <?php
-          $response = file_get_contents('http://localhost:8000/api/index');
+          $response = file_get_contents('https://www.platform.pdsionline.org/api/index');
           $data = json_decode($response);
 
           $totalDokter = $data->data->dokter;

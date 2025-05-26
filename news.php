@@ -232,7 +232,7 @@
 
           <?php
           // Fetch data from API
-          $apiUrl = "http://localhost:8000/api/news";
+          $apiUrl = "https://www.platform.pdsionline.org/api/news";
           $response = file_get_contents($apiUrl);
           $data = json_decode($response, true);
 
