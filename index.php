@@ -400,7 +400,8 @@
                         <div class="item">
                           <div class="card facility-card">
                             <figure>
-                              <img src="./assets/images/medical/<?= htmlspecialchars($item->attachment) ?>" alt="img" />
+                              <!-- <img src="./assets/images/medical/<?= htmlspecialchars($item->attachment) ?>" alt="img" /> -->
+                              <img src="https://www.platform.pdsionline.org/storage/articles/<?= htmlspecialchars($item->attachment) ?>" alt="">
                             </figure>
                             <div class="text">
                               <h6><?= htmlspecialchars($item->title) ?></h6>
