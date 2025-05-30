@@ -269,7 +269,7 @@
                         <div <?php echo $index > 0 ? 'class="mt-12 pt-3"' : ''; ?> data-index="<?php echo $index; ?>">
                           <div class="card post-card portrait full">
                             <div class="card-image figure">
-                              <div class="responsive-img" style="background-image: url('./assets/images/medical/<?php echo htmlspecialchars($article['attachment']); ?>');"></div>
+                              <div class="responsive-img" style="background-image: url('https://www.platform.pdsionline.org/storage/articles/<?php echo htmlspecialchars($article['attachment']); ?>');"></div>
                             </div>
                             <div class="properties">
                               <div class="use-text-subtitle2 text-truncate">
