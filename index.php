@@ -569,7 +569,7 @@
                               <span class="caption"><?= htmlspecialchars($item->anggota->nama) ?></span>
                             </div>
                             <div class="avatar-img avatar">
-                              <img src="<?= $avatar ?>" alt="<?= htmlspecialchars($item->anggota->nama) ?>" />
+                              <img src="https://www.platform.pdsionline.org/storage/images/users/<?= htmlspecialchars($item->avatar) ?>" />
                             </div>
                           </div>
                         </div>
