@@ -615,7 +615,7 @@
                           <div class="card address-card">
                             <div class="paper">
                               <figure>
-                                <img src="assets/images/medical/<?= htmlspecialchars($item->image) ?>" alt="clinic" />
+                                <img src="https://www.platform.pdsionline.org/storage/mitras/<?= htmlspecialchars($item->image) ?>" alt="clinic" />
                               </figure>
                               <div class="detail-info">
                                 <h6 class="use-text-subtitle2 mb-sm-6"><?= htmlspecialchars($item->title) ?></h6>
