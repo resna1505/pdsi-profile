@@ -322,7 +322,7 @@
                               <div class="responsive-img" style="background-image: url('https://res.cloudinary.com/walden-global-services/image/upload/v1544584608/dandelion/41.jpg');"></div>
                             </div>
                             <div class="avatar-img avatar bigger">
-                              <img src="https://randomuser.me/api/portraits/men/<?= rand(0, 99); ?>.jpg" alt="avatar" />
+                              <img src="https://www.platform.pdsionline.org/storage/images/users/<?= htmlspecialchars($item->avatar) ?>" alt="avatar" />
                             </div>
                             <div class="properties text-truncate">
                               <div class="card-content">

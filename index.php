@@ -637,9 +637,9 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div class="hidden-xs-down">
+                                <!-- <div class="hidden-xs-down">
                                   <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
-                                </div>
+                                </div> -->
                               </div>
                               <a class="mobile-link waves-effect" href="contact-map.html"></a>
                             </div>
