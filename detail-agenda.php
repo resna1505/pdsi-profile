@@ -278,7 +278,7 @@
 
                       <?php if (!empty($article['attachment'])): ?>
                         <figure class="image-blog">
-                          <img src="./assets/images/medical/<?php echo htmlspecialchars($article['attachment']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" />
+                          <img src="https://www.platform.pdsionline.org/storage/articles/<?php echo htmlspecialchars($article['attachment']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>" />
                         </figure>
                       <?php endif; ?>
 
