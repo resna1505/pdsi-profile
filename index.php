@@ -566,7 +566,7 @@
                           <div class="person">
                             <div class="name">
                               <h6><?= htmlspecialchars($item->anggota->nama) ?></h6>
-                              <span class="caption"><?= htmlspecialchars($item->anggota->nama) ?></span>
+                              <span class="caption"><?= htmlspecialchars($item->anggota->profesi) ?></span>
                             </div>
                             <div class="avatar-img avatar">
                               <img src="https://www.platform.pdsionline.org/storage/images/users/<?= htmlspecialchars($item->anggota->avatar) ?>" />
