@@ -235,7 +235,7 @@
           $articleId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
           // 2. Fetch all articles from API
-          $apiUrl = "https://www.platform.pdsionline.org/api/news";
+          $apiUrl = "https://www.platform.pdsionline.org/api/agenda";
           $response = file_get_contents($apiUrl);
           $data = json_decode($response, true);
 
