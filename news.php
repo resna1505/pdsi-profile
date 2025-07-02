@@ -93,7 +93,7 @@
                             <a class="waves-effect text-truncate menu-list" href="visi-misi.php">Visi, Misi, Value</a>
                           </li>
                           <li class="collection-item side-group-link">
-                            <a class="waves-effect text-truncate menu-list" href="about-team.php">Tim Pengajar & Ahli</a>
+                            <a class="waves-effect text-truncate menu-list" href="about-team.php">Anggota Kehormatan</a>
                           </li>
                           <li class="collection-item side-group-link">
                             <a class="waves-effect text-truncate menu-list current" href="news.php">Berita</a>
@@ -170,7 +170,7 @@
                                   <ul>
                                     <li class="waves-effect"><a class="menu-list" href="about.php">Sekilas</a></li>
                                     <li class="waves-effect"><a class="menu-list" href="visi-misi.php">Visi, Misi, Value</a></li>
-                                    <li class="waves-effect"><a class="menu-list" href="about-team.php">Tim Pengajar & Ahli</a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="about-team.php">Anggota Kehormatan</a></li>
                                     <li class="waves-effect"><a class="menu-list current" href="news.php">Berita</a></li>
                                   </ul>
                                 </div>
