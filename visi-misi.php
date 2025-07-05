@@ -287,12 +287,13 @@
           ?>
 
           <div class="space-top-short container py-5">
-            <div class="row justify-content-center">
-              <div class="col-lg-5 col-md-12">
-                <h4 class="section-title mb-4">Visi & Misi</h4>
+            <!-- Visi Section -->
+            <div class="row justify-content-center mb-5">
+              <div class="col-lg-10 col-md-12">
+                <h4 class="section-title mb-4 text-center">Visi</h4>
 
-                <?php if (!empty($data['visimisi'])): ?>
-                  <?php foreach ($data['visimisi'] as $item): ?>
+                <?php if (!empty($data['visi'])): ?>
+                  <?php foreach ($data['visi'] as $item): ?>
                     <div class="visi-item">
                       <div class="plus-icon">+</div>
                       <div class="visi-text"><?= htmlspecialchars($item) ?></div>
@@ -300,20 +301,43 @@
                   <?php endforeach; ?>
                 <?php endif; ?>
               </div>
+            </div>
 
-              <div class="col-lg-5 col-md-12">
-                <h4 class="section-title mb-4">Value</h4>
+            <!-- Misi Section -->
+            <div class="row justify-content-center mb-5">
+              <div class="col-lg-10 col-md-12">
+                <h4 class="section-title mb-4 text-center">Misi</h4>
 
-                <?php if (!empty($data['value'])): ?>
-                  <?php foreach ($data['value'] as $val): ?>
-                    <div class="value-item">
+                <?php if (!empty($data['misi'])): ?>
+                  <?php foreach ($data['misi'] as $item): ?>
+                    <div class="visi-item">
                       <div class="plus-icon">+</div>
-                      <div class="value-text">
-                        <strong><?= htmlspecialchars($val['title']) ?></strong><br>
-                        <?= htmlspecialchars($val['description']) ?>
-                      </div>
+                      <div class="visi-text"><?= htmlspecialchars($item) ?></div>
                     </div>
                   <?php endforeach; ?>
+                <?php endif; ?>
+              </div>
+            </div>
+
+            <!-- Value Section -->
+            <div class="row justify-content-center">
+              <div class="col-lg-10 col-md-12">
+                <h4 class="section-title mb-4 text-center">Value</h4>
+
+                <?php if (!empty($data['value'])): ?>
+                  <div class="row">
+                    <?php foreach ($data['value'] as $val): ?>
+                      <div class="col-lg-6 col-md-12 mb-3">
+                        <div class="value-item">
+                          <div class="plus-icon">+</div>
+                          <div class="value-text">
+                            <strong><?= htmlspecialchars($val['title']) ?></strong><br>
+                            <?= htmlspecialchars($val['description']) ?>
+                          </div>
+                        </div>
+                      </div>
+                    <?php endforeach; ?>
+                  </div>
                 <?php endif; ?>
               </div>
             </div>

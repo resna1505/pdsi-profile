@@ -450,7 +450,7 @@
                       <div class="running-tag">
                         <div class="slick-carousel" id="speciality_carousel">
                           <div class="tag-group">
-                            <span class="tag-item">Dentist</span>
+                            <span class="tag-item">Reumatologi</span>
 
                             <span class="tag-item">Padriatic</span>
 
@@ -468,10 +468,10 @@
 
                             <span class="tag-item">Andrologi</span>
 
-                            <span class="tag-item">Ortodonsia</span>
+                            <span class="tag-item">Cardiology</span>
                           </div>
                           <div class="tag-group">
-                            <span class="tag-item">Dentist</span>
+                            <span class="tag-item">Reumatologi</span>
 
                             <span class="tag-item">Padriatic</span>
 
@@ -489,10 +489,10 @@
 
                             <span class="tag-item">Andrologi</span>
 
-                            <span class="tag-item">Ortodonsia</span>
+                            <span class="tag-item">Cardiology</span>
                           </div>
                           <div class="tag-group">
-                            <span class="tag-item">Dentist</span>
+                            <span class="tag-item">Reumatologi</span>
 
                             <span class="tag-item">Padriatic</span>
 
@@ -510,7 +510,7 @@
 
                             <span class="tag-item">Andrologi</span>
 
-                            <span class="tag-item">Ortodonsia</span>
+                            <span class="tag-item">Cardiology</span>
                           </div>
                         </div>
                       </div>
