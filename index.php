@@ -618,13 +618,13 @@
                                 <img src="https://www.platform.pdsionline.org/storage/mitras/<?= htmlspecialchars($item->image) ?>" alt="clinic" />
                               </figure>
                               <div class="detail-info">
-                                <h6 class="use-text-subtitle2 mb-sm-6"><?= htmlspecialchars($item->title) ?></h6>
+                                <h6 class="use-text-subtitle2"><?= htmlspecialchars($item->title) ?></h6>
                                 <div class="row">
-                                  <div class="col-lg-6 col-sm-12 px-sm-2 py-sm-1 pa-0">
+                                  <div class="col-lg-12 col-sm-12 px-sm-2 py-sm-1 pa-0">
                                     <i class="material-icons icon use-text-primary-color">local_phone</i>
                                     <?= htmlspecialchars($item->telephone) ?>
                                   </div>
-                                  <div class="col-lg-6 col-sm-12 px-2 py-1">
+                                  <div class="col-lg-12 col-sm-12 px-2 py-1">
                                     <div class="hidden-xs-down">
                                       <i class="material-icons icon use-text-secondary-color">email</i>
                                       <?= htmlspecialchars($item->email) ?>
@@ -637,9 +637,6 @@
                                     </div>
                                   </div>
                                 </div>
-                                <!-- <div class="hidden-xs-down">
-                                  <a class="btn btn-outlined secondary block btn-small waves-effect" href="contact-map.html">Contact</a>
-                                </div> -->
                               </div>
                               <a class="mobile-link waves-effect" href="contact-map.html"></a>
                             </div>
@@ -665,14 +662,21 @@
             </div>
             <div class="container mq-sm-down" data-class="fixed-width">
               <div class="row">
-                <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
+                <div class="col-md-6 col-sm-12 pa-lg-6 logo-area">
                   <div class="logo">
                     <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                   </div>
-                  <p class="body-2">Platform pelatihan dan pengembangan kompetensi dokter di Indonesia, dengan kurikulum terstandar dan dukungan mitra terpercaya.</p>
-                  <p class="body-2 hidden-sm-down">© Copyright 2025 PDSI</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="body-2">Platform pelatihan dan pengembangan kompetensi dokter di Indonesia, dengan kurikulum terstandar dan dukungan mitra terpercaya.</p>
+                      <p class="body-2 hidden-sm-down">© Copyright 2025 PDSI</p>
+                    </div>
+                    <div class="col text-right">
+                      <p class="body-2">KTC Mall Lantai 3 Jl. Pulau Putri No.2, RW.9, Klp. Gading Bar., Kec. Klp. Gading, Kota Jkt Utara, Jakarta, Indonesia 14240.</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6 col-sm-12 pa-4">
+                <div class="col-md-3 col-sm-12">
                   <ul class="show-sm-down collapsible">
                     <li class="accordion-content">
                       <div class="collapsible-header">

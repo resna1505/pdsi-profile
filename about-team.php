@@ -496,14 +496,21 @@
             </div>
             <div class="container mq-sm-down" data-class="fixed-width">
               <div class="row">
-                <div class="col-md-3 col-sm-12 pa-lg-4 logo-area">
+                <div class="col-md-6 col-sm-12 pa-lg-6 logo-area">
                   <div class="logo">
                     <span class="logo-main landscape medium"><img src="./assets/images/logo-medical.png" alt="logo" />PDSI</span>
                   </div>
-                  <p class="body-2">Platform pelatihan dan pengembangan kompetensi dokter di Indonesia, dengan kurikulum terstandar dan dukungan mitra terpercaya.</p>
-                  <p class="body-2 hidden-sm-down">© Copyright 2025 PDSI</p>
+                  <div class="row">
+                    <div class="col">
+                      <p class="body-2">Platform pelatihan dan pengembangan kompetensi dokter di Indonesia, dengan kurikulum terstandar dan dukungan mitra terpercaya.</p>
+                      <p class="body-2 hidden-sm-down">© Copyright 2025 PDSI</p>
+                    </div>
+                    <div class="col text-right">
+                      <p class="body-2">KTC Mall Lantai 3 Jl. Pulau Putri No.2, RW.9, Klp. Gading Bar., Kec. Klp. Gading, Kota Jkt Utara, Jakarta, Indonesia 14240.</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6 col-sm-12 pa-4">
+                <div class="col-md-3 col-sm-12 pa-4">
                   <ul class="show-sm-down collapsible">
                     <li class="accordion-content">
                       <div class="collapsible-header">
