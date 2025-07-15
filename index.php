@@ -589,7 +589,7 @@ $dataTestimonial = $data->data->testimonials;
                       <div class="counter-item">
                         <span class="icon ion-ios-people-outline use-text-primary-color"></span>
                         <div class="text">
-                          <h4>+<span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;<?= htmlspecialchars($totalDokter) ?></span></h4>
+                          <!-- <h4>+<span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;<?= htmlspecialchars($totalDokter) ?></span></h4> -->
                           <h6 class="use-text-subtitle"><?php echo $text['counter_doctors']; ?></h6>
                         </div>
                       </div>
@@ -601,7 +601,7 @@ $dataTestimonial = $data->data->testimonials;
                       <div class="counter-item">
                         <span class="icon ion-ios-home-outline use-text-primary-color"></span>
                         <div class="text">
-                          <h4>+<span id="data-mitra" class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;<?= htmlspecialchars($totalMitra) ?></span></h4>
+                          <!-- <h4>+<span id="data-mitra" class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;<?= htmlspecialchars($totalMitra) ?></span></h4> -->
                           <h6 class="use-text-subtitle"><?php echo $text['counter_partners']; ?></h6>
                         </div>
                       </div>

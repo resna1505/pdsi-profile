@@ -451,7 +451,7 @@ $video = $data->data->videos[0];
                     <div class="counter-item">
                       <span class="icon ion-flag use-text-primary-color"></span>
                       <div class="text">
-                        <h4 class="display-1">+ <span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;<?= htmlspecialchars($totalDokter) ?></span></h4>
+                        <!-- <h4 class="display-1">+ <span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;<?= htmlspecialchars($totalDokter) ?></span></h4> -->
                         <h6 class="use-text-subtitle2"><?php echo $text['counter_certified_doctors']; ?></h6>
                       </div>
                     </div>
@@ -462,7 +462,7 @@ $video = $data->data->videos[0];
                     <div class="counter-item">
                       <span class="icon ion-android-people use-text-secondary-color"></span>
                       <div class="text">
-                        <h4 class="display-1">+ <span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;<?= htmlspecialchars($totalMitra) ?></span></h4>
+                        <!-- <h4 class="display-1">+ <span class="numscroller" data-min="0" data-delay="5" data-increment="8">&nbsp;<?= htmlspecialchars($totalMitra) ?></span></h4> -->
                         <h6 class="use-text-subtitle2"><?php echo $text['counter_partners']; ?></h6>
                       </div>
                     </div>

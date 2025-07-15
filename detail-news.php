@@ -475,12 +475,12 @@ if (!$article) {
                               <li class="collection-item avatar">
                                 <i class="circle icon primary material-icons grey lighten-3">date_range</i>
                                 <span class="use-text-medium"><?php echo $text['sidebar_established']; ?></span>
-                                <p>Jan 9, 2025</p>
+                                <p>27 April 2025</p>
                               </li>
                               <li class="collection-item avatar">
                                 <i class="circle icon primary material-icons grey lighten-3">local_phone</i>
                                 <span class="use-text-medium"><?php echo $text['sidebar_chairman']; ?></span>
-                                <p>Dr. Ahmad Fauzi, Sp.PD</p>
+                                <p>Brigjen TNI (Purn) dr. Jajang Edi Priyanto. SpB,. MARS</p>
                               </li>
                               <li class="collection-item avatar">
                                 <i class="circle icon primary material-icons grey lighten-3">location_on</i>
