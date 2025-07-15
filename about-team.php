@@ -471,8 +471,8 @@ $data = json_decode($response, true);
               <div class="about-style">
                 <div class="row justify-content-center">
 
-                  <?php if (!empty($data['data']['dokter'])): ?>
-                    <?php foreach ($data['data']['dokter'] as $item): ?>
+                  <?php if (!empty($data['data']['anggotaKehormatan'])): ?>
+                    <?php foreach ($data['data']['anggotaKehormatan'] as $item): ?>
                       <div class="col-md-4 col-sm-6 pa-lg-5 px-2" data-key="<?= $item['id']; ?>">
                         <div class="wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="0.5s">
                           <div class="card profile-card portrait full">
