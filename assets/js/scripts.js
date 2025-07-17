@@ -514,7 +514,62 @@ $(document).ready(function(){
   $('#next_facility').click(function() {
     $carousel.slick('slickNext');
   });
-})
+});
+
+$(document).ready(function(){
+  var $agendaCarousel = $('#agenda_carousel');
+  
+  // Slick go to the last slide
+  if ($("html").attr("dir") === "rtl") {
+    var lastSlide = Math.floor($agendaCarousel.data('length') - 2)
+    setTimeout(function() {
+      $agendaCarousel.slick('slickGoTo', lastSlide);
+    }, 100);
+  }
+
+  // slick carousel config
+  $agendaCarousel.slick({
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    arrows: false,
+    slidesToScroll: 1,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+  
+  // Fade effect
+  var sliderArt = $('#art_agenda');
+  $agendaCarousel.on('afterChange', function(slick, currentSlide){
+    if (currentSlide.currentSlide >= 1) {
+      sliderArt.addClass('faded');
+    } else {
+      sliderArt.removeClass('faded');
+    }
+  });
+
+  // Handle slick navigation
+  $('#prev_agenda').click(function() {
+    $agendaCarousel.slick('slickPrev');
+  });
+  $('#next_agenda').click(function() {
+    $agendaCarousel.slick('slickNext');
+  });
+});
 /**
  * @name Filter
  * @function filter product list base on category, price, tag, etc

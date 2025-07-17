@@ -200,6 +200,7 @@ $totalDokter = $data->data->dokter;
 $totalMitra = $data->data->mitra;
 $dataMitra = $data->data->mitras;
 $dataBerita = $data->data->articles;
+$dataAgenda = $data->data->agenda;
 $dataTestimonial = $data->data->testimonials;
 ?>
 
@@ -625,7 +626,7 @@ $dataTestimonial = $data->data->testimonials;
             </section>
             <!-- ##### END COUNTER #####-->
 
-            <!-- ##### FACILITY #####-->
+            <!-- ##### FACILITY (BERITA) ##### tetap sama -->
             <section class="space-top-short" id="facility">
               <div class="root">
                 <div class="container carousel-header">
@@ -682,6 +683,62 @@ $dataTestimonial = $data->data->testimonials;
               </div>
             </section>
             <!-- ##### END FACILITY #####-->
+
+            <section class="space-top-short" id="agenda">
+              <div class="root">
+                <div class="container carousel-header">
+                  <div class="text">
+                    <h4 class="use-text-title">Agenda</h4>
+                    <p class="use-text-subtitle2">Ikuti agenda kegiatan dan acara terbaru dari PDSI untuk pengembangan kompetensi profesional Anda.</p>
+                  </div>
+                  <a class="btn-flat primary-text waves-effect view-all" href="agenda.php"><?php echo $text['see_all']; ?><i class="material-icons icon">arrow_forward</i></a>
+                </div>
+                <div class="carousel-handle">
+                  <div class="carousel-wrap">
+                    <div class="carousel" id="agenda_carousel" data-length="6">
+                      <div class="item carousel-prop show-lg-up">
+                        <div></div>
+                      </div>
+                      <?php foreach ($dataAgenda as $item): ?>
+                        <div class="item">
+                          <div class="card facility-card">
+                            <figure>
+                              <img src="https://www.platform.pdsionline.org/storage/articles/<?= htmlspecialchars($item->attachment) ?>" alt="">
+                            </figure>
+                            <div class="text">
+                              <h6><?= htmlspecialchars($item->title) ?></h6>
+                              <p><?= strip_tags($item->description) ?></p>
+                            </div>
+                            <a class="btn waves-effect block secondary button" href="detail-agenda.php?id=<?= $item->id ?>"><?php echo $text['see_detail']; ?></a>
+                          </div>
+                        </div>
+                      <?php endforeach; ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="floating-artwork">
+                  <div class="container fixed-width">
+                    <div class="artwork">
+                      <!-- <div class="slider-art">
+                        <div class="deco">
+                          <div class="figure show-lg-up" id="art_agenda">
+                            <div class="wow fadeInLeftShort" data-wow-offset="250" data-wow-delay="0.3s" data-wow-duration="0.5s">
+                              <div>
+                                <img class="img-2d3d" src="./assets/images/medical/facility_3d@2x.png" data-2d="./assets" data-3d="./assets/images/medical/facility_3d@2x.png" alt="agenda" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
+                      <nav class="arrow">
+                        <button class="btn-floating margin" id="prev_agenda"><i class="material-icons">arrow_back</i></button>
+                        <button class="btn-floating margin" id="next_agenda"><i class="material-icons">arrow_forward</i></button>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
 
             <!-- ##### SPECIALITY #####-->
             <section class="space-top" id="speciality">

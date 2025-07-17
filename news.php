@@ -32,6 +32,7 @@ $translations = [
     'prev' => 'prev',
     'next' => 'next',
     'latest_articles' => 'Artikel Terbaru',
+    'latest_agenda' => 'Agenda Terbaru',
     'see_all' => 'see all',
 
     // About section
@@ -81,6 +82,7 @@ $translations = [
     'prev' => 'previous',
     'next' => 'next',
     'latest_articles' => 'Latest Articles',
+    'latest_agenda' => 'Agenda Terbaru',
     'see_all' => 'see all',
 
     // About section
@@ -381,6 +383,7 @@ function getCurrentUrl($newLang)
           // Check if API request was successful
           if ($data && $data['status'] === 'success' && !empty($data['data']['articles'])) {
             $allArticles = $data['data']['articles'];
+            $agenda = $data['data']['agenda'];
             $totalArticles = count($allArticles);
             $totalPages = ceil($totalArticles / $perPage);
 
@@ -392,6 +395,7 @@ function getCurrentUrl($newLang)
             // Get articles for current page
             $offset = ($page - 1) * $perPage;
             $articles = array_slice($allArticles, $offset, $perPage);
+
           ?>
             <div class="container-general">
               <div class="container mt-12 mt-sm-0">
@@ -521,6 +525,34 @@ function getCurrentUrl($newLang)
                           </div>
                         </div>
                         <div class="py-3"></div>
+                        <div class="card paper">
+                          <header>
+                            <div class="icon"><i class="material-icons small">bookmark</i></div>
+                            <div class="card-content">
+                              <span class="card-title"><?php echo $text['latest_agenda']; ?></span>
+                            </div>
+                          </header>
+                          <div class="content">
+                            <div>
+                              <div class="collection">
+                                <?php
+                                // Display latest 3 agenda in sidebar
+                                if (isset($agenda)) {
+                                  $latestAgenda = array_slice($agenda, 0, 3);
+                                  foreach ($latestAgenda as $latest):
+                                    $latestDate = date('d M Y', strtotime($latest['created_at']));
+                                ?>
+                                    <a class="waves-effect collection-item" href="detail-agenda.php?id=<?php echo $latest['id']; ?>&lang=<?php echo $lang; ?>">
+                                      <span class="d-block"><?php echo htmlspecialchars($latest['title']); ?></span>
+                                      <span class="caption"><?php echo $latestDate; ?></span>
+                                    </a>
+                                <?php endforeach;
+                                } ?>
+                              </div>
+                              <a class="btn waves-effect btn-flat primary-text block" href="agenda.php?lang=<?php echo $lang; ?>"><?php echo $text['see_all']; ?></a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
