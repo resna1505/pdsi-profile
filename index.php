@@ -265,6 +265,180 @@ $dataTestimonial = $data->data->testimonials;
   <link href="./assets/css/vendors/slick-carousel/slick.css" rel="stylesheet">
   <link href="./assets/css/vendors/slick-carousel/slick-theme.css" rel="stylesheet">
   <link href="./assets/css/styles.css" rel="stylesheet">
+
+  <style>
+    /* Agenda Card Styling */
+    .agenda-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .agenda-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .agenda-card figure {
+      margin: 0;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .agenda-card figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .agenda-card:hover figure img {
+      transform: scale(1.1);
+    }
+
+    .agenda-card .text {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .agenda-card .text h6 {
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #333;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 40px;
+    }
+
+    .agenda-card .text p {
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #666;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .agenda-card .author-info {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      margin-top: auto;
+    }
+
+    .agenda-card .card-action {
+      padding: 15px 20px;
+      background: #f8f9fa;
+      border-top: 1px solid #e9ecef;
+      text-align: right;
+    }
+
+    .agenda-card .card-action .btn {
+      margin: 0;
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+
+    /* Filter Styling - Keep Original */
+    .side-filter {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .collection-item.filter {
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 0;
+    }
+
+    .collection-item.filter:last-child {
+      border-bottom: none;
+    }
+
+    .collection-item.filter a {
+      padding: 12px 0;
+      display: block;
+      color: #666;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .collection-item.filter.active {
+      background: transparent;
+    }
+
+    .collection-item.filter.active a {
+      color: #2196f3;
+      font-weight: 600;
+    }
+
+    .collection-item.filter:hover a {
+      color: #2196f3;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .agenda-card figure {
+        height: 180px;
+      }
+
+      .agenda-card .text {
+        padding: 15px;
+      }
+
+      .agenda-card .card-action {
+        padding: 12px 15px;
+      }
+    }
+
+    /* Loading and No Data States */
+    .agenda-loading {
+      text-align: center;
+      padding: 40px 20px;
+      color: #666;
+    }
+
+    .agenda-no-data {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+    }
+
+    .agenda-no-data i {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    /* Smooth transitions for filtering */
+    .agenda-item {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .agenda-item.hidden {
+      opacity: 0;
+      transform: scale(0.9);
+      pointer-events: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -684,7 +858,7 @@ $dataTestimonial = $data->data->testimonials;
             </section>
             <!-- ##### END FACILITY #####-->
 
-            <section class="space-top-short" id="agenda">
+            <!-- <section class="space-top-short" id="agenda">
               <div class="root">
                 <div class="container carousel-header">
                   <div class="text">
@@ -719,7 +893,7 @@ $dataTestimonial = $data->data->testimonials;
                 <div class="floating-artwork">
                   <div class="container fixed-width">
                     <div class="artwork">
-                      <!-- <div class="slider-art">
+                      <div class="slider-art">
                         <div class="deco">
                           <div class="figure show-lg-up" id="art_agenda">
                             <div class="wow fadeInLeftShort" data-wow-offset="250" data-wow-delay="0.3s" data-wow-duration="0.5s">
@@ -729,11 +903,67 @@ $dataTestimonial = $data->data->testimonials;
                             </div>
                           </div>
                         </div>
-                      </div> -->
+                      </div>
                       <nav class="arrow">
                         <button class="btn-floating margin" id="prev_agenda"><i class="material-icons">arrow_back</i></button>
                         <button class="btn-floating margin" id="next_agenda"><i class="material-icons">arrow_forward</i></button>
                       </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section> -->
+
+            <!-- ##### ASK DOCTORS #####-->
+            <section class="space-top-short" id="ask-doctors">
+              <div class="root">
+                <div class="container">
+                  <div class="deco">
+                    <img class="img-2d3d" src="./assets/images/medical/footer_3d@2x.png" data-3d="./assets" data-2d="./assets/images/medical/footer_3d@2x.png" alt="speciality 3d" />
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-12 px-sm-6 px-0">
+                      <div class="wow fadeInLeftShort" data-offset="-100" data-delay="0.2s" data-duration="0.3s">
+                        <div class="side-filter">
+                          <h4 class="use-text-title">Agenda</h4>
+                          <ul class="collection nav" id="case_categories">
+                            <li class="collection-item filter active" data-category="all">
+                              <a class="waves-effect">All</a>
+                            </li>
+                            <!-- Categories akan diisi dari API -->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-8 col-md-9 col-sm-12 pa-sm-6 pa-0">
+                      <div class="massonry">
+                        <div class="row" id="agenda-container">
+                          <?php foreach ($dataAgenda as $item): ?>
+                            <div class="col-sm-4 px-lg-4 px-3 py-3 agenda-item" data-category="<?= $item->category_id ?>">
+                              <div class="wow fadeInUpShort" data-wow-delay="0s" data-wow-duration="0.4s">
+                                <div class="card facility-card agenda-card">
+                                  <figure>
+                                    <img src="https://www.platform.pdsionline.org/storage/articles/<?= htmlspecialchars($item->attachment) ?>" alt="<?= htmlspecialchars($item->title) ?>">
+                                  </figure>
+                                  <div class="text">
+                                    <h6><?= htmlspecialchars($item->title) ?></h6>
+                                    <p><?= strip_tags(substr($item->description, 0, 120)) ?>...</p>
+                                    <small class="author-info use-text-primary-color">
+                                      <i class="material-icons tiny">person</i>
+                                      <?= htmlspecialchars($item->author) ?>
+                                    </small>
+                                  </div>
+                                  <div class="card-action">
+                                    <a class="btn waves-effect secondary button" href="detail-agenda.php?id=<?= $item->id ?>">
+                                      <?php echo $text['see_detail']; ?>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          <?php endforeach; ?>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1030,74 +1260,120 @@ $dataTestimonial = $data->data->testimonials;
   <script src="./assets/js/scripts.js"></script>
   <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
   <script>
-    $(document).ready(function() {
-      let currentSlide = 0;
-      let totalSlides = 3;
-      let autoplayInterval;
-      let isAutoplayActive = true;
+    document.addEventListener('DOMContentLoaded', function() {
+      class AgendaManager {
+        constructor() {
+          this.currentCategory = 'all';
+          this.categories = [];
+          this.agendas = [];
+          this.apiData = <?= json_encode($dataAgenda) ?>;
 
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        $('#banner_nav a').removeClass('active');
-        $('#banner_nav a[data-slide="' + currentSlide + '"]').addClass('active');
-        $('#banner_nav a[data-slide="' + currentSlide + '"]').trigger('click');
-      }
-
-      function startAutoplay() {
-        if (isAutoplayActive) {
-          autoplayInterval = setInterval(nextSlide, 5000);
+          this.init();
         }
-      }
 
-      function stopAutoplay() {
-        clearInterval(autoplayInterval);
-      }
+        init() {
+          this.extractCategories();
+          this.renderCategories();
+          this.bindEvents();
+        }
 
-      function restartAutoplay() {
-        stopAutoplay();
-        startAutoplay();
-      }
+        extractCategories() {
+          // Extract unique categories from agenda data
+          const categoryMap = new Map();
 
-      $('#banner_nav a').on('click', function(e) {
-        e.preventDefault();
-        currentSlide = parseInt($(this).data('slide'));
-        $('#banner_nav a').removeClass('active');
-        $(this).addClass('active');
-        restartAutoplay();
-      });
+          this.apiData.forEach(item => {
+            if (item.category && !categoryMap.has(item.category.id)) {
+              categoryMap.set(item.category.id, {
+                id: item.category.id,
+                name: item.category.name
+              });
+            }
+          });
 
-      $('#banner').hover(
-        function() {
-          stopAutoplay();
-        },
-        function() {
-          if (isAutoplayActive) {
-            startAutoplay();
+          this.categories = Array.from(categoryMap.values());
+        }
+
+        renderCategories() {
+          const container = document.getElementById('case_categories');
+
+          // Keep the "All" item
+          const allItem = container.querySelector('[data-category="all"]');
+          container.innerHTML = '';
+          container.appendChild(allItem);
+
+          // Add dynamic categories
+          this.categories.forEach(category => {
+            const li = document.createElement('li');
+            li.className = 'collection-item filter';
+            li.setAttribute('data-category', category.id);
+            li.innerHTML = `<a class="waves-effect">${category.name}</a>`;
+            container.appendChild(li);
+          });
+        }
+
+        bindEvents() {
+          const categoryContainer = document.getElementById('case_categories');
+
+          categoryContainer.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+              e.preventDefault();
+
+              const filterItem = e.target.closest('.filter');
+              const category = filterItem.getAttribute('data-category');
+
+              this.setActiveCategory(category);
+              this.filterAgendas(category);
+            }
+          });
+        }
+
+        setActiveCategory(category) {
+          // Remove active class from all items
+          document.querySelectorAll('.collection-item.filter').forEach(item => {
+            item.classList.remove('active');
+          });
+
+          // Add active class to selected item
+          const activeItem = document.querySelector(`[data-category="${category}"]`);
+          if (activeItem) {
+            activeItem.classList.add('active');
           }
-        }
-      );
 
-      $(document).on('click', '#autoplay-toggle', function() {
-        if (isAutoplayActive) {
-          stopAutoplay();
-          isAutoplayActive = false;
-          $(this).text('▶ Play');
-        } else {
-          isAutoplayActive = true;
-          startAutoplay();
-          $(this).text('⏸ Pause');
+          this.currentCategory = category;
         }
-      });
 
-      startAutoplay();
+        filterAgendas(category) {
+          const agendaItems = document.querySelectorAll('.agenda-item');
 
-      document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-          stopAutoplay();
-        } else if (isAutoplayActive) {
-          startAutoplay();
+          agendaItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+
+            if (category === 'all' || itemCategory === category) {
+              item.style.display = 'block';
+              item.classList.remove('hidden');
+
+              // Re-trigger animation
+              setTimeout(() => {
+                const card = item.querySelector('.wow');
+                if (card) {
+                  card.classList.remove('animated', 'fadeInUpShort');
+                  setTimeout(() => {
+                    card.classList.add('animated', 'fadeInUpShort');
+                  }, 50);
+                }
+              }, 100);
+            } else {
+              item.classList.add('hidden');
+              setTimeout(() => {
+                item.style.display = 'none';
+              }, 300);
+            }
+          });
         }
-      });
+      }
+
+      // Initialize
+      new AgendaManager();
     });
   </script>
 </body>

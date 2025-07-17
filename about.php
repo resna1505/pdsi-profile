@@ -202,6 +202,131 @@ $video = $data->data->videos[0];
   <link href="./assets/css/vendors/slick-carousel/slick.css" rel="stylesheet">
   <link href="./assets/css/vendors/slick-carousel/slick-theme.css" rel="stylesheet">
   <link href="./assets/css/styles.css" rel="stylesheet">
+
+  <style>
+    .custom-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .modal-backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Remove or comment out the background-color line below to remove blur effect */
+      /* background-color: rgba(0, 0, 0, 0.5); */
+
+      /* Alternative: Use a very light background or transparent */
+      background-color: transparent;
+
+      /* Or if you want a subtle background without blur, use: */
+      /* background-color: rgba(0, 0, 0, 0.1); */
+    }
+
+    .modal-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      animation: modalFadeIn 0.3s ease-out;
+      /* Add a stronger shadow to make modal stand out without backdrop */
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .modal-header h4 {
+      margin: 0;
+      color: #333;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #999;
+      cursor: pointer;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .close-btn:hover {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+    .modal-body p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      color: #555;
+      text-align: justify;
+    }
+
+    .modal-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .modal-container {
+        width: 95%;
+        max-height: 90vh;
+      }
+
+      .modal-header h4 {
+        font-size: 1.2rem;
+      }
+
+      .modal-header,
+      .modal-body {
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -411,7 +536,9 @@ $video = $data->data->videos[0];
                       <div class="col-md-6 px-sm-5 px-0 py-4">
                         <div class="text">
                           <h4 class="use-text-title"><?php echo $text['banner_title']; ?></h4>
-                          <h5 class="use-text-subtitle2"><?php echo $text['banner_subtitle']; ?></h5>
+                          <h5 class="use-text-subtitle2">Sekilas tentang Perkumpulan Dokter Seluruh Indonesia
+                            Adalah organisasi profesi Dokter Indonesia yang lahir dari kesadaran dan pentingnya Reformasi sistem kedokteran Nasional yang lebih adil, profesional, terbuka, dan berpihak pada rakyat serta membela Negara kesatuan Republik Indonesia.</h5>
+                          <button id="openModal" class="btn waves-effect primary">see detail</button>
                         </div>
                       </div>
                       <div class="col-md-6 px-sm-5 py-4">
@@ -422,6 +549,34 @@ $video = $data->data->videos[0];
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Modal -->
+          <div id="customModal" class="custom-modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-container">
+              <div class="modal-header">
+                <h4>Sekilas tentang Perkumpulan Dokter Seluruh Indonesia</h4>
+                <button id="closeModal" class="close-btn">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Sekilas tentang Perkumpulan Dokter Seluruh Indonesia adalah organisasi profesi Dokter Indonesia yang lahir dari kesadaran dan pentingnya Reformasi sistem kedokteran Nasional yang lebih adil, profesional, terbuka, dan berpihak pada rakyat serta membela Negara kesatuan Republik Indonesia.
+                </p>
+                <p>
+                  Perkumpulan Dokter Seluruh Indonesia hadir untuk mewadahi semangat para dokter indonesia yang menginginkan perubahan dalam dunia kedokteran, dengan menjunjung tinggi nilai kesejawatan sejati, Profesionalisme dan pengabdian kepada bangsa.
+                </p>
+                <p>
+                  Perkumpulan Dokter Seluruh Indonesia secara resmi disahkan sebagai badan hukum oleh kementerian hukum dan hak asasi manusia Republik Indonesia melalui surat keputusan Nomor. AHU-0003638.AH.01.07 Tahun 2022, selanjutnya Perkumpulan Dokter Seluruh Indonesia di deklerasikan kepada publik secara resmi pada tanggal 27 April 2022, sebagai tunggak awal pergerakan kedokteran inklusif dan berorientasi pada pelayanan serta inovasi.
+                </p>
+                <p>
+                  Perkumpulan Dokter Seluruh Indonesia bukan sekedar profesi organisasi tetapi gerakan moral dan profesional para dokter indonesia untuk menciptakan sistem kedokteran berkualitas, transparan, inklusif dan berpihak kepada rakyat.
+                </p>
+                <p>
+                  Dengan semangat kolaborasi, inovasi, dan kesejawatan, Perkumpulan Dokter Seluruh Indonesia membuka lembaran baru bagi masa depan dunia kedokteran.
+                </p>
               </div>
             </div>
           </div>
@@ -686,6 +841,36 @@ $video = $data->data->videos[0];
   <script src="./assets/js/vendors/materialize.js"></script>
   <script src="./assets/js/scripts.js"></script>
   <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const openModalBtn = document.getElementById('openModal');
+      const closeModalBtn = document.getElementById('closeModal');
+      const modal = document.getElementById('customModal');
+      const modalBackdrop = document.querySelector('.modal-backdrop');
+
+      // Open modal
+      openModalBtn.addEventListener('click', function() {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+      });
+
+      // Close modal
+      function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore background scroll
+      }
+
+      closeModalBtn.addEventListener('click', closeModal);
+      modalBackdrop.addEventListener('click', closeModal);
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+          closeModal();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
