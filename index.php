@@ -202,6 +202,7 @@ $dataMitra = $data->data->mitras;
 $dataBerita = $data->data->articles;
 $dataAgenda = $data->data->agenda;
 $dataTestimonial = $data->data->testimonials;
+$dataBanner = $data->data->banner;
 ?>
 
 <!DOCTYPE html>
@@ -670,13 +671,13 @@ $dataTestimonial = $data->data->testimonials;
                             <div class="row">
                               <div class="col-md-7 col-lg-6 col-sm-12 px-sm-6 px-0 d-flex align-items-center">
                                 <div class="text">
-                                  <h4 class="use-text-title"><?php echo $text['banner_title_1']; ?></h4>
-                                  <h5 class="use-text-subtitle"><?php echo $text['banner_subtitle_1']; ?></h5>
+                                  <h4 class="use-text-title"><?php echo $dataBanner[0]->title; ?></h4>
+                                  <h5 class="use-text-subtitle"><?php echo $dataBanner[0]->sub_title; ?></h5>
                                 </div>
                               </div>
                               <div class="col-md-5 col-lg-6 col-sm-12">
                                 <div class="img">
-                                  <img class="img-2d3d" src="./assets/images/medical/banner1_3d@2x.png" data-2d="./assets" data-3d="./assets/images/medical/banner1_3d@2x.png" alt="banner 1 3D" />
+                                  <img class="img-2d3d" src="https://www.platform.pdsionline.org/storage/sliders/<?= htmlspecialchars($dataBanner[0]->image) ?>" alt="banner 1 3D">
                                 </div>
                               </div>
                             </div>
@@ -689,13 +690,13 @@ $dataTestimonial = $data->data->testimonials;
                             <div class="row">
                               <div class="col-md-7 col-lg-6 col-sm-12 px-sm-6 px-0 d-flex align-items-center order-lg-1">
                                 <div class="text">
-                                  <h4 class="use-text-title"><?php echo $text['banner_title_2']; ?></h4>
-                                  <h5 class="use-text-subtitle"><?php echo $text['banner_subtitle_2']; ?></h5>
+                                  <h4 class="use-text-title"><?php echo $dataBanner[1]->title; ?></h4>
+                                  <h5 class="use-text-subtitle"><?php echo $dataBanner[1]->title; ?></h5>
                                 </div>
                               </div>
                               <div class="col-md-5 col-lg-6 col-sm-12 order-lg-0">
                                 <div class="img">
-                                  <img class="img-2d3d mq-lg-up" src="./assets/images/medical/banner2_3d@2x.png" data-2d="./assets" data-3d="./assets/images/medical/banner2_3d@2x.png" alt="banner 2 3D" data-class="float-right mr-sm-12" />
+                                  <img class="img-2d3d mq-lg-up" src="https://www.platform.pdsionline.org/storage/sliders/<?= htmlspecialchars($dataBanner[1]->image) ?>" alt="banner 2 3D" data-class="float-right mr-sm-12" />
                                 </div>
                               </div>
                             </div>
@@ -708,13 +709,13 @@ $dataTestimonial = $data->data->testimonials;
                             <div class="row justify-content-center">
                               <div class="col-xs-12 px-md-12">
                                 <div class="text text-center">
-                                  <h4 class="use-text-title"><?php echo $text['banner_title_3']; ?></h4>
-                                  <h5 class="use-text-subtitle"><?php echo $text['banner_subtitle_3']; ?></h5>
+                                  <h4 class="use-text-title"><?php echo $dataBanner[2]->title; ?></h4>
+                                  <h5 class="use-text-subtitle"><?php echo $dataBanner[2]->title; ?></h5>
                                 </div>
                               </div>
                               <div class="col-12">
                                 <div class="img h-banner">
-                                  <img class="img-2d3d" src="./assets/images/medical/banner3_3d@2x.png" data-2d="./assets" data-3d="./assets/images/medical/banner3_3d@2x.png" alt="banner 3 3D" />
+                                  <img class="img-2d3d" src="https://www.platform.pdsionline.org/storage/sliders/<?= htmlspecialchars($dataBanner[2]->image) ?>" alt="banner 3 3D" />
                                 </div>
                               </div>
                             </div>
@@ -728,22 +729,22 @@ $dataTestimonial = $data->data->testimonials;
                       <nav class="slide-nav" id="banner_nav">
                         <a class="active" data-slide="0">
                           <span class="waves-effect">
-                            <strong><?php echo $text['banner_nav_1_title']; ?></strong>
-                            <?php echo $text['banner_nav_1_desc']; ?>
+                            <strong><?php echo $dataBanner[0]->title_banner; ?></strong>
+                            <?php echo $dataBanner[0]->sub_title_banner; ?>
                           </span>
                         </a>
                         <hr class="divider">
                         <a data-slide="1">
                           <span class="waves-effect">
-                            <strong><?php echo $text['banner_nav_2_title']; ?></strong>
-                            <?php echo $text['banner_nav_2_desc']; ?>
+                            <strong><?php echo $dataBanner[1]->title_banner; ?></strong>
+                            <?php echo $dataBanner[1]->sub_title_banner; ?>
                           </span>
                         </a>
                         <hr class="divider">
                         <a data-slide="2">
                           <span class="waves-effect">
-                            <strong><?php echo $text['banner_nav_3_title']; ?></strong>
-                            <?php echo $text['banner_nav_3_desc']; ?>
+                            <strong><?php echo $dataBanner[2]->title_banner; ?></strong>
+                            <?php echo $dataBanner[2]->sub_title_banner; ?>
                           </span>
                         </a>
                       </nav>
