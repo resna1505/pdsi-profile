@@ -947,8 +947,8 @@ $dataBanner = $data->data->banner;
                                     <img src="https://www.platform.pdsionline.org/storage/articles/<?= htmlspecialchars($item->attachment) ?>" alt="<?= htmlspecialchars($item->title) ?>">
                                   </figure>
                                   <div class="text">
-                                    <h6><?= htmlspecialchars($item->title) ?></h6>
-                                    <p><?= strip_tags(substr($item->description, 0, 120)) ?>...</p>
+                                    <h6><?= htmlspecialchars(substr($item->title, 0, 30)) ?>...</h6>
+                                    <p><?= strip_tags(substr($item->description, 0, 80)) ?>...</p>
                                     <small class="author-info use-text-primary-color">
                                       <i class="material-icons tiny">person</i>
                                       <?= htmlspecialchars($item->author) ?>
