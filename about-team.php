@@ -25,6 +25,7 @@ $languages = [
     'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently answer & questions',
+    'mega_struktur' => 'Struktur',
 
     // Banner
     'banner_title' => 'Pusat Pelatihan Dokter Profesional',
@@ -85,6 +86,7 @@ $languages = [
     'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently asked questions',
+    'mega_struktur' => 'Structure',
 
     // Banner
     'banner_title' => 'Professional Medical Training Center',
@@ -256,6 +258,9 @@ $data = json_decode($response, true);
                           <li class="collection-item side-group-link">
                             <a class="waves-effect text-truncate menu-list" href="agenda.php"><?php echo $text['mega_agenda']; ?></a>
                           </li>
+                          <li class="collection-item side-group-link">
+                            <a class="waves-effect text-truncate menu-list" href="struktur.php"><?php echo $text['mega_struktur']; ?></a>
+                          </li>
                         </ul>
                         <ul class="group-child">
                           <li class="collection-header">
@@ -329,6 +334,7 @@ $data = json_decode($response, true);
                                   <ul>
                                     <li class="waves-effect"><a class="menu-list" href="program-kerja.php"><?php echo $text['mega_work_program']; ?></a></li>
                                     <li class="waves-effect"><a class="menu-list" href="agenda.php"><?php echo $text['mega_agenda']; ?></a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="struktur.php"><?php echo $text['mega_struktur']; ?></a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">

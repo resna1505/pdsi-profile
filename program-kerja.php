@@ -22,6 +22,7 @@ $translations = [
     'agenda' => 'Agenda',
     'faq' => 'frequently answer & questions',
     'login' => 'Login',
+    'mega_struktur' => 'Struktur',
 
     // Theme
     'theme_mode' => 'theme mode',
@@ -60,6 +61,7 @@ $translations = [
     'agenda' => 'Agenda',
     'faq' => 'frequently asked questions',
     'login' => 'Login',
+    'mega_struktur' => 'Structure',
 
     // Theme
     'theme_mode' => 'theme mode',
@@ -208,6 +210,9 @@ function getCurrentUrl($newLang)
                           <li class="collection-item side-group-link">
                             <a class="waves-effect text-truncate menu-list" href="agenda.php?lang=<?php echo $lang; ?>"><?php echo $text['agenda']; ?></a>
                           </li>
+                          <li class="collection-item side-group-link">
+                            <a class="waves-effect text-truncate menu-list" href="struktur.php"><?php echo $text['mega_struktur']; ?></a>
+                          </li>
                         </ul>
                         <ul class="group-child">
                           <li class="collection-header">
@@ -279,6 +284,7 @@ function getCurrentUrl($newLang)
                                   <ul>
                                     <li class="waves-effect"><a class="menu-list current" href="program-kerja.php?lang=<?php echo $lang; ?>"><?php echo $text['work_program']; ?></a></li>
                                     <li class="waves-effect"><a class="menu-list" href="agenda.php?lang=<?php echo $lang; ?>"><?php echo $text['agenda']; ?></a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="struktur.php"><?php echo $text['mega_struktur']; ?></a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">

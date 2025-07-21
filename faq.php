@@ -11,7 +11,7 @@ $languages = [
     'nav_news' => 'berita',
     'nav_testimonial' => 'testimoni',
     'nav_partners' => 'mitra',
-    'nav_profile' => 'Profil PDSI',
+    'nav_profile' => 'Profil PDSI',
     'nav_login' => 'Login',
 
     // Mega Menu
@@ -25,6 +25,7 @@ $languages = [
     'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently answer & questions',
+    'mega_struktur' => 'Struktur',
 
     // Hero Banner
     'hero_title' => 'Pertanyaan Umum',
@@ -72,6 +73,7 @@ $languages = [
     'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently asked questions',
+    'mega_struktur' => 'Structure',
 
     // Hero Banner
     'hero_title' => 'Frequently Asked Questions',
@@ -236,6 +238,9 @@ if ($data && $data['status'] === 'success' && !empty($data['data']['faq'])) {
                           <li class="collection-item side-group-link">
                             <a class="waves-effect text-truncate menu-list" href="agenda.php"><?php echo $text['mega_agenda']; ?></a>
                           </li>
+                          <li class="collection-item side-group-link">
+                            <a class="waves-effect text-truncate menu-list" href="struktur.php"><?php echo $text['mega_struktur']; ?></a>
+                          </li>
                         </ul>
                         <ul class="group-child">
                           <li class="collection-header">
@@ -309,6 +314,7 @@ if ($data && $data['status'] === 'success' && !empty($data['data']['faq'])) {
                                   <ul>
                                     <li class="waves-effect"><a class="menu-list" href="program-kerja.php"><?php echo $text['mega_work_program']; ?></a></li>
                                     <li class="waves-effect"><a class="menu-list" href="agenda.php"><?php echo $text['mega_agenda']; ?></a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="struktur.php"><?php echo $text['mega_struktur']; ?></a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">

@@ -568,6 +568,7 @@ $dataBanner = $data->data->banner;
                                   <ul>
                                     <li class="waves-effect"><a class="menu-list" href="program-kerja.php"><?php echo $text['mega_work_program']; ?></a></li>
                                     <li class="waves-effect"><a class="menu-list" href="agenda.php"><?php echo $text['mega_agenda']; ?></a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="struktur.php">Struktur</a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">

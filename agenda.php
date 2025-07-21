@@ -25,6 +25,7 @@ $languages = [
     'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently answer & questions',
+    'mega_struktur' => 'Struktur',
 
     // Main Content
     'read_more' => 'baca selengkapnya',
@@ -81,6 +82,7 @@ $languages = [
     'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently asked questions',
+    'mega_struktur' => 'Structure',
 
     // Main Content
     'read_more' => 'read more',
@@ -253,6 +255,9 @@ $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1; // Current page
                           <li class="collection-item side-group-link">
                             <a class="waves-effect text-truncate menu-list current" href="agenda.php"><?php echo $text['mega_agenda']; ?></a>
                           </li>
+                          <li class="collection-item side-group-link">
+                            <a class="waves-effect text-truncate menu-list" href="struktur.php"><?php echo $text['mega_struktur']; ?></a>
+                          </li>
                         </ul>
                         <ul class="group-child">
                           <li class="collection-header">
@@ -326,6 +331,7 @@ $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1; // Current page
                                   <ul>
                                     <li class="waves-effect"><a class="menu-list" href="program-kerja.php"><?php echo $text['mega_work_program']; ?></a></li>
                                     <li class="waves-effect"><a class="menu-list current" href="agenda.php"><?php echo $text['mega_agenda']; ?></a></li>
+                                    <li class="waves-effect"><a class="menu-list" href="struktur.php"><?php echo $text['mega_struktur']; ?></a></li>
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
