@@ -484,7 +484,7 @@ function getCurrentUrl($newLang)
                                 <li class="collection-item avatar">
                                   <i class="circle icon primary material-icons grey lighten-3">local_phone</i>
                                   <span class="use-text-medium"><?php echo $text['chairman']; ?></span>
-                                  <p>...</p>
+                                  <p>Brigjen TNI (Purn) dr. Jajang Edi Priyanto. SpB,. MARS</p>
                                 </li>
                                 <li class="collection-item avatar">
                                   <i class="circle icon primary material-icons grey lighten-3">location_on</i>
