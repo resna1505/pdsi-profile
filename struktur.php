@@ -137,7 +137,7 @@ $currentLang = $_SESSION['language'];
 $text = $languages[$currentLang];
 
 // API Data fetching
-$response = file_get_contents('http://127.0.0.1:8000/api/struktur');
+$response = file_get_contents('https://www.platform.pdsionline.org/api/struktur');
 $data = json_decode($response); // jadi objek
 
 $dataStruktur = $data->data->struktur;
