@@ -137,8 +137,10 @@ $currentLang = $_SESSION['language'];
 $text = $languages[$currentLang];
 
 // API Data fetching
-$response = file_get_contents('https://www.platform.pdsionline.org/api/dokter');
-$data = json_decode($response, true);
+$response = file_get_contents('http://127.0.0.1:8000/api/struktur');
+$data = json_decode($response); // jadi objek
+
+$dataStruktur = $data->data->struktur;
 ?>
 
 <!DOCTYPE html>
@@ -414,8 +416,8 @@ $data = json_decode($response, true);
                                         <div class="row d-flex justify-content-center align-items-center">
                                             <div class="col-md-6 px-sm-5 px-0 py-4">
                                                 <div class="text">
-                                                    <h4 class="use-text-title"><?php echo $text['banner_title']; ?></h4>
-                                                    <h5 class="use-text-subtitle2"><?php echo $text['banner_subtitle']; ?></h5>
+                                                    <h4 class="use-text-title"><?php echo $dataStruktur->title; ?></h4>
+                                                    <h5 class="use-text-subtitle2"><?php echo $dataStruktur->subtitle; ?></h5>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 px-sm-5 py-4">
@@ -436,7 +438,7 @@ $data = json_decode($response, true);
                         <div class="container text-center text-lg-start">
                             <div class="about-style">
                                 <div class="row justify-content-center">
-                                    <img src="https://eng.ui.ac.id/wp-content/uploads/Struktur-Organisasi-FTUI-2025-06.jpg" alt="" width="100%" height="auto" title="Struktur Organisasi FTUI 2025-06" style="max-width: 100%; height: auto; object-fit: contain;">
+                                    <img src="https://www.platform.pdsionline.org/storage/struktur/<?= htmlspecialchars($dataStruktur->image) ?>" alt="" width="100%" height="auto" title="Struktur Organisasi FTUI 2025-06" style="max-width: 100%; height: auto; object-fit: contain;">
                                 </div>
                             </div>
                         </div>
