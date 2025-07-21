@@ -11,7 +11,7 @@ $languages = [
     'nav_news' => 'berita',
     'nav_testimonial' => 'testimoni',
     'nav_partners' => 'mitra',
-    'nav_profile' => 'Profil Lembaga',
+    'nav_profile' => 'Profil PDSI',
     'nav_login' => 'Login',
 
     // Mega Menu
@@ -22,7 +22,7 @@ $languages = [
     'mega_news' => 'Berita',
     'mega_activities' => 'Kegiatan',
     'mega_work_program' => 'Program Kerja',
-    'mega_agenda' => 'Agenda',
+    'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently answer & questions',
 
@@ -81,7 +81,7 @@ $languages = [
     'mega_news' => 'News',
     'mega_activities' => 'Activities',
     'mega_work_program' => 'Work Program',
-    'mega_agenda' => 'Agenda',
+    'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently asked questions',
 
@@ -581,19 +581,6 @@ $video = $data->data->videos[0];
             </div>
           </div>
           <!-- ##### BANNER #####-->
-
-          <!-- ##### COMPANY LOGO #####-->
-          <div class="company-logo fixed-width">
-            <div class="root">
-              <img src="./assets/images/logos/architect.png" alt="logo0" />
-              <img src="./assets/images/logos/cloud.png" alt="logo1" />
-              <img src="./assets/images/logos/coin.png" alt="logo2" />
-              <img src="./assets/images/logos/mobile.png" alt="logo3" />
-              <img src="./assets/images/logos/profile.png" alt="logo4" />
-              <img src="./assets/images/logos/saas.png" alt="logo5" />
-            </div>
-          </div>
-          <!-- ##### END COMPANY LOGO #####-->
 
           <!-- ##### COUNTER #####-->
           <div class="space-top-short">

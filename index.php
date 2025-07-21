@@ -11,7 +11,7 @@ $languages = [
     'nav_news' => 'berita',
     'nav_testimonial' => 'testimoni',
     'nav_partners' => 'mitra',
-    'nav_profile' => 'Profil Lembaga',
+    'nav_profile' => 'Profil PDSI',
     'nav_login' => 'Login',
 
     // Mega Menu
@@ -22,7 +22,7 @@ $languages = [
     'mega_news' => 'Berita',
     'mega_activities' => 'Kegiatan',
     'mega_work_program' => 'Program Kerja',
-    'mega_agenda' => 'Agenda',
+    'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently answer & questions',
 
@@ -61,8 +61,8 @@ $languages = [
     'speciality_desc' => 'Semua instruktur di Platform Kursus Medis kami adalah dokter berlisensi dan ahli di bidangnya masing-masing.',
 
     // Testimonial Section
-    'testimonial_title' => 'Testimoni Dokter',
-    'testimonial_subtitle' => 'Apa kata para dokter tentang pengalaman mereka mengikuti kursus ini.',
+    'testimonial_title' => 'Pengakuan',
+    'testimonial_subtitle' => 'Apa kata dokter tentang Perkumpulan Dokter Seluruh Indonesia.',
 
     // Partners Section
     'partners_title' => 'Mitra Kami',
@@ -111,7 +111,7 @@ $languages = [
     'mega_news' => 'News',
     'mega_activities' => 'Activities',
     'mega_work_program' => 'Work Program',
-    'mega_agenda' => 'Agenda',
+    'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently asked questions',
 
@@ -150,8 +150,8 @@ $languages = [
     'speciality_desc' => 'All instructors in our Medical Course Platform are licensed doctors and experts in their respective fields.',
 
     // Testimonial Section
-    'testimonial_title' => 'Doctor Testimonials',
-    'testimonial_subtitle' => 'What doctors say about their experience taking this course.',
+    'testimonial_title' => 'Confession',
+    'testimonial_subtitle' => 'What do doctors say about the Indonesian Doctors Association?',
 
     // Partners Section
     'partners_title' => 'Our Partners',
@@ -664,9 +664,9 @@ $dataBanner = $data->data->banner;
                     <div class="slider" id="banner_slider">
                       <div class="slide" id="slide1">
                         <div class="inner">
-                          <div class="img background-banner">
+                          <!-- <div class="img background-banner">
                             <img class="img-2d3d" src="./assets/images/medical/background_3d@2x.png" data-2d="./assets" data-3d="./assets/images/medical/background_3d@2x.png" alt="background" />
-                          </div>
+                          </div> -->
                           <div class="container">
                             <div class="row">
                               <div class="col-md-7 col-lg-6 col-sm-12 px-sm-6 px-0 d-flex align-items-center">
@@ -859,62 +859,6 @@ $dataBanner = $data->data->banner;
             </section>
             <!-- ##### END FACILITY #####-->
 
-            <!-- <section class="space-top-short" id="agenda">
-              <div class="root">
-                <div class="container carousel-header">
-                  <div class="text">
-                    <h4 class="use-text-title">Agenda</h4>
-                    <p class="use-text-subtitle2">Ikuti agenda kegiatan dan acara terbaru dari PDSI untuk pengembangan kompetensi profesional Anda.</p>
-                  </div>
-                  <a class="btn-flat primary-text waves-effect view-all" href="agenda.php"><?php echo $text['see_all']; ?><i class="material-icons icon">arrow_forward</i></a>
-                </div>
-                <div class="carousel-handle">
-                  <div class="carousel-wrap">
-                    <div class="carousel" id="agenda_carousel" data-length="6">
-                      <div class="item carousel-prop show-lg-up">
-                        <div></div>
-                      </div>
-                      <?php foreach ($dataAgenda as $item): ?>
-                        <div class="item">
-                          <div class="card facility-card">
-                            <figure>
-                              <img src="https://www.platform.pdsionline.org/storage/articles/<?= htmlspecialchars($item->attachment) ?>" alt="">
-                            </figure>
-                            <div class="text">
-                              <h6><?= htmlspecialchars($item->title) ?></h6>
-                              <p><?= strip_tags($item->description) ?></p>
-                            </div>
-                            <a class="btn waves-effect block secondary button" href="detail-agenda.php?id=<?= $item->id ?>"><?php echo $text['see_detail']; ?></a>
-                          </div>
-                        </div>
-                      <?php endforeach; ?>
-                    </div>
-                  </div>
-                </div>
-                <div class="floating-artwork">
-                  <div class="container fixed-width">
-                    <div class="artwork">
-                      <div class="slider-art">
-                        <div class="deco">
-                          <div class="figure show-lg-up" id="art_agenda">
-                            <div class="wow fadeInLeftShort" data-wow-offset="250" data-wow-delay="0.3s" data-wow-duration="0.5s">
-                              <div>
-                                <img class="img-2d3d" src="./assets/images/medical/facility_3d@2x.png" data-2d="./assets" data-3d="./assets/images/medical/facility_3d@2x.png" alt="agenda" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <nav class="arrow">
-                        <button class="btn-floating margin" id="prev_agenda"><i class="material-icons">arrow_back</i></button>
-                        <button class="btn-floating margin" id="next_agenda"><i class="material-icons">arrow_forward</i></button>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section> -->
-
             <!-- ##### ASK DOCTORS #####-->
             <section class="space-top-short" id="ask-doctors">
               <div class="root">
@@ -926,7 +870,7 @@ $dataBanner = $data->data->banner;
                     <div class="col-md-3 col-sm-12 px-sm-6 px-0">
                       <div class="wow fadeInLeftShort" data-offset="-100" data-delay="0.2s" data-duration="0.3s">
                         <div class="side-filter">
-                          <h4 class="use-text-title">Agenda</h4>
+                          <h4 class="use-text-title">Agenda PDSI</h4>
                           <ul class="collection nav" id="case_categories">
                             <li class="collection-item filter active" data-category="all">
                               <a class="waves-effect">All</a>

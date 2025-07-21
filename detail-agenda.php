@@ -11,7 +11,7 @@ $languages = [
     'nav_news' => 'berita',
     'nav_testimonial' => 'testimoni',
     'nav_partners' => 'mitra',
-    'nav_profile' => 'Profil Lembaga',
+    'nav_profile' => 'Profil PDSI',
     'nav_login' => 'Login',
 
     // Mega Menu
@@ -22,7 +22,7 @@ $languages = [
     'mega_news' => 'Berita',
     'mega_activities' => 'Kegiatan',
     'mega_work_program' => 'Program Kerja',
-    'mega_agenda' => 'Agenda',
+    'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently answer & questions',
 
@@ -77,7 +77,7 @@ $languages = [
     'mega_news' => 'News',
     'mega_activities' => 'Activities',
     'mega_work_program' => 'Work Program',
-    'mega_agenda' => 'Agenda',
+    'mega_agenda' => 'Agenda PDSI',
     'mega_faq' => 'FAQ',
     'mega_faq_full' => 'frequently asked questions',
 
