@@ -9,7 +9,7 @@ $languages = [
 
     // Navigation
     'nav_news' => 'berita',
-    'nav_testimonial' => 'testimoni',
+    'nav_testimonial' => 'Pengakuan',
     'nav_partners' => 'mitra',
     'nav_profile' => 'Profil PDSI',
     'nav_login' => 'Login',

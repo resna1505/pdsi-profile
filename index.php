@@ -9,7 +9,7 @@ $languages = [
 
     // Navigation
     'nav_news' => 'berita',
-    'nav_testimonial' => 'testimoni',
+    'nav_testimonial' => 'Pengakuan',
     'nav_partners' => 'mitra',
     'nav_profile' => 'Profil PDSI',
     'nav_login' => 'Login',
@@ -704,7 +704,7 @@ $dataBanner = $data->data->banner;
                           </div>
                         </div>
                       </div>
-                      <div class="slide center-content" id="slide3">
+                      <!-- <div class="slide center-content" id="slide3">
                         <div class="inner">
                           <div class="container max-md">
                             <div class="row justify-content-center">
@@ -717,6 +717,25 @@ $dataBanner = $data->data->banner;
                               <div class="col-12">
                                 <div class="img h-banner">
                                   <img class="img-2d3d" src="https://www.platform.pdsionline.org/storage/sliders/<?= htmlspecialchars($dataBanner[2]->image) ?>" alt="banner 3 3D" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
+                      <div class="slide" id="slide3">
+                        <div class="inner">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-md-7 col-lg-6 col-sm-12 px-sm-6 px-0 d-flex align-items-center">
+                                <div class="text">
+                                  <h4 class="use-text-title"><?php echo $dataBanner[2]->title; ?></h4>
+                                  <h5 class="use-text-subtitle"><?php echo $dataBanner[2]->sub_title; ?></h5>
+                                </div>
+                              </div>
+                              <div class="col-md-5 col-lg-6 col-sm-12">
+                                <div class="img">
+                                  <img class="img-2d3d" src="https://www.platform.pdsionline.org/storage/sliders/<?= htmlspecialchars($dataBanner[2]->image) ?>" alt="banner 1 3D">
                                 </div>
                               </div>
                             </div>

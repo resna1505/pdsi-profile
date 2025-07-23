@@ -6,7 +6,7 @@ $translations = [
   'id' => [
     // Navigation
     'news' => 'berita',
-    'testimonials' => 'testimoni',
+    'testimonials' => 'Pengakuan',
     'partners' => 'mitra',
     'institution_profile' => 'Profil PDSI',
     'about_us' => 'Tentang Kami',
