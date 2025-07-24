@@ -44,7 +44,7 @@ $translations = [
 
     // Footer
     'footer_description' => 'Platform Perkumpulan Dokter Seluruh Indonesia & Lembaga Pendidikan dan Pelatihan Dokter Seluruh Indonesia',
-    'copyright' => 'Copyright 2025©Ict-Pekumpulan Dokter Seluruh Indonesia-PDSI-LPDS',
+    'copyright' => 'Copyright 2025©Ict-Pekumpulan Dokter Seluruh Indonesia-PDSI-LPDSI',
     'legal' => 'Legal',
     'privacy_policy' => 'Privacy policy',
     'terms_of_use' => 'Terms of use',
@@ -87,7 +87,7 @@ $translations = [
 
     // Footer
     'footer_description' => 'Training and competency development platform for doctors in Indonesia, with standardized curriculum and trusted partner support.',
-    'copyright' => 'Copyright 2025©Ict-Pekumpulan Dokter Seluruh Indonesia-PDSI-LPDS',
+    'copyright' => 'Copyright 2025©Ict-Pekumpulan Dokter Seluruh Indonesia-PDSI-LPDSI',
     'legal' => 'Legal',
     'privacy_policy' => 'Privacy policy',
     'terms_of_use' => 'Terms of use',
