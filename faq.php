@@ -103,6 +103,32 @@ Daerah Khusus Ibukota Jakarta 12310',
   ]
 ];
 
+function convertLinksToButtons($content)
+{
+  // Pattern untuk detect URLs
+  $urlPattern = '/(https?:\/\/[^\s<>"\']+|www\.[^\s<>"\']+)/i';
+
+  $content = preg_replace_callback($urlPattern, function ($matches) {
+    $url = $matches[0];
+    $displayUrl = $url;
+
+    // Add https if missing
+    $fullUrl = $url;
+    if (!preg_match('/^https?:\/\//i', $fullUrl)) {
+      $fullUrl = 'https://' . $fullUrl;
+    }
+
+    // Return as button instead of link
+    return sprintf(
+      '<button type="button" class="faq-url-button" data-url="%s" style="background: none; border: none; color: #2196F3; text-decoration: underline; cursor: pointer; padding: 0; font: inherit;">%s</button>',
+      htmlspecialchars($fullUrl),
+      htmlspecialchars($displayUrl)
+    );
+  }, $content);
+
+  return $content;
+}
+
 // Language detection and setting
 if (isset($_GET['lang']) && in_array($_GET['lang'], ['id', 'en'])) {
   $_SESSION['language'] = $_GET['lang'];
@@ -422,7 +448,9 @@ if ($data && $data['status'] === 'success' && !empty($data['data']['faq'])) {
                                       <i class="material-icons right arrow">expand_more</i>
                                     </div>
                                     <div class="collapsible-body detail">
-                                      <p><?= htmlspecialchars($item['answer']) ?></p>
+                                      <div class="faq-answer-content">
+                                        <?= convertLinksToButtons($item['answer']) ?>
+                                      </div>
                                     </div>
                                   </li>
                                 <?php endforeach; ?>
@@ -553,8 +581,37 @@ if ($data && $data['status'] === 'success' && !empty($data['data']['faq'])) {
   <script src="./assets/js/vendors/jquery.navScroll.min.js"></script>
   <script src="./assets/js/vendors/modernizr-2.8.3-respond-1.4.2.min.js"></script>
   <script src="./assets/js/vendors/materialize.js"></script>
+
   <script src="./assets/js/scripts.js"></script>
   <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+  <script>
+    $(document).ready(function() {
+      // Handle button clicks untuk URL
+      $(document).on('click', '.faq-url-button', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        const url = $(this).data('url');
+        console.log('Button clicked, opening:', url);
+
+        // Paksa buka URL
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        if (newWindow) {
+          newWindow.focus();
+        }
+
+        return false;
+      });
+
+      // Style buttons on hover
+      $(document).on('mouseenter', '.faq-url-button', function() {
+        $(this).css('color', '#0d47a1');
+      }).on('mouseleave', '.faq-url-button', function() {
+        $(this).css('color', '#2196F3');
+      });
+    });
+  </script>
 </body>
 
 </html>
