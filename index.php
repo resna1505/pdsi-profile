@@ -1134,7 +1134,7 @@ $dataBanner = $data->data->banner;
                           </div>
                           <div class="person">
                             <div class="name">
-                              <h6><?= htmlspecialchars($item->anggota->nama) ?></h6>
+                              <h6><?= htmlspecialchars(mb_strimwidth($item->anggota->nama, 0, 25, "...")) ?></h6>
                               <span class="caption"><?= htmlspecialchars($item->anggota->profesi) ?></span>
                             </div>
                             <div class="avatar-img avatar">
