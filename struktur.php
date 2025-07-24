@@ -50,7 +50,10 @@ $languages = [
         // Footer
         'footer_description' => 'Platform Perkumpulan Dokter Seluruh Indonesia & Lembaga Pendidikan dan Pelatihan Dokter Seluruh Indonesia',
         'footer_copyright' => 'Copyright 2025©Ict-Pekumpulan Dokter Seluruh Indonesia-PDSI-LPDSI',
-        'footer_address' => 'KTC Mall Lantai 3 Jl. Pulau Putri No.2, RW.9, Klp. Gading Bar., Kec. Klp. Gading, Kota Jkt Utara, Jakarta, Indonesia 14240.',
+        'footer_address' => 'KTC Mall Kelapa Gading Lt.3 - Vinski Tower: 
+Jl.Ciputat Raya No.22A, Pd.Pinang, 
+Kec.Kby.Lama, Kota Jakarta Selatan, 
+Daerah Khusus Ibukota Jakarta 12310',
         'footer_legal' => 'Legal',
         'footer_privacy' => 'Privacy policy',
         'footer_terms' => 'Terms of use',

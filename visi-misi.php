@@ -48,7 +48,10 @@ $translations = [
     'legal' => 'Legal',
     'privacy_policy' => 'Privacy policy',
     'terms_of_use' => 'Terms of use',
-    'address' => 'KTC Mall Lantai 3 Jl. Pulau Putri No.2, RW.9, Klp. Gading Bar., Kec. Klp. Gading, Kota Jkt Utara, Jakarta, Indonesia 14240.',
+    'address' => 'KTC Mall Kelapa Gading Lt.3 - Vinski Tower: 
+Jl.Ciputat Raya No.22A, Pd.Pinang, 
+Kec.Kby.Lama, Kota Jakarta Selatan, 
+Daerah Khusus Ibukota Jakarta 12310',
   ],
   'en' => [
     // Navigation
