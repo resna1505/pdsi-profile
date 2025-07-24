@@ -44,8 +44,8 @@ $languages = [
     'sidebar_see_all' => 'lihat semua',
 
     // Footer
-    'footer_description' => 'Platform pelatihan dan pengembangan kompetensi dokter di Indonesia, dengan kurikulum terstandar dan dukungan mitra terpercaya.',
-    'footer_copyright' => '© Copyright 2025 PDSI',
+    'footer_description' => 'Platform Perkumpulan Dokter Seluruh Indonesia & Lembaga Pendidikan dan Pelatihan Dokter Seluruh Indonesia',
+    'footer_copyright' => 'Copyright 2025©Ict-Pekumpulan Dokter Seluruh Indonesia-PDSI-LPDS',
     'footer_address' => 'KTC Mall Lantai 3 Jl. Pulau Putri No.2, RW.9, Klp. Gading Bar., Kec. Klp. Gading, Kota Jkt Utara, Jakarta, Indonesia 14240.',
     'footer_legal' => 'Legal',
     'footer_privacy' => 'Privacy policy',
@@ -101,8 +101,8 @@ $languages = [
     'sidebar_see_all' => 'see all',
 
     // Footer
-    'footer_description' => 'Medical training and competency development platform for doctors in Indonesia, with standardized curriculum and trusted partner support.',
-    'footer_copyright' => '© Copyright 2025 PDSI',
+    'footer_description' => 'Platform of the Indonesian Doctors Association & Educational and Training Institutions for Doctors Throughout Indonesia',
+    'footer_copyright' => 'Copyright 2025©Ict-Pekumpulan Dokter Seluruh Indonesia-PDSI-LPDS',
     'footer_address' => 'KTC Mall 3rd Floor Jl. Pulau Putri No.2, RW.9, Klp. Gading Bar., Kec. Klp. Gading, North Jakarta City, Jakarta, Indonesia 14240.',
     'footer_legal' => 'Legal',
     'footer_privacy' => 'Privacy policy',

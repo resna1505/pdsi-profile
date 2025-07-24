@@ -44,8 +44,8 @@ $translations = [
     'headquarters_location' => 'Jakarta, Indonesia',
 
     // Footer
-    'footer_description' => 'Platform pelatihan dan pengembangan kompetensi dokter di Indonesia, dengan kurikulum terstandar dan dukungan mitra terpercaya.',
-    'copyright' => '© Copyright 2025 PDSI',
+    'footer_description' => 'Platform Perkumpulan Dokter Seluruh Indonesia & Lembaga Pendidikan dan Pelatihan Dokter Seluruh Indonesia',
+    'copyright' => 'Copyright 2025©Ict-Pekumpulan Dokter Seluruh Indonesia-PDSI-LPDS',
     'legal' => 'Legal',
     'privacy_policy' => 'Privacy policy',
     'terms_of_use' => 'Terms of use',
@@ -96,7 +96,7 @@ $translations = [
 
     // Footer
     'footer_description' => 'Training and competency development platform for doctors in Indonesia, with standardized curriculum and trusted partner support.',
-    'copyright' => '© Copyright 2025 PDSI',
+    'copyright' => 'Copyright 2025©Ict-Pekumpulan Dokter Seluruh Indonesia-PDSI-LPDS',
     'legal' => 'Legal',
     'privacy_policy' => 'Privacy policy',
     'terms_of_use' => 'Terms of use',
