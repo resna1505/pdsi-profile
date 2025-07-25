@@ -5,7 +5,7 @@ session_start();
 $languages = [
   'id' => [
     'site_title' => 'PDSI - Homepage',
-    'meta_description' => 'Platform pelatihan dan pengembangan kompetensi dokter di Indonesia',
+    'meta_description' => 'Platform Perkumpulan Dokter Seluruh Indonesia & Lembaga Pendidikan dan Pelatihan Dokter Seluruh Indonesia',
 
     // Navigation
     'nav_news' => 'berita',
@@ -249,7 +249,7 @@ $dataBanner = $data->data->banner;
   <meta property="twitter:card" content="summary">
   <meta property="twitter:image:src" content="./assets/images/logo-medical.png">
   <meta property="og:url" content="nirwana.indisains.com/medical">
-  <meta property="og:title" content="Medical">
+  <meta property="og:title" content="PDSI">
   <meta property="og:description" content="<?php echo $text['meta_description']; ?>">
   <meta name="twitter:site" content="nirwana.indisains.com/medical">
   <meta name="twitter:card" content="summary_large_image">

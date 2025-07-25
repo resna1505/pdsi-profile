@@ -139,7 +139,7 @@ function getCurrentUrl($newLang)
   <meta property="twitter:card" content="summary">
   <meta property="twitter:image:src" content="./assets/images/logo-medical.png">
   <meta property="og:url" content="nirwana.indisains.com/medical">
-  <meta property="og:title" content="Medical">
+  <meta property="og:title" content="PDSI">
   <meta property="og:description" content="Nirwana Medical - HTML5 Bootstrap Template">
   <meta name="twitter:site" content="nirwana.indisains.com/medical">
   <meta name="twitter:card" content="summary_large_image">
