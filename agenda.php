@@ -499,7 +499,7 @@ $page = isset($_GET['page']) ? max(1, (int)$_GET['page']) : 1; // Current page
                                 <li class="collection-item avatar">
                                   <i class="circle icon primary material-icons grey lighten-3">date_range</i>
                                   <span class="use-text-medium"><?php echo $text['sidebar_established']; ?></span>
-                                  <p>Jan 9, 2025</p>
+                                  <p>27 April 2022</p>
                                 </li>
                                 <li class="collection-item avatar">
                                   <i class="circle icon primary material-icons grey lighten-3">local_phone</i>

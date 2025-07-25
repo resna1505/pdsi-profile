@@ -37,7 +37,7 @@ $translations = [
     'see_all' => 'see all',
 
     // About section
-    'about_description' => 'Ikatan Dokter Spesialis Penyakit Dalam (IDSPDI) adalah wadah profesional untuk meningkatkan kompetensi, etika, dan kolaborasi antar spesialis di Indonesia.',
+    'about_description' => 'Perkumpulan Dokter Seluruh Indonesia (PDSI) adalah wadah profesional untuk meningkatkan kompetensi, etika, dan kolaborasi antar dokter di Indonesia.',
     'established' => 'Didirikan',
     'chairman' => 'Ketua Umum',
     'headquarters' => 'Kantor Pusat',
@@ -488,7 +488,7 @@ function getCurrentUrl($newLang)
                                 <li class="collection-item avatar">
                                   <i class="circle icon primary material-icons grey lighten-3">date_range</i>
                                   <span class="use-text-medium"><?php echo $text['established']; ?></span>
-                                  <p>Jan 9, 2025</p>
+                                  <p>27 April 2022</p>
                                 </li>
                                 <li class="collection-item avatar">
                                   <i class="circle icon primary material-icons grey lighten-3">local_phone</i>
