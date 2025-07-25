@@ -57,8 +57,8 @@ $languages = [
     'see_detail' => 'See Detail',
 
     // Speciality Section
-    'speciality_title' => 'Spesialisasi Kami',
-    'speciality_desc' => 'Semua instruktur di Platform Kursus Medis kami adalah dokter berlisensi dan ahli di bidangnya masing-masing.',
+    'speciality_title' => 'Keanggotaan dokter PDSI',
+    'speciality_desc' => 'Semua dokter di Platform PDSI adalah berlisensi dan ahli dibidangnya masing-masing. Daftar Sekarang !',
 
     // Testimonial Section
     'testimonial_title' => 'Pengakuan',
@@ -149,8 +149,8 @@ Daerah Khusus Ibukota Jakarta 12310',
     'see_detail' => 'See Detail',
 
     // Speciality Section
-    'speciality_title' => 'Our Specialities',
-    'speciality_desc' => 'All instructors in our Medical Course Platform are licensed doctors and experts in their respective fields.',
+    'speciality_title' => 'PDSI doctor membership',
+    'speciality_desc' => 'All doctors on the PDSI platform are licensed and experts in their respective fields. Register Now.',
 
     // Testimonial Section
     'testimonial_title' => 'Confession',
