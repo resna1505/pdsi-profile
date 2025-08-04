@@ -459,6 +459,22 @@ if (!$article) {
                           echo $article['description'];
                           ?>
                         </div>
+                        <div class="mt-4 d-flex gap-3 align-items-center">
+                          <!-- Share via WhatsApp -->
+                          <a href="https://wa.me/?text=<?php echo urlencode($article['title'] . ' - https://pdsionline.org/detail-agenda.php?id=' . $articleId); ?>" target="_blank" title="Bagikan ke WhatsApp">
+                            <img src="https://img.icons8.com/color/24/000000/whatsapp--v1.png" alt="WhatsApp" />
+                          </a>
+
+                          <!-- Copy to clipboard -->
+                          <button onclick="copyToClipboard()" title="Salin URL" style="border: none; background: none;">
+                            <img src="https://img.icons8.com/ios-filled/24/000000/copy.png" alt="Copy" />
+                          </button>
+
+                          <!-- Share Icon -->
+                          <button onclick="shareArticle()" title="Share artikel" style="border: none; background: none;">
+                            <img src="https://img.icons8.com/ios-glyphs/24/000000/share--v1.png" alt="Share" />
+                          </button>
+                        </div>
                       </article>
                     </div>
                   </div>
@@ -617,6 +633,25 @@ if (!$article) {
   <script src="./assets/js/vendors/materialize.js"></script>
   <script src="./assets/js/scripts.js"></script>
   <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+  <script>
+    function copyToClipboard() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url)
+        .then(() => alert('URL disalin ke clipboard!'))
+        .catch(() => alert('Gagal menyalin URL.'));
+    }
+
+    function shareArticle() {
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          url: window.location.href
+        }).catch(() => alert('Gagal membagikan.'));
+      } else {
+        alert('Fitur berbagi tidak didukung di browser ini.');
+      }
+    }
+  </script>
 </body>
 
 </html>
