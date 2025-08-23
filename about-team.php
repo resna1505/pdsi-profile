@@ -473,7 +473,7 @@ $data = json_decode($response, true);
           <!-- ##### END COUNTER #####-->
 
           <!-- ##### TEAM #####-->
-          <div class="space-bottom-short">
+          <!-- <div class="space-bottom-short">
             <div class="container text-center text-lg-start">
               <h4 class="use-text-title2 mb-3"><?php echo $text['team_title']; ?></h4>
               <p class="use-text-subtitle2 mb-10"><?php echo $text['team_subtitle']; ?></p>
@@ -533,7 +533,7 @@ $data = json_decode($response, true);
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- ##### END TEAM #####-->
 
           <!-- ##### FOOTER #####-->
