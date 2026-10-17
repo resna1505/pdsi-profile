@@ -532,6 +532,65 @@ $dataBanner = $data->data->banner;
       transform: scale(0.9);
       pointer-events: none;
     }
+
+    /* Perhimpunan */
+    .home-perhimpunan-card {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 100%;
+      padding: 24px;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .08);
+      color: inherit;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .home-perhimpunan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+      color: inherit;
+    }
+
+    .home-perhimpunan-card img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .home-perhimpunan-card h6 {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .home-perhimpunan-card p {
+      font-size: 14px;
+      opacity: .75;
+      margin-bottom: 12px;
+    }
+
+    .home-perhimpunan-abbr {
+      display: inline-block;
+      padding: 2px 12px;
+      border-radius: 20px;
+      background: rgba(3, 172, 242, .12);
+      color: #0288c2;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 575px) {
+      .home-perhimpunan-card {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -590,6 +649,17 @@ $dataBanner = $data->data->banner;
                           </li>
                         </ul>
                         <ul class="group-child">
+                          <li class="collection-header">
+                            <div class="title-mega">Perhimpunan</div>
+                          </li>
+                          <li class="collection-item side-group-link">
+                            <a class="waves-effect text-truncate menu-list" href="perhimpunan.php">Daftar Perhimpunan</a>
+                          </li>
+                          <li class="collection-item side-group-link">
+                            <a class="waves-effect text-truncate menu-list" href="https://www.platform.pdsionline.org/register">Daftar Anggota</a>
+                          </li>
+                        </ul>
+<ul class="group-child">
                           <li class="collection-header">
                             <div class="title-mega"><?php echo $text['mega_faq']; ?></div>
                           </li>
@@ -665,6 +735,14 @@ $dataBanner = $data->data->banner;
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
+                                <div class="title-mega">Perhimpunan</div>
+                                <img class="thumb-menu" src="./assets/images/medical/menu_medical@2x.jpg" alt="thumbnail" />
+                                <ul>
+                                  <li class="waves-effect"><a class="menu-list" href="perhimpunan.php">Daftar Perhimpunan</a></li>
+                                  <li class="waves-effect"><a class="menu-list" href="https://www.platform.pdsionline.org/register">Daftar Anggota</a></li>
+                                </ul>
+                              </div>
+<div class="col-sm-3 mb-6">
                                   <div class="title-mega"><?php echo $text['mega_faq']; ?></div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_saas2@2x.jpg" alt="thumbnail" />
                                   <ul>
@@ -1113,6 +1191,44 @@ $dataBanner = $data->data->banner;
               </div>
             </section>
             <!-- ##### END SPECIALITY #####-->
+
+            <!-- ##### PERHIMPUNAN #####-->
+            <?php
+            $perhimpunanApi = (getenv('PDSI_API_BASE') ?: 'https://www.platform.pdsionline.org') . '/api/perhimpunan';
+            $perhimpunanResponse = @file_get_contents($perhimpunanApi, false, stream_context_create(['http' => ['timeout' => 10]]));
+            $perhimpunanList = $perhimpunanResponse !== false ? (json_decode($perhimpunanResponse, true)['data'] ?? []) : [];
+            ?>
+            <?php if (!empty($perhimpunanList)): ?>
+              <section class="space-top-short" id="perhimpunan">
+                <div class="root">
+                  <div class="container">
+                    <div class="px-3 mb-4">
+                      <h4 class="use-text-title">Perhimpunan</h4>
+                      <p class="use-text-subtitle2">Perhimpunan dokter spesialis yang bernaung bersama PDSI.</p>
+                    </div>
+                    <div class="row">
+                      <?php foreach ($perhimpunanList as $perhimpunan): ?>
+                        <div class="col-lg-6 col-md-12 mb-4 px-3">
+                          <a class="home-perhimpunan-card" href="detail-perhimpunan.php?id=<?= urlencode($perhimpunan['id']) ?>">
+                            <?php if (!empty($perhimpunan['logo'])): ?>
+                              <img src="<?= htmlspecialchars($perhimpunan['logo']) ?>" alt="Logo <?= htmlspecialchars($perhimpunan['singkatan']) ?>">
+                            <?php endif; ?>
+                            <div>
+                              <div class="home-perhimpunan-abbr"><?= htmlspecialchars($perhimpunan['singkatan']) ?></div>
+                              <h6><?= htmlspecialchars($perhimpunan['nama']) ?></h6>
+                              <?php if (!empty($perhimpunan['ringkasan'])): ?>
+                                <p><?= htmlspecialchars($perhimpunan['ringkasan']) ?></p>
+                              <?php endif; ?>
+                            </div>
+                          </a>
+                        </div>
+                      <?php endforeach; ?>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            <?php endif; ?>
+            <!-- ##### END PERHIMPUNAN #####-->
 
             <!-- ##### TESTIMONIALS #####-->
             <section class="space-top-short" id="testimonials">

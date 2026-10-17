@@ -287,6 +287,17 @@ if (!$article) {
                         </ul>
                         <ul class="group-child">
                           <li class="collection-header">
+                            <div class="title-mega">Perhimpunan</div>
+                          </li>
+                          <li class="collection-item side-group-link">
+                            <a class="waves-effect text-truncate menu-list" href="perhimpunan.php">Daftar Perhimpunan</a>
+                          </li>
+                          <li class="collection-item side-group-link">
+                            <a class="waves-effect text-truncate menu-list" href="https://www.platform.pdsionline.org/register">Daftar Anggota</a>
+                          </li>
+                        </ul>
+<ul class="group-child">
+                          <li class="collection-header">
                             <div class="title-mega"><?php echo $text['mega_faq']; ?></div>
                           </li>
                           <li class="collection-item side-group-link">
@@ -361,6 +372,14 @@ if (!$article) {
                                   </ul>
                                 </div>
                                 <div class="col-sm-3 mb-6">
+                                <div class="title-mega">Perhimpunan</div>
+                                <img class="thumb-menu" src="./assets/images/medical/menu_medical@2x.jpg" alt="thumbnail" />
+                                <ul>
+                                  <li class="waves-effect"><a class="menu-list" href="perhimpunan.php">Daftar Perhimpunan</a></li>
+                                  <li class="waves-effect"><a class="menu-list" href="https://www.platform.pdsionline.org/register">Daftar Anggota</a></li>
+                                </ul>
+                              </div>
+<div class="col-sm-3 mb-6">
                                   <div class="title-mega"><?php echo $text['mega_faq']; ?></div>
                                   <img class="thumb-menu" src="./assets/images/medical/menu_saas2@2x.jpg" alt="thumbnail" />
                                   <ul>
